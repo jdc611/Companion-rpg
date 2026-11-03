@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#101b20"><title>Lings — Overworld Prototype</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#101b20;color:#f2e9d6;font-family:system-ui,-apple-system,sans-serif}body{overscroll-behavior:none}main{max-width:780px;margin:auto;padding:14px 12px 30px}.top{display:flex;justify-content:space-between;align-items:center;gap:8px}.top h1{font-size:1.25rem;margin:0}.sub{font-size:.72rem;color:#a9c4b8}.world{position:relative;margin-top:12px;border:3px solid #536a5b;border-radius:12px;overflow:hidden;background:#304b34;box-shadow:0 12px 35px #0007}canvas{width:100%;display:block;image-rendering:pixelated;touch-action:none;aspect-ratio:4/3}.overlay{position:absolute;left:10px;top:10px;background:#122b2ad9;border:1px solid #729082;padding:7px 10px;border-radius:8px;font-size:.72rem}.dialog{min-height:83px;background:#243c3d;border:2px solid #73918a;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.9rem;line-height:1.5}.dialog strong{color:#e7d99e}.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}.dpad{display:grid;grid-template-columns:repeat(3,54px);grid-template-rows:repeat(3,48px);gap:4px}.btn{background:#2e4c51;border:2px solid #638585;border-radius:12px;color:white;font-weight:700;font-size:1.3rem;touch-action:none;user-select:none;-webkit-user-select:none}.btn:active,.btn.pressed{background:#54816e;transform:translateY(2px) scale(.96);box-shadow:inset 0 3px 7px #0b252b88;border-color:#a6cbb4}.btn{transition:transform 65ms ease,background 65ms ease,border-color 65ms ease}.up{grid-column:2;grid-row:1}.left{grid-column:1;grid-row:2}.down{grid-column:2;grid-row:3}.right{grid-column:3;grid-row:2}.action{width:84px;height:84px;border-radius:50%;background:#8e5c4c;border-color:#d7a88e}.hint{font-size:.72rem;color:#a9c4b8;margin-top:10px}.reset{background:transparent;border:1px solid #678178;border-radius:7px;color:#c4d7d0;padding:7px 10px;font-size:.75rem}footer{font-size:.72rem;color:#9aaea8;margin-top:12px}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · TERRAIN CLEANUP 1.2</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · ENVIRONMENT ART 1.3</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
 <script>
 (()=>{
 'use strict';
@@ -88,47 +88,65 @@ function interact(){if(interior){if(player.y>=7&&player.x===5){leave();return}sa
 
 function px(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),w,h)}
 function tile(x,y,t){
-const a=x*TILE,b=y*TILE,r=rand(x,y),r2=rand(x+91,y+73);
-const wet=biomeMix(x,y);
-if(t==='r'||t==='h'){
-// Flat asphalt with fractured edges, faded lane paint and encroaching weeds.
-const north=y>0?map[y-1][x]:null,south=y<H-1?map[y+1][x]:null;
-const road=v=>v==='r'||v==='h';
-px(a,b,32,32,'#555e5b');
-px(a,b,32,2,'#737d76');px(a,b+30,32,2,'#414c4b');
-if(!road(north)){px(a,b,32,5,'#4d705c');px(a+4,b+3,9,2,'#8b9a7d')}
-if(!road(south)){px(a,b+27,32,5,'#3f6856');px(a+19,b+27,8,2,'#7d9877')}
-if(y===22&&x%3!==0){px(a+4,b+15,24,2,'#b2a98a');px(a+4,b+17,24,1,'#777965')}
-if(r>.24){px(a+6,b+7,2,8,'#303f40');px(a+8,b+14,9,2,'#303f40');px(a+15,b+16,2,6,'#303f40')}
-if(r2>.48){px(a+23,b+24,3,3,'#718b72');px(a+25,b+20,2,7,'#5c845f')}
-}else if(t==='b'){px(a,b,32,32,'#776c55');px(a,b+2,32,6,'#bba886');px(a,b+14,32,5,'#a68e6c');px(a,b+27,32,4,'#594d3c');px(a+6,b,3,32,'#e0c99e');px(a+25,b,3,32,'#e0c99e');}else if(t==='p'){
-// Worn earth: low-contrast compacted soil, gravel and subtle wheel ruts.
-px(a,b,32,32,mixColor('#b5a078','#777d70',wet));
-px(a+2,b+5,23,3,mixColor('#bda982','#879083',wet));
-px(a+6,b+16,19,2,'#a18d69');
-if(r>.28){px(a+5,b+10,3,2,'#d2c09b');px(a+23,b+25,4,2,'#8f805f')}
-if(r2>.5){px(a+11,b+21,7,2,'#c8b18b');px(a+27,b+8,2,3,'#84785c')}
-const n=x>0?map[y][x-1]:null, e=x<W-1?map[y][x+1]:null;
-if(n!=='p'&&n!=='b'){px(a,b,3,32,'#8d9d70');px(a+3,b+5,2,7,'#5c8c5e')}
-if(e!=='p'&&e!=='b'){px(a+29,b,3,32,'#8d9d70');px(a+27,b+18,2,9,'#648e62')}
-}else if(t==='w'||t==='W'){
-px(a,b,32,32,t==='w'?'#3e8293':'#498fa0');
-px(a,b,32,4,'#67a7a8');
-const ripple=Math.round(Math.sin(worldTime/380+x*1.7+y*.9)*5);
-px(a+4+ripple,b+11,12,2,'#8bd1c9');px(a+20-ripple/2,b+25,8,2,'#5cb0b7');
-if(r>.72)px(a+3,b+4,3,3,'#a3d7c8');
-}else{
-px(a,b,32,32,mixColor(r>.5?'#78a66c':'#73a066','#456c70',wet));
-px(a,b,32,3,mixColor('#82b074','#638b83',wet));px(a+3,b+18,6,2,mixColor('#68955d','#385d65',wet));px(a+24,b+7,4,2,mixColor('#64935c','#587f78',wet));
-if(r2>.4){px(a+9,b+24,2,5,'#4f844f');px(a+13,b+22,2,4,'#5b8d51')}
-if(t==='m'){px(a+2,b+22,28,5,'#375d65');px(a+7,b+24,12,2,'#71a9a8');px(a+14,b+9,4,13,'#396b65');px(a+10,b+6,12,5,'#78c8bd');px(a+13,b+3,6,7,'#9ce6d3');px(a+23,b+18,3,5,'#b1a1d9');}
-if(t==='f'){px(a+10,b+13,3,9,'#447d4b');px(a+7,b+10,9,4,'#f7df9a');px(a+10,b+7,4,10,'#f7df9a');px(a+11,b+11,3,3,'#e79c79');px(a+23,b+20,3,6,'#4f844f');px(a+20,b+19,9,4,'#f2bfd0');px(a+23,b+16,3,9,'#f2bfd0')}
-if(t==='t'){
-px(a+12,b+19,9,13,mixColor('#5a503f','#354b50',wet));px(a+10,b+22,13,4,'#79664b');
-px(a+4,b+11,25,19,mixColor('#294f3d','#253f49',wet));px(a+1,b+8,30,14,mixColor('#38694a','#365e63',wet));px(a+6,b+2,22,15,mixColor('#477b50','#47777a',wet));
-px(a+10,b+1,13,6,mixColor('#60925a','#649b90',wet));px(a+4,b+13,10,4,mixColor('#53885a','#55867f',wet));px(a+19,b+8,8,4,mixColor('#62975e','#76a39a',wet));px(a+9,b+21,7,3,mixColor('#2f5b43','#2b5b63',wet));
+const a=x*TILE,b=y*TILE,wet=biomeMix(x,y),r=rand(x,y),r2=rand(x+91,y+73);
+const at=(xx,yy)=>xx>=0&&yy>=0&&xx<W&&yy<H?map[yy][xx]:null;
+const isPath=v=>v==='p'||v==='b',isWater=v=>v==='w'||v==='W';
+const grass=mixColor('#608d57','#3d706e',wet),grassLight=mixColor('#86ae6e','#699d91',wet),soil=mixColor('#b6a17a','#8d9283',wet);
+function ellipse(cx,cy,rx,ry,color){ctx.fillStyle=color;ctx.beginPath();ctx.ellipse(a+cx,b+cy,rx,ry,0,0,Math.PI*2);ctx.fill()}
+function stem(cx,cy,color){px(a+cx,b+cy,1,5,color);px(a+cx-2,b+cy+1,2,1,color);px(a+cx+1,b+cy-1,2,1,color)}
+if(isWater(t)){
+px(a,b,32,32,mixColor('#397d8c','#345d75',wet));
+for(let i=0;i<4;i++){const v=rand(x*11+i,y*7+i),shift=Math.sin(worldTime/750+i*1.8+x*.4+y*.6)*2;px(a+Math.floor(v*17)+Math.round(shift),b+4+i*8,7+(i%2)*6,1,i%2?'#69a9ae':'#568f9d')}
+if(!isWater(at(x-1,y))){px(a,b,3,32,'#b4c39a');px(a+3,b,2,32,'#679d8e')}
+if(!isWater(at(x+1,y))){px(a+29,b,3,32,'#a3b88f');px(a+27,b,2,32,'#619d91')}
+if(!isWater(at(x,y-1)))px(a,b,32,3,'#7ab2a6');
+if(!isWater(at(x,y+1)))px(a,b+29,32,3,'#5d8d84');
+return;
 }
-}}
+if(t==='b'){
+px(a,b,32,32,'#5c574a');
+for(let i=0;i<4;i++){px(a+i*8,b,2,32,'#3b3a34');px(a+i*8+2,b,6,32,i%2?'#ab906b':'#c0a47c');px(a+i*8+3,b+3,3,1,'#dfc39a');px(a+i*8+3,b+27,3,1,'#6f5d4a')}
+px(a,b,32,3,'#d2bd94');px(a,b+29,32,3,'#514d42');return;
+}
+if(t==='r'||t==='h'){
+px(a,b,32,32,'#555f5d');
+for(let i=0;i<9;i++){const xx=Math.floor(rand(x*17+i,y*31)*30),yy=Math.floor(rand(x*29,y*13+i)*30);px(a+xx,b+yy,2,1,i%2?'#727c72':'#414e4d')}
+if(y===22&&x%3!==0)px(a+5,b+15,21,2,'#c4b994');
+px(a+9,b+8,2,9,'#374847');px(a+11,b+16,8,1,'#374847');px(a+19,b+16,1,5,'#374847');
+return;
+}
+if(t==='p'){
+px(a,b,32,32,soil);
+for(let i=0;i<13;i++){const xx=Math.floor(rand(x*31+i*7,y*19)*32),yy=Math.floor(rand(x*17,y*37+i*11)*32);ellipse(xx,yy,1+(i%3),.6+(i%2),i%2?'#cbb690':'#978564')}
+for(const [dx,dy,side] of [[-1,0,'left'],[1,0,'right'],[0,-1,'top'],[0,1,'bottom']]){
+if(!isPath(at(x+dx,y+dy))){const c=grass;ctx.fillStyle=c;ctx.beginPath();
+if(side==='left'){ctx.moveTo(a,b);for(let j=0;j<=32;j+=4)ctx.lineTo(a+3+Math.floor(rand(x*17+j,y*19)*5),b+j);ctx.lineTo(a,b+32)}
+if(side==='right'){ctx.moveTo(a+32,b);for(let j=0;j<=32;j+=4)ctx.lineTo(a+29-Math.floor(rand(x*13+j,y*23)*5),b+j);ctx.lineTo(a+32,b+32)}
+if(side==='top'){ctx.moveTo(a,b);for(let j=0;j<=32;j+=4)ctx.lineTo(a+j,b+3+Math.floor(rand(x*11+j,y*17)*5));ctx.lineTo(a+32,b)}
+if(side==='bottom'){ctx.moveTo(a,b+32);for(let j=0;j<=32;j+=4)ctx.lineTo(a+j,b+29-Math.floor(rand(x*7+j,y*13)*5));ctx.lineTo(a+32,b+32)}
+ctx.closePath();ctx.fill()}}
+if(r>.5){ellipse(15,8,8,2,'#c1aa81');ellipse(22,26,6,1,'#93805e')}
+return;
+}
+px(a,b,32,32,grass);
+for(let i=0;i<10;i++){const xx=Math.floor(rand(x*19+i*13,y*11)*32),yy=Math.floor(rand(x*31,y*29+i*17)*32);px(a+xx,b+yy,2+(i%3),1,i%3?'#719e65':'#4c7b50')}
+for(let i=0;i<4;i++){const xx=Math.floor(rand(x*23+i,y*41)*29),yy=Math.floor(rand(x*43,y*23+i)*26);stem(xx,yy,grassLight)}
+if(t==='f'){
+stem(10,12,'#456e4a');stem(22,20,'#456e4a');
+for(const [xx,yy,col] of [[10,11,'#efcfa0'],[21,19,'#e8a5b4']]){ellipse(xx,yy,4,2,col);ellipse(xx,yy,2,4,col);ellipse(xx,yy,1,1,'#f9ebbd')}
+}
+if(t==='m'){
+ellipse(18,24,12,4,'#356d70');ellipse(19,23,8,1,'#78b7ae');
+stem(10,10,'#80b6a1');ellipse(12,9,4,2,'#9dd9c4');ellipse(12,9,1,1,'#d6f6d7');
+}
+if(t==='t'){
+ellipse(17,27,14,6,'#335b48');
+px(a+12,b+17,8,14,'#675c46');px(a+14,b+17,3,12,'#8e7854');
+for(const [cx,cy,rx,ry,col] of [[14,19,14,10,'#2b5846'],[23,16,10,10,'#386e51'],[13,12,11,9,'#477e55'],[22,9,9,7,'#619563'],[9,14,6,5,'#70a36a']])ellipse(cx,cy,rx,ry,mixColor(col,'#416f73',wet));
+ellipse(16,7,7,3,mixColor('#83af70','#75aaa0',wet));
+for(let i=0;i<5;i++){const xx=7+Math.floor(rand(x*11+i,y*23)*19),yy=5+Math.floor(rand(x*29,y*11+i)*17);px(a+xx,b+yy,3,1,i%2?'#87b67b':'#264f45')}
+}
+}
 function poly(points,color){ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.closePath();ctx.fill()}
 function shrub(x,y){px(x+3,y+20,26,9,'#294e3b');px(x+1,y+13,14,13,'#3e744b');px(x+11,y+6,17,19,'#4d8552');px(x+15,y+4,9,7,'#7aab68');px(x+3,y+14,8,4,'#78a466')}
 function chimney(x,y){px(x,y,18,27,'#735a51');px(x+2,y+3,14,21,'#ae8b70');px(x-2,y-3,22,6,'#c3a58b');px(x+4,y+9,7,2,'#d2b39a')}
