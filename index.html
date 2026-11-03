@@ -240,7 +240,7 @@ sprites.right=sprites.left.map(row=>row.split('').reverse().join(''));
 const heroSheet=new Image();let heroSheetReady=false;
 heroSheet.onload=()=>{heroSheetReady=true};
 heroSheet.onerror=()=>{heroSheetReady=false};
-heroSheet.src='assets/lings_survivor_sprite_concept.png';
+heroSheet.src='assets/survivor_preview.svg';
 function drawCharacter(x,y,coat,face,walking,clock){
 if(coat==='#476a9c'&&heroSheetReady){const row={down:0,left:1,right:2,up:3}[face]??0;const frame=walking?Math.floor(clock/145)%4:0;ctx.drawImage(heroSheet,frame*96,row*112,96,112,Math.round(x)-8,Math.round(y)-18,48,56);return;}
 
