@@ -7,7 +7,7 @@ try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');state={...defaults
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};
 const stages=[
 {id:'notice',name:'A Place Worth Saving',desc:'Speak to Elder Rowan and learn what Willowmere needs.',done:()=>!!state.flags.metRowan},
-{id:'salvage',name:'What the Ruins Left Behind',desc:'Recover 3 scrap from the abandoned vehicle and 2 timber from the eastern road.',done:()=>state.scrap>=3&&state.timber>=2},
+{id:'salvage',name:'What the Ruins Left Behind',desc:'Recover 3 scrap from the abandoned vehicle and 2 timber from the eastern road.',done:()=>!!state.flags.vehicle&&!!state.flags.sign},
 {id:'workshop',name:'Light the Workshop',desc:'Bring supplies to Tobin and restore the workshop (3 scrap, 2 timber).',done:()=>!!state.built.workshop},
 {id:'beacon',name:'A Light for Travelers',desc:'Help Mira repair the roadside beacon (2 scrap, 1 timber).',done:()=>!!state.built.beacon}
 ];
