@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#101b20"><title>Lings — Overworld Prototype</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#101b20;color:#f2e9d6;font-family:system-ui,-apple-system,sans-serif}body{overscroll-behavior:none}main{max-width:780px;margin:auto;padding:14px 12px 30px}.top{display:flex;justify-content:space-between;align-items:center;gap:8px}.top h1{font-size:1.25rem;margin:0}.sub{font-size:.72rem;color:#a9c4b8}.world{position:relative;margin-top:12px;border:3px solid #536a5b;border-radius:12px;overflow:hidden;background:#304b34;box-shadow:0 12px 35px #0007}canvas{width:100%;display:block;image-rendering:pixelated;touch-action:none;aspect-ratio:4/3}.overlay{position:absolute;left:10px;top:10px;background:#122b2ad9;border:1px solid #729082;padding:7px 10px;border-radius:8px;font-size:.72rem}.dialog{min-height:83px;background:#243c3d;border:2px solid #73918a;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.9rem;line-height:1.5}.dialog strong{color:#e7d99e}.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}.dpad{display:grid;grid-template-columns:repeat(3,54px);grid-template-rows:repeat(3,48px);gap:4px}.btn{background:#2e4c51;border:2px solid #638585;border-radius:12px;color:white;font-weight:700;font-size:1.3rem;touch-action:none;user-select:none;-webkit-user-select:none}.btn:active,.btn.pressed{background:#54816e;transform:translateY(2px) scale(.96);box-shadow:inset 0 3px 7px #0b252b88;border-color:#a6cbb4}.btn{transition:transform 65ms ease,background 65ms ease,border-color 65ms ease}.up{grid-column:2;grid-row:1}.left{grid-column:1;grid-row:2}.down{grid-column:2;grid-row:3}.right{grid-column:3;grid-row:2}.action{width:84px;height:84px;border-radius:50%;background:#8e5c4c;border-color:#d7a88e}.hint{font-size:.72rem;color:#a9c4b8;margin-top:10px}.reset{background:transparent;border:1px solid #678178;border-radius:7px;color:#c4d7d0;padding:7px 10px;font-size:.75rem}footer{font-size:.72rem;color:#9aaea8;margin-top:12px}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · ENVIRONMENT ART 1.3</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · CHARACTER ART 1.4</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
 <script>
 (()=>{
 'use strict';
@@ -71,7 +71,7 @@ function doorX(b){return b.x+Math.floor(b.w/2)}
 function enter(b){interior=b;interiorReturn={x:player.x,y:player.y,face:'down'};step=null;stop();held=null;visual={x:5,y:7};player={x:5,y:7,face:'up'};camera={x:0,y:0};say(b.name,'You step inside. Look around, then walk to the bottom doorway or press A there to leave.');updatePlace()}
 function leave(){if(!interior)return;interior=null;player={...interiorReturn};visual={x:player.x,y:player.y};step=null;stop();held=null;camera={x:Math.max(0,Math.min(W*TILE-canvas.width,player.x*TILE-canvas.width/2)),y:Math.max(0,Math.min(H*TILE-canvas.height,player.y*TILE-canvas.height/2))};save();say('Willowmere','You step back into the village.');updatePlace()}
 function interiorWalk(x,y){return x>=1&&x<=10&&y>=2&&y<=8&&!(y===2&&x!==5)&&!(x>=3&&x<=4&&y>=3&&y<=4)&&!(x>=7&&x<=9&&y>=4&&y<=5)}
-function interiorDraw(){const sx=144,sy=42;ctx.fillStyle='#1a2b30';ctx.fillRect(0,0,640,480);ctx.fillStyle='#806e5d';ctx.fillRect(sx,sy,12*TILE,10*TILE);ctx.fillStyle='#c8b38b';ctx.fillRect(sx+TILE,sy+TILE,10*TILE,8*TILE);for(let y=1;y<9;y++)for(let x=1;x<11;x++){ctx.fillStyle=(x+y)%2?'#bfa981':'#cbb68e';ctx.fillRect(sx+x*TILE,sy+y*TILE,TILE,TILE)}ctx.fillStyle='#715446';ctx.fillRect(sx+3*TILE,sy+3*TILE,2*TILE,2*TILE);ctx.fillRect(sx+7*TILE,sy+4*TILE,3*TILE,2*TILE);ctx.fillStyle='#e6c78e';ctx.fillRect(sx+3*TILE+8,sy+3*TILE+8,48,12);ctx.fillStyle='#6b8d75';ctx.fillRect(sx+TILE,sy+TILE,32,42);ctx.fillRect(sx+10*TILE,sy+TILE,32,42);ctx.fillStyle='#463b38';ctx.fillRect(sx+5*TILE,sy+9*TILE,32,32);ctx.fillStyle='#f0d4a0';ctx.font='bold 16px monospace';ctx.textAlign='center';ctx.fillText(interior.name,320,27);ctx.fillStyle='#4a608e';ctx.fillRect(sx+visual.x*TILE+8,sy+visual.y*TILE+14,16,14);ctx.fillStyle='#e9bb91';ctx.fillRect(sx+visual.x*TILE+10,sy+visual.y*TILE+4,12,12);ctx.fillStyle='#49362d';ctx.fillRect(sx+visual.x*TILE+9,sy+visual.y*TILE+2,14,5);ctx.fillStyle='#f5e6c6';ctx.font='13px system-ui';ctx.fillText('Door ↓',320,sy+10*TILE+22)}
+function interiorDraw(){const sx=144,sy=42;ctx.fillStyle='#1a2b30';ctx.fillRect(0,0,640,480);ctx.fillStyle='#806e5d';ctx.fillRect(sx,sy,12*TILE,10*TILE);ctx.fillStyle='#c8b38b';ctx.fillRect(sx+TILE,sy+TILE,10*TILE,8*TILE);for(let y=1;y<9;y++)for(let x=1;x<11;x++){ctx.fillStyle=(x+y)%2?'#bfa981':'#cbb68e';ctx.fillRect(sx+x*TILE,sy+y*TILE,TILE,TILE)}ctx.fillStyle='#715446';ctx.fillRect(sx+3*TILE,sy+3*TILE,2*TILE,2*TILE);ctx.fillRect(sx+7*TILE,sy+4*TILE,3*TILE,2*TILE);ctx.fillStyle='#e6c78e';ctx.fillRect(sx+3*TILE+8,sy+3*TILE+8,48,12);ctx.fillStyle='#6b8d75';ctx.fillRect(sx+TILE,sy+TILE,32,42);ctx.fillRect(sx+10*TILE,sy+TILE,32,42);ctx.fillStyle='#463b38';ctx.fillRect(sx+5*TILE,sy+9*TILE,32,32);ctx.fillStyle='#f0d4a0';ctx.font='bold 16px monospace';ctx.textAlign='center';ctx.fillText(interior.name,320,27);drawCharacter(sx+Math.round(visual.x*TILE),sy+Math.round(visual.y*TILE),'#476a9c',player.face,!!step,walkClock);ctx.fillStyle='#f5e6c6';ctx.font='13px system-ui';ctx.fillText('Door ↓',320,sy+10*TILE+22)}
 function drawDecor(){for(const d of decor){const x=d.x*TILE,y=d.y*TILE;if(d.type==='bush'){ctx.fillStyle='#426b45';ctx.fillRect(x+7,y+14,18,14);ctx.fillStyle='#68995a';ctx.fillRect(x+10,y+10,12,10)}else{ctx.fillStyle='#f2e2a0';ctx.fillRect(x+8,y+12,5,5);ctx.fillStyle='#d68a9a';ctx.fillRect(x+20,y+19,5,5);ctx.fillStyle='#477d48';ctx.fillRect(x+10,y+17,2,8)}}}
 function tickVillagers(dt){npcTimer+=dt;if(npcTimer<700)return;npcTimer=0;for(const o of villagers){if(rand(o.x+Math.floor(worldTime/1000),o.y)>.85)continue;const opts=[[1,0],[-1,0],[0,1],[0,-1]];const pick=opts[Math.floor(rand(o.y+Math.floor(worldTime/1000),o.x)*4)];const nx=o.x+pick[0],ny=o.y+pick[1];if(Math.abs(nx-o.homeX)>3||Math.abs(ny-o.homeY)>3||!canWalk(nx,ny)||nx===player.x&&ny===player.y)continue;o.face=pick[0]===1?'right':pick[0]===-1?'left':pick[1]===1?'down':'up';o.moving=true;o.x=nx;o.y=ny}} 
 for(const o of villagers){o.homeX=o.x;o.homeY=o.y}
@@ -236,39 +236,51 @@ left:[
 ]};
 sprites.right=sprites.left.map(row=>row.split('').reverse().join(''));
 function drawCharacter(x,y,coat,face,walking,clock){
-const dir=sprites[face]?face:'down';
-const phase=walking?Math.sin(clock*.026):0;
-const stride=walking?(phase>=0?1:-1):0;
-const bob=walking?Math.round(Math.abs(phase)*2):0;
-const sx=Math.round(x),sy=Math.round(y)-bob;
-const outline='#26363c',skin='#e9b990',hair='#544137',dark='#344657';
-const shirt=coat,light=coat==='#476a9c'?'#7796c0':'#a3a8a1';
-px(sx+6,sy+29,21,3,'#1c393766');
-function part(X,Y,w,h,c){px(sx+X,sy+Y,w,h,c)}
-// Distinct front, back and profile silhouettes, with opposite leg/arm swings.
+const dir=['up','down','left','right'].includes(face)?face:'down';
+const stepPhase=walking?Math.sin(clock*.027):0, stride=walking?(stepPhase>=0?1:-1):0;
+const bob=walking?Math.round(Math.abs(stepPhase)):0;
+const X=Math.round(x),Y=Math.round(y)-bob;
+const ink='#26313b',skin='#dfac87',skinLight='#f1c7a0',skinShadow='#ae765f';
+const hair='#45362e',hairLight='#735344',pants='#3b4856',pantsLight='#586879',boot='#292e35';
+const shirt=coat,shirtLight=coat==='#476a9c'?'#789ac5':'#b0a7a0',shirtShade=coat==='#476a9c'?'#304e77':'#55535c';
+function q(px0,py0,w,h,c){px(X+px0,Y+py0,w,h,c)}
+function polyLocal(points,c){ctx.fillStyle=c;ctx.beginPath();ctx.moveTo(X+points[0][0],Y+points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(X+points[i][0],Y+points[i][1]);ctx.closePath();ctx.fill()}
+function leg(cx,offset,front){const yy=23+offset; q(cx,yy,7,6,ink);q(cx+1,yy,5,5,front?pantsLight:pants);q(cx-1,yy+5,9,3,boot);q(cx,yy+5,6,1,'#48505a')}
+q(7,30,20,2,'#233f3e77');
 if(dir==='down'||dir==='up'){
-part(9,23+stride*2,6,8,outline);part(18,23-stride*2,6,8,outline);
-part(9,28+stride*2,7,3,'#272e35');part(18,28-stride*2,7,3,'#272e35');
-part(7,13,20,13,outline);part(9,14,16,11,shirt);
-part(4,15-stride*2,5,11,outline);part(5,16-stride*2,3,8,shirt);
-part(26,15+stride*2,5,11,outline);part(27,16+stride*2,3,8,shirt);
-part(5,24-stride*2,3,3,skin);part(27,24+stride*2,3,3,skin);
-part(8,3,18,12,outline);part(10,4,14,10,dir==='up'?hair:skin);
-part(8,2,18,5,hair);part(10,1,14,3,hair);
-if(dir==='down'){part(12,9,3,2,outline);part(20,9,3,2,outline);part(16,12,3,1,'#b67d66');part(13,16,8,2,light)}
-else{part(11,7,12,5,'#674d3c');part(12,15,10,3,light);part(14,18,6,5,dark)}
+// Walking is a true two-pose cycle: legs and opposite arms exchange depth.
+leg(9,stride*2,stride<0);leg(19,-stride*2,stride>0);
+q(7,14,20,12,ink);q(9,15,16,10,shirtShade);q(10,15,14,8,shirt);q(11,16,12,2,shirtLight);
+const arm=(ax,off,front)=>{q(ax,15+off,6,10,ink);q(ax+1,16+off,4,7,front?shirtLight:shirtShade);q(ax+1,23+off,4,3,skin);q(ax+2,24+off,2,1,skinLight)};
+arm(4,-stride*2,stride>0);arm(25,stride*2,stride<0);
+q(13,11,8,5,ink);q(14,11,6,4,skinShadow);
+q(7,2,20,12,ink);q(9,3,16,11,dir==='up'?hair:skin);
+if(dir==='down'){
+q(10,4,14,8,skinLight);q(9,3,16,5,hair);q(8,5,4,5,hair);q(22,5,4,5,hair);
+q(10,4,6,2,hairLight);q(17,3,6,2,hairLight);
+q(12,9,3,2,ink);q(20,9,3,2,ink);q(13,9,1,1,'#f7f1e1');q(21,9,1,1,'#f7f1e1');
+q(16,12,3,1,skinShadow);q(15,14,5,1,'#e8bc97');
+q(14,18,6,2,'#d1ad7b');q(15,20,4,3,'#886c4b');
 }else{
-const right=dir==='right',mirror=(v,w)=>right?32-v-w:v;
-const p=(X,Y,w,h,c)=>part(mirror(X,w),Y,w,h,c);
-p(10,23+stride*2,7,8,outline);p(17,23-stride*2,7,8,outline);
-p(9,28+stride*2,9,3,'#272e35');p(17,28-stride*2,8,3,'#272e35');
-p(8,13,17,13,outline);p(10,14,14,11,shirt);
-p(17,16-stride*2,5,11,outline);p(18,17-stride*2,3,8,shirt);p(18,24-stride*2,3,3,skin);
-p(5,15+stride*2,5,10,outline);p(6,16+stride*2,3,7,shirt);p(6,23+stride*2,3,3,skin);
-p(9,3,16,12,outline);p(10,4,15,10,skin);p(7,3,17,5,hair);p(9,1,12,4,hair);
-p(24,8,3,3,skin);p(21,9,2,2,outline);p(18,12,4,1,'#ad7969');
-p(11,16,8,2,light);
+q(8,3,18,9,hair);q(10,3,14,4,hairLight);q(11,7,12,5,hair);q(9,13,16,3,shirtShade);
+q(13,16,8,10,'#7c6d58');q(14,17,6,7,'#a68d68');q(15,19,4,2,'#d2b588');q(12,16,2,7,ink);q(22,16,2,7,ink);
 }
+}else{
+const right=dir==='right';
+const p=(xx,yy,w,h,c)=>q(right?32-xx-w:xx,yy,w,h,c);
+const facePoly=(points,c)=>polyLocal(points.map(([xx,yy])=>[right?32-xx:xx,yy]),c);
+leg(right?17:9,stride*2,stride<0);leg(right?9:17,-stride*2,stride>0);
+p(9,14,17,12,ink);p(10,15,15,10,shirtShade);p(11,15,12,9,shirt);p(13,16,10,2,shirtLight);
+p(5,15+stride*2,6,10,ink);p(6,16+stride*2,4,7,shirtShade);p(7,23+stride*2,3,3,skin);
+p(18,15-stride*2,6,10,ink);p(19,16-stride*2,4,7,shirtLight);p(19,23-stride*2,4,3,skinLight);
+p(10,11,8,5,ink);p(11,12,6,4,skinShadow);
+p(8,2,19,12,ink);p(10,3,15,10,skin);
+p(9,3,17,5,hair);p(10,3,11,3,hairLight);p(9,5,5,6,hair);p(10,10,3,3,hair);
+p(23,8,4,3,skinLight);p(20,9,2,2,ink);p(20,9,1,1,'#faf0dc');p(23,12,3,1,skinShadow);
+p(10,16,5,8,'#7c6d58');p(11,17,4,6,'#a68d68');p(12,19,2,2,'#d2b588');
+}
+// Tiny asymmetric highlights preserve pixel character rather than flat geometric blocks.
+if(dir!=='up'){q(dir==='right'?20:11,6,2,1,skinLight)}
 }
 function object(o){const x=o.x*TILE,y=o.y*TILE;
 if(['Mira','Elder Rowan','Tobin'].includes(o.name)){const color=o.name==='Mira'?'#b87572':o.name==='Tobin'?'#6b87a9':'#9787aa';drawCharacter(x,y,color,o.face||'down',!!o.moving,worldTime);return}
