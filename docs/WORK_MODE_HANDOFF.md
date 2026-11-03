@@ -37,6 +37,18 @@ Status: TODO
 - Keep performance practical for iPhone, including sprite atlas loading, caching and offline behavior where possible.
 Acceptance: polished, visually consistent and playable 5–10-minute area with no placeholder blobs or broken controls.
 
+
+## Priority 1A — Settlement rebuilding and NPC quest system follow-through
+Status: IN PROGRESS (initial code committed; browser QA not yet verified)
+- Implemented in normal chat on 2026-11-03: `assets/rebuilding.js` with persistent resources (scrap/timber), Elder Rowan introduction, salvage interactions at Abandoned Vehicle, Collapsed Transit Entrance, Old Highway Sign and Ruins Sign, Tobin workshop repair, Mira beacon repair, and a milestone tracker. `index.html` invokes this system on NPC/object interactions and renders repaired-world decorations.
+- Current milestone build: v1.8. Commit: `57421bfa7e8eb6478c575b7d1e24db76b410958a` (quest bug fix), index integration commit `91502b94d337aeaeff5b18acd8f5b871467e7f14`.
+- Work: verify actual live deployment, inspect JavaScript console, test quest completion and save persistence on iPhone Safari, ensure all scavenging objects can be reached and interacted with, test repairs in both orders, and ensure no conflict with door interactions or NPC walking.
+- Work: upgrade basic repair overlays to proper art-backed before/after building states; add construction animations and visible settlement growth after repair. Do not replace approved survivor art.
+- Work: build data-driven quest scripting and a journal for branching dialogue, dependencies, choice consequences, objective markers, quest reward/claim states, and migrations of saved progress.
+- Work: design a bounded first-settlement economy and gradual population changes; don't treat prototype numbers or names as final canon.
+- Work: add automated smoke tests and an on-device QA checklist for quests, movement, interiors, save/load and UI.
+Acceptance: four milestones can be completed in live mobile gameplay, repairs visibly persist, and there are no progression softlocks.
+
 ## Priority 2 — Reliable asset-production workflow
 Status: TODO
 - Establish reproducible image-generation -> clean transparent assets -> sprite atlas -> GitHub commit -> browser verification workflow.
@@ -82,3 +94,4 @@ Status: TODO; DESIGN AUTHORITY PRESERVED
 | 2026-11-03 | Create persistent Work handoff | DONE | This file |
 | 2026-11-03 | Integrate detailed survivor PNG | BLOCKED | Upload/verify image asset; game currently has fallback |
 | 2026-11-03 | Polished vertical slice | TODO | Begin after protagonist sprite is verified |
+| 2026-11-03 | Rebuilding and NPC quest prototype | IN PROGRESS | v1.8 committed; mobile QA and art upgrades assigned to Work |
