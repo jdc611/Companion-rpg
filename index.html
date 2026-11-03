@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#101b20"><title>Lings — Overworld Prototype</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#101b20;color:#f2e9d6;font-family:system-ui,-apple-system,sans-serif}body{overscroll-behavior:none}main{max-width:780px;margin:auto;padding:14px 12px 30px}.top{display:flex;justify-content:space-between;align-items:center;gap:8px}.top h1{font-size:1.25rem;margin:0}.sub{font-size:.72rem;color:#a9c4b8}.world{position:relative;margin-top:12px;border:3px solid #536a5b;border-radius:12px;overflow:hidden;background:#304b34;box-shadow:0 12px 35px #0007}canvas{width:100%;display:block;image-rendering:pixelated;touch-action:none;aspect-ratio:4/3}.overlay{position:absolute;left:10px;top:10px;background:#122b2ad9;border:1px solid #729082;padding:7px 10px;border-radius:8px;font-size:.72rem}.dialog{min-height:83px;background:#243c3d;border:2px solid #73918a;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.9rem;line-height:1.5}.dialog strong{color:#e7d99e}.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}.dpad{display:grid;grid-template-columns:repeat(3,54px);grid-template-rows:repeat(3,48px);gap:4px}.btn{background:#2e4c51;border:2px solid #638585;border-radius:12px;color:white;font-weight:700;font-size:1.3rem;touch-action:none;user-select:none;-webkit-user-select:none}.btn:active,.btn.pressed{background:#54816e;transform:translateY(2px) scale(.96);box-shadow:inset 0 3px 7px #0b252b88;border-color:#a6cbb4}.btn{transition:transform 65ms ease,background 65ms ease,border-color 65ms ease}.up{grid-column:2;grid-row:1}.left{grid-column:1;grid-row:2}.down{grid-column:2;grid-row:3}.right{grid-column:3;grid-row:2}.action{width:84px;height:84px;border-radius:50%;background:#8e5c4c;border-color:#d7a88e}.hint{font-size:.72rem;color:#a9c4b8;margin-top:10px}.reset{background:transparent;border:1px solid #678178;border-radius:7px;color:#c4d7d0;padding:7px 10px;font-size:.75rem}footer{font-size:.72rem;color:#9aaea8;margin-top:12px}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · BRIDGE FIX 1.0.1</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · VISUAL POLISH 1.1</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · No creatures or battles yet · Progress saves locally</footer></main>
 <script>
 (()=>{
 'use strict';
@@ -89,7 +89,18 @@ function px(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),
 function tile(x,y,t){
 const a=x*TILE,b=y*TILE,r=rand(x,y),r2=rand(x+91,y+73);
 const wet=biomeMix(x,y);
-if(t==='r'||t==='h'){px(a,b,32,32,'#77796f');px(a+2,b+3,28,5,'#9b9b88');px(a+6,b+13,21,3,'#505d55');px(a+3,b+23,24,5,'#929283');if(r>.5)px(a+14,b+8,3,20,'#5b7760');}else if(t==='b'){px(a,b,32,32,'#776c55');px(a,b+2,32,6,'#bba886');px(a,b+14,32,5,'#a68e6c');px(a,b+27,32,4,'#594d3c');px(a+6,b,3,32,'#e0c99e');px(a+25,b,3,32,'#e0c99e');}else if(t==='p'){
+if(t==='r'||t==='h'){
+// Flat asphalt with fractured edges, faded lane paint and encroaching weeds.
+const north=y>0?map[y-1][x]:null,south=y<H-1?map[y+1][x]:null;
+const road=v=>v==='r'||v==='h';
+px(a,b,32,32,'#555e5b');
+px(a,b,32,2,'#737d76');px(a,b+30,32,2,'#414c4b');
+if(!road(north)){px(a,b,32,5,'#4d705c');px(a+4,b+3,9,2,'#8b9a7d')}
+if(!road(south)){px(a,b+27,32,5,'#3f6856');px(a+19,b+27,8,2,'#7d9877')}
+if(y===22&&x%3!==0){px(a+4,b+15,24,2,'#b2a98a');px(a+4,b+17,24,1,'#777965')}
+if(r>.24){px(a+6,b+7,2,8,'#303f40');px(a+8,b+14,9,2,'#303f40');px(a+15,b+16,2,6,'#303f40')}
+if(r2>.48){px(a+23,b+24,3,3,'#718b72');px(a+25,b+20,2,7,'#5c845f')}
+}else if(t==='b'){px(a,b,32,32,'#776c55');px(a,b+2,32,6,'#bba886');px(a,b+14,32,5,'#a68e6c');px(a,b+27,32,4,'#594d3c');px(a+6,b,3,32,'#e0c99e');px(a+25,b,3,32,'#e0c99e');}else if(t==='p'){
 px(a,b,32,32,'#c7ad7d');px(a,b,32,3,'#d6bd8d');
 px(a+3,b+6,10,2,'#bba072');px(a+20,b+23,8,2,'#af956d');
 if(r>.45)px(a+15,b+13,5,3,'#e2c897');if(r2>.7)px(a+6,b+26,3,2,'#967e5b');
@@ -200,23 +211,38 @@ left:[
 ]};
 sprites.right=sprites.left.map(row=>row.split('').reverse().join(''));
 function drawCharacter(x,y,coat,face,walking,clock){
-const dir=sprites[face]?face:'down',rows=sprites[dir],phase=walking?Math.sin(clock*.037):0;
-const bob=walking?Math.round(Math.abs(phase)):0;
-const shoe=phase>0?2:0,shoe2=phase<0?2:0;
-px(x+7,y+28,20,4,'#1e443c66');
-for(let yy=0;yy<16;yy++)for(let xx=0;xx<16;xx++){
-const ch=rows[yy][xx];if(ch==='.')continue;
-let py=yy*2-bob;
-if(yy>=13&&walking){if(xx<8)py+=shoe;else py+=shoe2}
-let color=spritePal[ch];
-if(ch==='c'||ch==='C')color=coat;
-if(ch==='D'&&coat==='#476a9c')color='#304b73';
-if(ch==='a'&&coat==='#476a9c')color='#d9af6e';
-px(x+xx*2,y+py,2,2,color);
-}
-if(coat==='#476a9c'){
-px(x+11,y+19-bob,3,2,'#f3e2c6');
-px(x+21,y+19-bob,2,2,'#d6b477');
+const dir=sprites[face]?face:'down';
+const phase=walking?Math.sin(clock*.026):0;
+const stride=walking?(phase>=0?1:-1):0;
+const bob=walking?Math.round(Math.abs(phase)*2):0;
+const sx=Math.round(x),sy=Math.round(y)-bob;
+const outline='#26363c',skin='#e9b990',hair='#544137',dark='#344657';
+const shirt=coat,light=coat==='#476a9c'?'#7796c0':'#a3a8a1';
+px(sx+6,sy+29,21,3,'#1c393766');
+function part(X,Y,w,h,c){px(sx+X,sy+Y,w,h,c)}
+// Distinct front, back and profile silhouettes, with opposite leg/arm swings.
+if(dir==='down'||dir==='up'){
+part(9,23+stride*2,6,8,outline);part(18,23-stride*2,6,8,outline);
+part(9,28+stride*2,7,3,'#272e35');part(18,28-stride*2,7,3,'#272e35');
+part(7,13,20,13,outline);part(9,14,16,11,shirt);
+part(4,15-stride*2,5,11,outline);part(5,16-stride*2,3,8,shirt);
+part(26,15+stride*2,5,11,outline);part(27,16+stride*2,3,8,shirt);
+part(5,24-stride*2,3,3,skin);part(27,24+stride*2,3,3,skin);
+part(8,3,18,12,outline);part(10,4,14,10,dir==='up'?hair:skin);
+part(8,2,18,5,hair);part(10,1,14,3,hair);
+if(dir==='down'){part(12,9,3,2,outline);part(20,9,3,2,outline);part(16,12,3,1,'#b67d66');part(13,16,8,2,light)}
+else{part(11,7,12,5,'#674d3c');part(12,15,10,3,light);part(14,18,6,5,dark)}
+}else{
+const right=dir==='right',mirror=(v,w)=>right?32-v-w:v;
+const p=(X,Y,w,h,c)=>part(mirror(X,w),Y,w,h,c);
+p(10,23+stride*2,7,8,outline);p(17,23-stride*2,7,8,outline);
+p(9,28+stride*2,9,3,'#272e35');p(17,28-stride*2,8,3,'#272e35');
+p(8,13,17,13,outline);p(10,14,14,11,shirt);
+p(17,16-stride*2,5,11,outline);p(18,17-stride*2,3,8,shirt);p(18,24-stride*2,3,3,skin);
+p(5,15+stride*2,5,10,outline);p(6,16+stride*2,3,7,shirt);p(6,23+stride*2,3,3,skin);
+p(9,3,16,12,outline);p(10,4,15,10,skin);p(7,3,17,5,hair);p(9,1,12,4,hair);
+p(24,8,3,3,skin);p(21,9,2,2,outline);p(18,12,4,1,'#ad7969');
+p(11,16,8,2,light);
 }
 }
 function object(o){const x=o.x*TILE,y=o.y*TILE;
@@ -228,7 +254,7 @@ else if(o.name==='Collapsed Transit Entrance'){px(x+2,y+8,28,22,'#6d756f');px(x+
 else if(o.name==='Old Stone'){px(x+7,y+10,20,20,'#7b8c82');px(x+10,y+6,14,5,'#a9b3a0');px(x+12,y+13,3,11,'#b5c2a9');px(x+18,y+16,5,3,'#c6cfb6')}
 else{px(x+13,y+12,7,18,'#795f47');px(x+5,y+5,24,15,'#b99669');px(x+7,y+7,20,11,'#e2c696');px(x+10,y+11,14,2,'#8a7353')}}
 function drawWorldDetails(){// Physical evidence of collapse and slow recovery.
-for(const [x,y] of [[42,24],[44,25],[47,25],[55,26],[60,32],[67,29]]){const a=x*TILE,b=y*TILE;px(a+3,b+17,23,8,'#626b62');px(a+9,b+11,13,6,'#919688');px(a+5,b+25,6,3,'#3e6055');px(a+22,b+14,4,11,'#527e66')}
+for(const [x,y] of [[42,25],[44,26],[47,26],[55,26],[60,32],[67,29]]){const a=x*TILE,b=y*TILE;px(a+3,b+17,23,8,'#626b62');px(a+9,b+11,13,6,'#919688');px(a+5,b+25,6,3,'#3e6055');px(a+22,b+14,4,11,'#527e66')}
 for(const [x,y] of [[6,19],[12,24],[24,19],[29,24]]){const a=x*TILE,b=y*TILE;px(a+2,b+8,4,22,'#8c7454');px(a+25,b+8,4,22,'#8c7454');px(a+3,b+9,25,4,'#d4b17c');px(a+7,b+13,2,16,'#6b9a64')}
 for(const [x,y] of [[45,26],[56,30],[64,33]]){const a=x*TILE,b=y*TILE;px(a+4,b+16,25,10,'#5e655e');px(a+8,b+11,18,6,'#858b7c');px(a+14,b+10,3,15,'#354f50');px(a+5,b+23,5,5,'#477c68')}
 }
