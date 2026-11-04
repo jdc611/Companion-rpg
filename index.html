@@ -25,14 +25,34 @@ button{touch-action:none}
  .controls{min-height:116px}.dpad{grid-template-columns:repeat(3,42px);grid-template-rows:repeat(3,36px);gap:2px}
  .action{width:68px;height:68px}
 }
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · MOBILE CONTROLS 4.0</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+
+/* v4.1: map-first phone layout; dialogue floats over the map. */
+main{gap:5px}
+.world{flex:1 1 auto;min-height:0;margin:0;position:relative}
+.world canvas{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
+.dialog{position:absolute;z-index:8;left:8px;right:8px;bottom:8px;margin:0;max-height:40%;min-height:0;overflow-y:auto;background:rgba(16,34,35,.95);border:2px solid #a3b5a2;box-shadow:0 5px 18px #0009;padding:11px 33px 11px 12px;font-size:.83rem;line-height:1.35;cursor:pointer}
+.dialog::after{content:'✕';position:absolute;right:10px;top:8px;font-size:15px;color:#d7e3d5}
+.dialog.is-hidden{display:none}
+#lings-quest-panel{flex:0 0 auto!important;margin:0!important;padding:7px 10px!important;border-width:1px!important;border-radius:9px!important;font-size:12px!important;line-height:1.25!important;max-height:72px;overflow:auto}
+#lings-quest-panel .quest-details{display:none}
+#lings-quest-panel .quest-progress{margin-top:4px!important;height:4px!important}
+.controls{min-height:136px}
+@media(max-height:680px){#lings-quest-panel{max-height:57px;padding:4px 8px!important}.controls{min-height:110px}}
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · MAP-FIRST UI 4.1</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js"></script>
-<script src="assets/visual-upgrade.js?v=40-mobile-controls"></script>
+<script src="assets/visual-upgrade.js?v=41-map-first"></script>
 <script>
 (()=>{
 'use strict';
 const canvas=document.getElementById('game'),ctx=canvas.getContext('2d'),dialog=document.getElementById('dialog'),place=document.getElementById('place');
 ctx.imageSmoothingEnabled=false;
+// Put interaction text on the playfield rather than consuming vertical screen space.
+document.querySelector('.world').appendChild(dialog);
+dialog.classList.add('is-hidden');
+dialog.setAttribute('role','button');
+dialog.setAttribute('aria-label','Dismiss dialogue');
+dialog.addEventListener('pointerdown',e=>{e.stopPropagation();dialog.classList.add('is-hidden')});
+
 const TILE=32,W=72,H=40,seed=1641;
 // Soft geographic palette transition: warm Haven -> cool misty reclaimed wetlands.
 function biomeMix(x,y){const edge=53+Math.sin(y*.23)*2;return Math.max(0,Math.min(1,(x-edge)/12))}
@@ -105,7 +125,7 @@ let visual={x:player.x,y:player.y},camera={x:0,y:0},step=null,held=null,lastFram
 const directions={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
 try{const p=JSON.parse(localStorage.getItem('lings-world-v08'));if(p&&Number.isInteger(p.x)&&Number.isInteger(p.y)&&p.x>=0&&p.y>=0&&p.x<W&&p.y<H&&!occupied(p.x,p.y)&&!['w','W','t','r'].includes(map[p.y][p.x]))player={x:p.x,y:p.y,face:p.face||'down'}}catch{}
 function save(){try{localStorage.setItem('lings-world-v08',JSON.stringify(player))}catch{}}
-function say(name,text){dialog.innerHTML='';const b=document.createElement('strong');b.textContent=name+'. ';dialog.append(b,document.createTextNode(text))}
+function say(name,text){dialog.classList.remove('is-hidden');dialog.innerHTML='';const b=document.createElement('strong');b.textContent=name+'. ';dialog.append(b,document.createTextNode(text))}
 // Collision footprints for placed art; kept in tile coordinates.
 const placedSolidProps=[
  ...[[12,20],[15,20],[23,20],[27,22],[34,22]].map(([x,y])=>({x,y})),
