@@ -168,3 +168,6 @@ User explicitly approved original red/charcoal **Rexthros — The Primal Lineage
 - Universal Dracling stages remain **Hatchling → Drake → Elder**; Raptor, Bulwark, Tyrant and Bastion are species form descriptors.
 - **Aerythos**, the separate eagle-headed wyvern Dracling, is ON HOLD / NOT APPROVED due to incorrect wing anatomy. Do not mark Aerythos locked.
 - Elemental affinity and Primal Force mechanics on concept sheet are provisional, not finalized game rules. Approved Rexthros artwork is in this ChatGPT conversation; this GitHub markdown preserves its design description, not image asset.
+
+### Approved artwork archive — Rexthros
+Exact user-supplied approved concept sheet saved to ChatGPT Library: `/Lings/Approved Artwork/Rexthros_The_Primal_Lineage_APPROVED.jpeg` (Library ID `libfile_7a753fe6f76881918ba2e8fb6bf8f4be`). This is the canonical image; do not substitute subsequent regenerations. Note: this image is in the ChatGPT Library, not embedded in GitHub. Other Lings' actual image assets have not yet been verified archived; preserve them individually when available.
