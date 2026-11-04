@@ -46,6 +46,13 @@ Status: TODO / BLOCKED ON ASSET TRANSFER
 Acceptance: live iPhone game renders identifiable polished survivor with genuinely different, consistent walking poses in all four directions.
 
 
+## Priority 0D — West Village Asset Pack v1 live integration (v2.2)
+Status: IN PROGRESS; committed, live mobile QA pending
+- User uploaded `assets/west_village_asset_pack_v1.png`; GitHub SHA `f646975c0471d74e332263ffae1352f2b7c84f79`.
+- v2.2 code commit `55a1192cf7db9a270e46fe764ff68b1e9206876c` loads the image and uses extracted grass/dirt and building crops, with toggle back to original. The workshop stage uses saved rebuilding state.
+- Work: verify crop coordinates against actual PNG; clean dark background around buildings, avoid accidentally including neighboring labels/arrows, fix tile seams and perspective/scale. Ensure visual buildings align with existing collision footprints and doors; preserve working entrances and quest interactions.
+- Work: prepare optimized transparent game-ready atlases instead of cropping this presentation board at runtime. Check actual mobile rendering before marking complete.
+
 ## Priority 0C — Experimental survivor sprites (v2.0)
 Status: IN PROGRESS; committed, mobile visual QA pending
 - Added a temporary directional survivor renderer in `assets/visual-upgrade.js` using four pose crops per direction from the concept-art sheet. Wired it into `drawCharacter` in `index.html` at commit `54f0affb55b8404ef23f7d7dae39fcc43a86853b`.
