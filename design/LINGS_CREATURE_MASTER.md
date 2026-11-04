@@ -224,3 +224,15 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - **Anatomy/design:** Remain clearly insectoid, not humanoid or merely realistic oversized insects. Both branches retain their recognizable butterfly/moth identity with supernatural distinctive traits.
 - **Canonical approved artwork:** `/Lings/Approved Artwork/Velmora_Metamorph_Lineage_APPROVED.png` (Library ID `libfile_02109230e8988191926e226bcc3a986a`). This is the original user-approved concept sheet, not a regenerated lock confirmation. The sheet's LOCKED banner was premature at generation but user subsequently explicitly approved it.
 - **Notes:** Elements and ability labels on concept sheet are provisional unless separately approved.
+
+
+## Centrith — Arthling — APPROVED / LOCKED (2026-11-04)
+- **Lineage:** Centrith, The Segmentborn Lineage. Three stages, two divergent branches, five forms.
+- **Shared baby:** Centrith, The Wriggling Larva. Expressive cute insectoid centipede with multiple legs, green luminous eyes and accents, silver/ivory segmented plates, and **subtle purple markings on dorsal armor and antennae** tying together both future branches. This purple addition is essential to the final approved image.
+- **Offense intermediate:** Razorcoil, The Slicing Courier. Slender fast elongated centipede with sharp leg blades, green energy, metallic silver/black armor.
+- **Offense mature:** Viperith, The Blade Torrent. Long serpentine centipede with many razor legs, split aggressive armored head, lime-green energy arcs and extreme speed, sweeping bladed rushes.
+- **Defense intermediate:** Bulwarkin, The Plated Crawler. Broader low centipede, heavy layered plates, violet energy beneath chitin.
+- **Defense mature:** Terraspine, The Cyclopean Bastion. Massive stout plated centipede with purple core glow and gold-edged armored segments; coils into a spiked defensive ring, burrows and fortifies terrain.
+- **Originality:** Clearly arthropod centipede anatomy, but fantastical expressive Ling design rather than ordinary realistic centipede; distinct offensive/defensive silhouettes.
+- **Canonical approved artwork:** `/Lings/Approved Artwork/Centrith_Segmentborn_Lineage_APPROVED.png` (Library ID `libfile_41e8be543dd4819189eb447029507b19`). This is the **second, revised art sheet** with purple baby markings, not the earlier green-only draft. User explicitly locked this version.
+- **Notes:** Elemental affinities and named signature ability Segmentation on poster remain provisional unless separately approved.
