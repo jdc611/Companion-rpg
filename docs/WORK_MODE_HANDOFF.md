@@ -29,6 +29,12 @@ Status: TODO / BLOCKED ON ASSET TRANSFER
 Acceptance: live iPhone game renders identifiable polished survivor with genuinely different, consistent walking poses in all four directions.
 
 
+## Priority 0C — Experimental survivor sprites (v2.0)
+Status: IN PROGRESS; committed, mobile visual QA pending
+- Added a temporary directional survivor renderer in `assets/visual-upgrade.js` using four pose crops per direction from the concept-art sheet. Wired it into `drawCharacter` in `index.html` at commit `54f0affb55b8404ef23f7d7dae39fcc43a86853b`.
+- Work: inspect crop bounds, direction consistency, walk animation frame-to-frame continuity, background removal, player anchor, apparent scale, occlusion and iPhone performance. Concept sheet frames are not validated production animation.
+- Replace with a proper cleaned transparent atlas and actual distinct leg/arm walking frames, preserving the rugged survivor design and the reversible art toggle until tested.
+
 ## Priority 0B — Experimental art integration QA (v1.9)
 Status: IN PROGRESS; code committed, live rendering NOT YET VERIFIED
 - Normal chat committed `assets/visual-upgrade.js` and updated `index.html` (commit `1183e3599217cd3c92db03f111c9d808c27adc80`).
