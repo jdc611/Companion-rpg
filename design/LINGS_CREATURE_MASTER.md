@@ -27,3 +27,12 @@ Earlier generated eight-family overview artwork is NOT canonical: it made every 
 
 ## Image preservation status
 Design decisions saved in GitHub text. The original concept illustrations remain in ChatGPT conversation and are NOT embedded or backed up in GitHub; add actual approved images to repository assets when file upload mechanism becomes available. Do not claim artwork is safely stored as files in GitHub until uploaded.
+
+## MORPHLING — MORFEX (VISUAL DESIGN APPROVED / LOCKED)
+**Species name: Morfex.** User explicitly loved and approved the latest five-form concept artwork on November 4, 2026. Purple/violet and cyan palette, large expressive cyan eyes, small cute two-legged base form, two connected arms, pliable organic matter. No aquatic/amphibian/tentacle emphasis; reserve those for Aquilings. Do not duplicate Ancient Morphling's detached floating arms and forehead Council Sigil.
+1. **Base:** adorable small round soft-bodied purple-and-lavender creature with cyan eyes and luminous cyan seams, short connected arms and legs, playful face and swept-back pliable crest.
+2. **Offensive intermediate:** lean, agile, more angular adolescent with developing pointed forelimbs and an elongated swept-back crest; visibly less elaborate than adult.
+3. **Offensive mature:** elegant upright athletic morphic fighter with large cyan-glowing elongated blade-like forearms, sharp flowing purple crest, streamlined silhouette. Blades are its own reshaped tissue, not equipment.
+4. **Defensive intermediate:** broader stocky adolescent, enlarged hands/forearms, lower stance, thick but flexible body.
+5. **Defensive mature:** massive broad-shouldered organic protector with huge flexible arms and hands, body can temporarily harden/reshape to protect. The generated image looks somewhat armored; user approved overall visual, but earlier direction specifically favors **organic elastic anatomy, not worn or permanent hard armor**.
+**Reference:** most recent Morphling infographic in November 4, 2026 ChatGPT conversation, showing title 'Morfex', with purple/cyan five-form evolution. It is not yet uploaded to repository as an image. Labels on image: Sprout → Flux → Apex; separately proposed Mote → Shifter → Paragon. **Universal Morphling stage names remain UNDECIDED**; do not lock either set without user choice. Image branch labels Bladeform/Bulwark are provisional. Element, combat stats, and signature abilities are also not finalized.
