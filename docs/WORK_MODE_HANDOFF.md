@@ -28,6 +28,16 @@ Status: TODO / BLOCKED ON ASSET TRANSFER
 - User rejected earlier blob-like hand-built SVG sprites and wants quality approaching the polished pixel-art settlement concept image, NOT an approximation of that screenshot.
 Acceptance: live iPhone game renders identifiable polished survivor with genuinely different, consistent walking poses in all four directions.
 
+
+## Priority 0B — Experimental art integration QA (v1.9)
+Status: IN PROGRESS; code committed, live rendering NOT YET VERIFIED
+- Normal chat committed `assets/visual-upgrade.js` and updated `index.html` (commit `1183e3599217cd3c92db03f111c9d808c27adc80`).
+- The new module loads `lings-art-preview.html` from the same GitHub Pages site, extracts its embedded reference-board JPEG, crops grass/dirt/tree/bush/flower samples at runtime, and masks near-black backgrounds for objects. This is a temporary experimental proof of concept, NOT a production-ready atlas.
+- The game now has an `Art: NEW / Art: ORIGINAL` toggle; keep this rollback mechanism until the new art is verified.
+- Work must inspect the live page on iPhone and desktop, verify crop coordinates, transparency halos, sprite scale, repeated tile seams, draw ordering, loading time and performance. Fix any regression.
+- Work must replace runtime extraction of a 450KB HTML-embedded JPEG with true transparent optimized PNG/WebP atlases, with consistent tile dimensions, no background/text artifacts, and appropriate tree canopy collision/occlusion.
+- Do not claim the sprite quality is production-ready; the goal is a fast visual comparison.
+
 ## Priority 1 — Build a polished playable vertical slice
 Status: TODO
 - Focus on one small settlement, surrounding paths, ruins and wilderness; do not expand the map until art quality is established.
@@ -95,3 +105,4 @@ Status: TODO; DESIGN AUTHORITY PRESERVED
 | 2026-11-03 | Integrate detailed survivor PNG | BLOCKED | Upload/verify image asset; game currently has fallback |
 | 2026-11-03 | Polished vertical slice | TODO | Begin after protagonist sprite is verified |
 | 2026-11-03 | Rebuilding and NPC quest prototype | IN PROGRESS | v1.8 committed; mobile QA and art upgrades assigned to Work |
+| 2026-11-03 | Experimental nature art | IN PROGRESS | v1.9 committed; user visual comparison and Work QA needed |
