@@ -67,33 +67,31 @@ function makeGrassTexture(){
  const c=document.createElement('canvas');c.width=256;c.height=256;
  const g=c.getContext('2d');g.imageSmoothingEnabled=false;
  const im=g.createImageData(256,256),d=im.data;
- function smooth(t){return t*t*(3-2*t)}
- function periodic(x,y,scale){
-  const u=x/scale,v=y/scale,ix=Math.floor(u),iy=Math.floor(v),fx=smooth(u-ix),fy=smooth(v-iy),period=256/scale;
-  const h=(a,b)=>noise(((a%period)+period)%period+900,((b%period)+period)%period+400);
-  const a=h(ix,iy)*(1-fx)+h(ix+1,iy)*fx,b=h(ix,iy+1)*(1-fx)+h(ix+1,iy+1)*fx;
-  return a*(1-fy)+b*fy;
+ const fade=t=>t*t*(3-2*t);
+ function field(x,y,scale){
+  const u=x/scale,v=y/scale,ix=Math.floor(u),iy=Math.floor(v),fx=fade(u-ix),fy=fade(v-iy),period=256/scale;
+  const h=(a,b)=>noise(((a%period)+period)%period+1601,((b%period)+period)%period+1703);
+  return (h(ix,iy)*(1-fx)+h(ix+1,iy)*fx)*(1-fy)+(h(ix,iy+1)*(1-fx)+h(ix+1,iy+1)*fx)*fy;
  }
  for(let y=0;y<256;y++)for(let x=0;x<256;x++){
-  const broad=periodic(x,y,64),mid=periodic(x,y,16),fine=noise(x+200,y+300);
-  const v=(broad-.5)*37+(mid-.5)*29+(fine-.5)*20;
+  const broad=field(x,y,64),mid=field(x,y,16),fine=noise(x+2011,y+2081);
+  const n=(broad-.5)*44+(mid-.5)*27+(fine-.5)*14;
   const i=(y*256+x)*4;
-  d[i]=Math.max(25,Math.min(160,79+v*.76));
-  d[i+1]=Math.max(55,Math.min(180,116+v));
-  d[i+2]=Math.max(18,Math.min(105,49+v*.47));
+  d[i]=Math.round(Math.max(28,Math.min(135,72+n*.7)));
+  d[i+1]=Math.round(Math.max(60,Math.min(175,115+n)));
+  d[i+2]=Math.round(Math.max(18,Math.min(105,44+n*.48)));
   d[i+3]=255;
  }
  g.putImageData(im,0,0);
- // Many tiny tapered blade clusters. Wrap every stroke across boundaries.
- for(let i=0;i<3900;i++){
-  const x=Math.floor(noise(i+391,28)*256),y=Math.floor(noise(i+201,63)*256);
-  const h=2+Math.floor(noise(i+109,82)*5),n=noise(i+42,51);
-  const col=n<.25?'#315e30':n<.5?'#4d833b':n<.75?'#85a84c':'#b0bb65';
+ // World-periodic but never mirror-reflected; tiny blades, not symmetric rosettes.
+ for(let i=0;i<5900;i++){
+  const x=Math.floor(noise(i+1201,151)*256),y=Math.floor(noise(i+1811,159)*256);
+  const n=noise(i+1921,169),h=2+Math.floor(noise(i+2101,179)*4);
+  const shade=n<.22?'#2d5a2e':n<.5?'#427a35':n<.8?'#80a84b':'#a7bd65';
   for(const dx of [-256,0,256])for(const dy of [-256,0,256]){
-   g.fillStyle='rgba(25,57,25,.26)';g.fillRect(x+dx+1,y+dy,5,2);
-   g.fillStyle=col;g.fillRect(x+dx+2,y+dy-h,1,h);
-   g.fillRect(x+dx+4,y+dy-h+2,1,Math.max(1,h-2));
-   if(n>.53){g.fillStyle='#b6c774';g.fillRect(x+dx+2,y+dy-h,1,1)}
+   g.fillStyle='rgba(24,55,22,.19)';g.fillRect(x+dx,y+dy,3,1);
+   g.fillStyle=shade;g.fillRect(x+dx+1,y+dy-h,1,h);
+   if(n>.45)g.fillRect(x+dx+3,y+dy-h+2,1,Math.max(1,h-2));
   }
  }
  grassTexture.canvas=c;
@@ -102,18 +100,13 @@ function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
  if(!path){
-  // Directly use the grass-only crop from the user's uploaded art sheet.
-  if(terrainArt.loaded&&terrainArt.grass.length){
-   const tex=terrainArt.grass[0],sx=(gx%80+80)%80,sy=(gy%80+80)%80;
-   for(let oy=0;oy<size;){const sh=Math.min(size-oy,80-((sy+oy)%80));
-    for(let ox=0;ox<size;){const sw=Math.min(size-ox,80-((sx+ox)%80));
-     ctx.drawImage(tex,(sx+ox)%80,(sy+oy)%80,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
-    }oy+=sh;
-   }
-   return true;
-  }
   if(!grassTexture.canvas)makeGrassTexture();
-  ctx.drawImage(grassTexture.canvas,(gx%256+256)%256,(gy%256+256)%256,size,size,x,y,size,size);
+  const tex=grassTexture.canvas,sx=(gx%256+256)%256,sy=(gy%256+256)%256;
+  for(let oy=0;oy<size;){const sh=Math.min(size-oy,256-((sy+oy)%256));
+   for(let ox=0;ox<size;){const sw=Math.min(size-ox,256-((sx+ox)%256));
+    ctx.drawImage(tex,(sx+ox)%256,(sy+oy)%256,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
+   }oy+=sh;
+  }
   return true;
  }
  // Keep the detailed illustrated dirt road, without using its floral grass crop.
