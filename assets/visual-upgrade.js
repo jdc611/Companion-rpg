@@ -102,6 +102,20 @@ function loadWorldAtlas(){
   }
   // First wooden bridge and individual 32px-style villagers; avoid text labels.
   worldAtlas.bridge=crop(29,55,337,107);
+  // The atlas bridge has its own painted blue/teal water backdrop.
+  // Remove that backdrop so the same animated river tiles show through everywhere.
+  {
+   const c=worldAtlas.bridge,g=c.getContext('2d',{willReadFrequently:true});
+   const img=g.getImageData(0,0,c.width,c.height),d=img.data;
+   for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++){
+    const k=(y*c.width+x)*4,r=d[k],gr=d[k+1],b=d[k+2];
+    // Water is blue/cyan. Timber is warm brown/orange, so preserve it.
+    const blue= b>r*1.13 && gr>r*1.10 && b>45;
+    const cyan=gr>r*1.35 && b>r*1.23 && b>42;
+    if(blue||cyan)d[k+3]=0;
+   }
+   g.putImageData(img,0,0);
+  }
   const rows={villager:78,merchant:204,blacksmith:269,healer:335,guard:466,ranger:530};
   for(const [role,cy] of Object.entries(rows)){
    worldAtlas.npcs[role]=[];
