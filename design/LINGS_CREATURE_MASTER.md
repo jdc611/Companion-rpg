@@ -236,3 +236,15 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - **Originality:** Clearly arthropod centipede anatomy, but fantastical expressive Ling design rather than ordinary realistic centipede; distinct offensive/defensive silhouettes.
 - **Canonical approved artwork:** `/Lings/Approved Artwork/Centrith_Segmentborn_Lineage_APPROVED.png` (Library ID `libfile_41e8be543dd4819189eb447029507b19`). This is the **second, revised art sheet** with purple baby markings, not the earlier green-only draft. User explicitly locked this version.
 - **Notes:** Elemental affinities and named signature ability Segmentation on poster remain provisional unless separately approved.
+
+
+## Scorthan — Arthling — PROVISIONALLY LOCKED (2026-11-04)
+- **Lineage:** Scorthan, The Venomtail Lineage. Three-stage branching, five forms.
+- **Shared base:** Scorthan, The Stinger Larva. Cute expressive charcoal scorpion with crimson eyes and tail glow, subtle amber hints, rounded pincers and curled stinger tail.
+- **Offense intermediate:** Venomreap, The Toxic Stalker. Smaller, somewhat youthful and sleek black/crimson scorpion with streamlined body, less elaborate head and claw shapes than mature form; intermediate should not be a miniature copy of final.
+- **Offense mature:** Venomreaver, The Lethal Reaper. Smooth, streamlined predatory scorpion, fluid aerodynamic curves, narrow crescent pincers, curved venomous tail and glowing crimson accents; **no excessive dorsal spikes**. Earlier conceptual proposal mentioned twin tails, but approved art currently shows one tail; image takes precedence.
+- **Defense intermediate:** Ironclaw, The Plated Guardian. Rounded, juvenile-proportioned gold/charcoal scorpion with expressive amber eyes, incomplete smooth armor plates and comparatively modest claws.
+- **Defense mature:** Aegisthorn, The Bastion Scorpion. Very large low-slung scorpion with thick overlapping gold/charcoal armor plates and enormous crushing pincers, reinforced shield-like tail. Prioritize layered armor rather than spikes.
+- **Revision history:** User rejected early art because both branches were spiky; offense smoothed and defense plated. User then repeatedly rejected intermediate stages as near-copies of mature forms; latest hybrid adolescent revision accepted **'lock it for now'**. Thus approval is provisional and further refinements remain possible.
+- **Canonical current approved artwork:** `/Lings/Approved Artwork/Scorthan_Venomtail_Lineage_APPROVED.png` (Library ID `libfile_f48316d5fa4481919b096f9582d8b678`). This is the most recent hybrid middle-stage sheet, NOT earlier attempts.
+- **Notes:** Elemental and signature ability labels printed on sheet are provisional. Any 'officially locked' banner predating this approval did not represent actual approval.
