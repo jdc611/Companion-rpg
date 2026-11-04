@@ -45,7 +45,7 @@ function loadTerrainArt(){
    }
    return c;
   };
-  terrainArt.grass=[]; // Illustrated sheet contains decorative flowers, not clean repeatable grass.
+  terrainArt.grass=[make(1081,35)]; // Grass-only third tile from uploaded asset sheet, no flower/fence tiles.
   terrainArt.dirt=[make(924,111),make(1003,111),make(1081,111)];
   terrainArt.loaded=true;
  };
@@ -102,14 +102,18 @@ function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
  if(!path){
-  if(!grassTexture.canvas)makeGrassTexture();
-  const tex=grassTexture.canvas;
-  const sx=(gx%256+256)%256,sy=(gy%256+256)%256;
-  for(let oy=0;oy<size;){const sh=Math.min(size-oy,256-((sy+oy)%256));
-   for(let ox=0;ox<size;){const sw=Math.min(size-ox,256-((sx+ox)%256));
-    ctx.drawImage(tex,(sx+ox)%256,(sy+oy)%256,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
-   }oy+=sh;
+  // Directly use the grass-only crop from the user's uploaded art sheet.
+  if(terrainArt.loaded&&terrainArt.grass.length){
+   const tex=terrainArt.grass[0],sx=(gx%80+80)%80,sy=(gy%80+80)%80;
+   for(let oy=0;oy<size;){const sh=Math.min(size-oy,80-((sy+oy)%80));
+    for(let ox=0;ox<size;){const sw=Math.min(size-ox,80-((sx+ox)%80));
+     ctx.drawImage(tex,(sx+ox)%80,(sy+oy)%80,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
+    }oy+=sh;
+   }
+   return true;
   }
+  if(!grassTexture.canvas)makeGrassTexture();
+  ctx.drawImage(grassTexture.canvas,(gx%256+256)%256,(gy%256+256)%256,size,size,x,y,size,size);
   return true;
  }
  // Keep the detailed illustrated dirt road, without using its floral grass crop.
