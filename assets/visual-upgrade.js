@@ -38,24 +38,34 @@ function draw(ctx,key,x,y,w,h){if(!enabled||!ready||!sprites[key])return false;c
 function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;const frames=hero[face]||hero.down;if(!frames?.length)return false;const frame=walking?Math.floor(clock/155)%frames.length:0;ctx.drawImage(frames[frame],Math.round(x)-3,Math.round(y)-22,40,53);return true}
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
- if(!village.loaded&&!ready)return false;
- // Edge-free procedural ground: no shaded borders from the concept sheet.
- // Details are positioned in world coordinates and never draw tile outlines.
- const path=type==='p';
- ctx.fillStyle=path?'#a17b51':'#648d3c';
- ctx.fillRect(x,y,size,size);
- const gx=Math.round(x),gy=Math.round(y);
- for(let i=0;i<(path?44:65);i++){
-  const rx=Math.floor(noise(gx+i*17,gy+i*29)*size);
-  const ry=Math.floor(noise(gx+i*37,gy+i*13)*size);
+ const path=type==='p',gx=Math.round(x),gy=Math.round(y);
+ ctx.fillStyle=path?'#a68761':'#648d3c';ctx.fillRect(x,y,size,size);
+ // Dense hand-shaped micro-clumps; no per-tile borders or hard outlines.
+ for(let i=0;i<(path?35:36);i++){
+  const rx=Math.floor(noise(gx+i*17,gy+i*29)*size),ry=Math.floor(noise(gx+i*37,gy+i*13)*size);
   const n=noise(gx+i*7,gy+i*41);
-  ctx.fillStyle=path?(n<.3?'#c6a178':n<.7?'#8e6d4b':'#b28b5c'):(n<.25?'#395f31':n<.6?'#7fa64b':'#9bb65b');
-  ctx.fillRect(x+rx,y+ry,n>.8?2:1,n<.18?3:1);
+  if(path){
+   ctx.fillStyle=n<.34?'#8c7153':n<.7?'#c0a17a':'#725e49';
+   ctx.fillRect(x+rx,y+ry,n>.8?3:2,1);
+   if(n>.88){ctx.fillStyle='#d7c09b';ctx.fillRect(x+rx,y+ry-1,2,1)}
+  }else{
+   const h=2+Math.floor(noise(gx+i*23,gy+i*47)*5);
+   ctx.fillStyle=n<.28?'#315d32':n<.62?'#477a3c':'#83a94e';
+   ctx.fillRect(x+rx,y+ry-h,1,h);
+   ctx.fillRect(x+rx+2,y+ry-h+2,1,Math.max(2,h-2));
+   ctx.fillStyle=n>.65?'#a1b86b':'#5c913e';
+   ctx.fillRect(x+rx+1,y+ry-h-1,1,2);
+  }
  }
- if(path&&noise(gx+501,gy+73)>.79){
-  const rx=Math.floor(noise(gx+9,gy+7)*24)+3,ry=Math.floor(noise(gx+4,gy+11)*24)+3;
-  ctx.fillStyle='#d5b18a';ctx.fillRect(x+rx,y+ry,4,2);
-  ctx.fillStyle='#705b47';ctx.fillRect(x+rx+1,y+ry+2,3,1);
+ if(path){
+  // Light travel wear and gravel: varied by world position, not tile borders.
+  const wear=noise(Math.floor(gx/96)+17,Math.floor(gy/96)+33);
+  if(wear>.43){ctx.fillStyle='rgba(74,54,37,.13)';for(let j=0;j<2;j++){
+   const rx=7+j*15+Math.floor(noise(gx+j,gy+9)*4);
+   ctx.fillRect(x+rx,y+Math.floor(noise(gx+23,gy+j)*10),2,9);
+  }}
+  if(noise(gx+501,gy+73)>.72){const rx=4+Math.floor(noise(gx+9,gy+7)*24),ry=4+Math.floor(noise(gx+4,gy+11)*24);
+   ctx.fillStyle='#e0cba6';ctx.fillRect(x+rx,y+ry,4,2);ctx.fillStyle='#766047';ctx.fillRect(x+rx+1,y+ry+2,3,1)}
  }
  return true;
 }
