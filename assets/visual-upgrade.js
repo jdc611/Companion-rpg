@@ -54,6 +54,39 @@ function loadTerrainArt(){
 }
 loadTerrainArt(); // Dirt only; grass uses a clean generated illustrated texture.
 
+function prop(ctx,kind,x,y,clock=0){
+ if(!enabled)return false;
+ const p=(a,b,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(Math.round(x+a),Math.round(y+b),w,h)};
+ const shadow=()=>{ctx.fillStyle='rgba(23,39,26,.28)';ctx.beginPath();ctx.ellipse(x+16,y+29,14,3,0,0,Math.PI*2);ctx.fill()};
+ shadow();
+ if(kind==='fence'){
+  for(const xx of [2,25]){p(xx+1,7,7,23,'#4d392c');p(xx,5,7,23,'#98734b');p(xx+1,5,4,3,'#d6b57d');p(xx+5,9,1,17,'#614731')}
+  for(const yy of [12,22]){p(0,yy+2,32,5,'#503b2e');p(0,yy,32,5,'#a78256');p(1,yy,29,1,'#e0bc80');p(5,yy+4,23,1,'#624a34')}
+  p(10,24,2,5,'#5a8545');p(11,23,1,4,'#8cab59');
+ }else if(kind==='lantern'){
+  p(13,10,5,20,'#493b30');p(14,9,3,20,'#96764c');
+  p(13,9,14,3,'#9d7850');p(23,10,4,4,'#5e4635');
+  p(23,13,2,7,'#43372d');p(19,19,10,3,'#382e2b');p(20,15,8,7,'#b57738');
+  p(21,16,6,5,Math.sin(clock/260)>.1?'#ffe49a':'#f8c776');
+  p(23,14,2,10,'#42372f');p(19,13,10,2,'#514037');p(21,11,6,3,'#ac8557');
+  ctx.fillStyle='rgba(255,190,90,.09)';ctx.beginPath();ctx.arc(x+24,y+19,15,0,Math.PI*2);ctx.fill();
+ }else if(kind==='sign'){
+  p(13,9,6,21,'#513c2d');p(14,7,4,23,'#9e754a');p(15,8,1,20,'#d0a16a');
+  p(1,6,30,13,'#4d3b2c');p(2,4,27,13,'#aa8151');p(4,5,23,2,'#e2bd7c');
+  p(5,14,20,1,'#61492f');p(6,8,3,3,'#60472f');p(24,8,2,3,'#60472f');
+  p(9,9,13,2,'#5d4730');p(12,12,9,2,'#5d4730');
+  p(11,27,11,3,'#4b5036');
+ }else if(kind==='crate'){
+  p(5,13,24,17,'#47392e');p(6,11,22,17,'#9b734b');p(8,13,18,12,'#b98c56');
+  p(9,14,3,11,'#705034');p(22,14,3,11,'#705034');p(8,18,18,3,'#6d5036');
+  p(10,14,13,2,'#d7ad72');p(10,25,13,2,'#5b4534');
+ }else if(kind==='barrel'){
+  p(9,10,16,19,'#493a30');p(11,9,13,20,'#91683e');p(13,10,9,18,'#b48650');
+  p(9,13,16,3,'#454c4c');p(9,24,16,3,'#454c4c');p(11,8,13,3,'#c09a61');
+  p(14,16,2,8,'#d5a66b');
+ }else return false;
+ return true;
+}
 function drawBuilding(ctx,b,TILE,state){
  // Source concept crops include incompatible baked-in ground and hard rectangular edges.
  // Disable these building crops until clean transparent silhouettes are supplied.
@@ -194,6 +227,6 @@ function decor(ctx,items,TILE){
 }
 function update(){let b=document.getElementById('art-toggle');if(b)b.textContent=enabled?'Art: NEW':'Art: ORIGINAL'}
 function setup(){const bar=document.querySelector('.top');if(!bar)return;const b=document.createElement('button');b.id='art-toggle';b.className='reset';b.style.marginLeft='auto';b.textContent='Art: loading';b.addEventListener('click',()=>{enabled=!enabled;try{localStorage.setItem(KEY,String(enabled))}catch{}update()});bar.insertBefore(b,document.getElementById('reset'));update()}
-window.LingsArt={draw,drawHero,drawBuilding,ground,terrainDepth,buildingBase,trees,decor,get ready(){return ready},get enabled(){return enabled}};
+window.LingsArt={draw,drawHero,drawBuilding,prop,ground,terrainDepth,buildingBase,trees,decor,get ready(){return ready},get enabled(){return enabled}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);else setup();load();
 })();
