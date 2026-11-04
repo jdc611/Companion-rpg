@@ -78,7 +78,7 @@ main{position:relative!important;width:100%!important;height:100%!important;max-
 .lings-node{padding:8px 4px;border:1px solid #8c7959;border-radius:8px;background:#293b3a;text-align:center;font-size:11px}
 .lings-node.locked{opacity:.55;border-style:dashed}
 .lings-node small{display:block;color:#b3c5ba;font-size:10px;margin-top:3px}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · ANIMATED HATCHLING 6.0</div><h1>The Reclaimed Valley</h1></div><div style="display:flex;gap:6px"><button class="reset" id="start-menu-button">☰ START</button><button class="reset" id="reset">Return home</button></div></div><div class="world"><div id="lings-start-menu" class="lings-menu is-hidden" role="dialog" aria-label="Start menu"><div class="lings-menu-head"><strong id="lings-menu-title">START MENU</strong><button id="lings-menu-close" class="reset">✕ Close</button></div><div id="lings-menu-content"></div></div><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · SPRITE FRAME FIX 6.1</div><h1>The Reclaimed Valley</h1></div><div style="display:flex;gap:6px"><button class="reset" id="start-menu-button">☰ START</button><button class="reset" id="reset">Return home</button></div></div><div class="world"><div id="lings-start-menu" class="lings-menu is-hidden" role="dialog" aria-label="Start menu"><div class="lings-menu-head"><strong id="lings-menu-title">START MENU</strong><button id="lings-menu-close" class="reset">✕ Close</button></div><div id="lings-menu-content"></div></div><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -633,10 +633,10 @@ hatchlingSheet.src='assets/dracling-hatchling-animation-reference.png';
 const hatchlingFrames={right:[],left:[],up:[],down:[]};
 hatchlingSheet.onload=()=>{
  const specs={
-  right:{xs:[480,585,688,790],y:322,w:98,h:100},
-  left:{xs:[480,585,688,790],y:500,w:98,h:102},
-  up:{xs:[540,715,895,1070],y:700,w:110,h:120},
-  down:{xs:[540,715,895,1070],y:885,w:120,h:120}
+  right:{xs:[518,620,722,824],y:321,w:92,h:91},
+  left:{xs:[519,623,728,832],y:505,w:92,h:91},
+  up:{xs:[546,728,908,1090],y:720,w:112,h:115},
+  down:{xs:[548,727,908,1089],y:906,w:112,h:112}
  };
  for(const [dir,spec] of Object.entries(specs)){
   for(const cx of spec.xs){
