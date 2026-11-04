@@ -15,3 +15,6 @@ Ancient Guardian Arthling already combines stag beetle head, praying mantis body
 
 ## Design principle
 Intermediate Strider should look adolescent and visibly different from fully developed Prime, not merely a smaller adult. Each family has species-specific offense/defense branch names, not necessarily Elemental/Bulwark.
+
+## Elemental affinity mutation system (approved direction)
+Each Ling species has a dominant/native elemental affinity; unusual environmental populations may have rare, permanent, inherited alternate affinities. Example: Mirmi are almost always **Nature**, but Fire Mirmi might be discovered in a volcanic/geothermal region. Earth and Electric are illustrative possibilities, not yet approved mutation pools or encounter rates. Affinity affects strengths, weaknesses, moves and potentially passive abilities, but **all affinities use exactly the same artwork and animations**. Affinity is independent of offensive/defensive physical lineage and combat specialty, and remains stable across Grub → Strider → Prime. No color swaps, extra body accents, or variant-specific sprites are required.
