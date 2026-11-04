@@ -1,7 +1,7 @@
 # Lings — Dracling transformation design (approved November 2026)
 
 ## Canonical life stages
-All baby Draclings hatch from eggs and are called **Hatchlings**. All mature Draclings are **Elders**. A universal intermediate-stage term is still to be finalized; **Drake** is a leading suggestion, NOT approved yet. Pattern: Hatchling → [intermediate term] → Elder.
+All baby Draclings hatch from eggs and are called **Hatchlings**. All mature Draclings are **Elders**. The universal intermediate-stage name is **Drake**, approved by the user. Canonical Dracling life stages: **Hatchling → Drake → Elder**. These names apply to Draclings, not automatically to the other seven Ling families.
 
 ## Branching structure
 Every three-stage Ling species has one baby/base form, two intermediate forms (offense and defense), and two mature forms continuing those branches: five illustrated designs total. Physical branch is permanent; combat specialization (Striker, Bruiser, Tank, Caster, Support) is separate and can be respecified. Other species may have unique branch names. Reserve **Guardian** for the ancient eight Guardians, not regular transformations.
