@@ -1,0 +1,29 @@
+# LINGS — CREATURE DESIGN MASTER
+Updated November 4, 2026. This is the canonical design decision record. Concept art generated in ChatGPT conversation is visual reference; the images are not yet uploaded to the repo as production assets.
+
+## Global design system
+Eight families: Bestiling, Dracling, Morphling, Florling, Arthling, Aquiling, Terraling, Spectraling. Species are separate from family and life-stage names. Three life stages per species: one base, two offense/defense intermediate forms, two corresponding mature forms (five designs per species). Middle stage must be visibly adolescent; mature form gains signature features, not merely size. Physical lineage is permanent. Combat specialties (working set: Striker, Bruiser, Tank, Caster, Support) are separate and potentially respecable. Affinity is separate from family, species, lineage, specialty; each species has a dominant native affinity and rare location-dependent mutation affinities. All affinities use EXACTLY the same artwork and animations. Potential affinity stat tradeoffs and elemental matchups to be balanced later; rare variants are not automatically better. Guardian refers to the eight Ancient Guardians, never a regular combat form.
+
+## BESTILING — LUPAW (APPROVED / LOCKED)
+**Species name: Lupaw.** User's favorite species so far. Universal Bestiling life stages **Cub → Prowler → Alpha** (all approved). Species theme: puppy base → wolf offense OR lion defense.
+
+Visual lineage, all retain family resemblance and recognizable brown/tan/cream and dark fur, blue eyes and characteristic tail:
+1. **Lupaw Cub (base):** cute brown-and-cream puppy, large bright blue eyes, floppy ears, oversized paws, cream chest/ruff, fluffy curled tail, warm approachable face.
+2. **Offense Prowler (wolf):** athletic lean four-legged wolf, pointed upright ears, longer legs, narrow muzzle, dark charcoal/cream/gold fur, bushy tail. **Keep the latest intermediate wolf design as is**.
+3. **Offense Alpha (werewolf):** strong mature bipedal or semi-upright werewolf silhouette, muscular shoulders/forelimbs, long sharp claws, aggressive wolf face, expressive mane/ruff, retains base fur pattern and tail. Visually dramatic departure from quadrupedal Prowler. **Latest revised design approved**.
+4. **Defense Prowler (young lion):** broad, sturdy four-legged juvenile lion, developing neck ruff but no full mane, cream/gold/brown fur, recognizable base face/eyes/tail. **Keep latest design as is**.
+5. **Defense Alpha (lion):** huge regal muscular lion, full flowing golden/brown mane, broad chest, powerful paws, imposing protective silhouette. **Keep latest design as is**.
+
+Concept art: latest user-approved Bestiling infographic from November 4, 2026 conversation (werewolf Alpha version). Name proposals such as Nightfang and Lioncrest are illustration labels, not separately approved as canonical form names. **Lupaw** is canonical species name. 'Pack Bond' is a promising ability idea, not yet finalized. Affinity, stats and abilities are not locked.
+
+## DRACLING — FIRST SPECIES (VISUAL DIRECTION APPROVED)
+Universal stages **Hatchling → Drake → Elder**. All Draclings hatch from eggs. First species name not yet chosen. Cute orange-red Hatchling with cream ear-frills, blue markings, little wings. Offense **Elemental** lineage: lean lanky long-bodied Drake with oversized developing wings, gliding only; mature Elder elegant with enormous fully functional wings, blue elemental features, sustained flight. Defense **Bulwark** lineage: stocky broad-chested Drake with strong limbs **no armor plating yet**; mature Elder with heavy natural armor plates, strong grounded silhouette. Keep intermediate clearly adolescent. Guardian reserved for Ancient lore. Reference: latest approved Dracling branching infographic from November 4, 2026 conversation. More details: design/dracling-transformations.md.
+
+## ARTHLING — MIRMI (DESIGN DIRECTION APPROVED)
+Universal stages **Grub → Strider → Prime**. Species **Mirmi** used in current design/art discussions; user likes artwork but has not explicitly finalized species name. Ant-inspired cute six-legged Grub, segmented abdomen, curved antennae, expressive eyes, amber/charcoal palette. Offensive bee-inspired Strider: agile, developed stinger, **NO wings at all**; winged bee/wasp-like Prime gains translucent wings for first time. Defensive spider-inspired Strider: broader lower stance, thickening legs, abdomen and web motifs; mature spider-like Prime has web/silk abilities and a strongly distinct silhouette. Do not duplicate Ancient Arthling's stag beetle head + mantis body + dragonfly wings. Nature is Mirmi's dominant affinity; rare Fire Mirmi may be found in special volcanic/geothermal locations; others TBD. All affinities share exact art. Colony instinct/coordination ability is a liked future concept, not finalized. Latest approved infographic: wingless offensive Strider revised version, November 4, 2026. More details: design/arthling-transformations.md.
+
+## NOT APPROVED
+Earlier generated eight-family overview artwork is NOT canonical: it made every family dragon-shaped and incorrectly applied Dracling life stages/Elemental-Bulwark labels universally. Design other families individually. Other five families have not yet had their first ordinary species designs approved.
+
+## Image preservation status
+Design decisions saved in GitHub text. The original concept illustrations remain in ChatGPT conversation and are NOT embedded or backed up in GitHub; add actual approved images to repository assets when file upload mechanism becomes available. Do not claim artwork is safely stored as files in GitHub until uploaded.
