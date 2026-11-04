@@ -65,7 +65,7 @@ html{overflow:hidden!important;overscroll-behavior:none!important}
 body{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;height:100dvh!important;overflow:hidden!important}
 main{position:relative!important;width:100%!important;height:100%!important;max-height:100%!important;overflow:hidden!important}
 .controls{touch-action:none!important}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · TAP TO EXIT 5.1</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · ALL INTERIORS 5.2</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -145,24 +145,44 @@ function leave(){if(!interior)return;interior=null;player={...interiorReturn};vi
 const interiorAtlas=new Image();
 interiorAtlas.src='assets/A2C2D4C3-1B99-48ED-B068-34AEC830597F.png';
 function interiorWalk(x,y){
- if(interior?.name==='The Workshop'){
-  if(x<1||x>10||y<2||y>8)return false;
-  // Workbenches along the north wall, central drafting table and storage at right.
+ if(x<1||x>10||y<2||y>8)return false;
+ const name=interior?.name;
+ if(name==='The Workshop'){
   if(y===2&&(x<=4||x>=7))return false;
   if(y===3&&(x<=4||x>=7))return false;
   if((y===5||y===6)&&x>=4&&x<=7)return false;
   if(y===4&&x>=9)return false;
-  return true;
+ }else if(name==='Your Home'){
+  if(x<=3&&y>=3&&y<=6)return false; // Bed and nightstand
+  if(x>=8&&y<=4)return false; // Cabinet and fireplace
+ }else if(name==='The Inn'){
+  if(x>=2&&x<=4&&y>=4&&y<=6)return false;
+  if(x>=7&&x<=9&&y>=4&&y<=6)return false;
+  if(y===2&&x>=3&&x<=9)return false;
+ }else if(name==='Willowmere Hall'){
+  if(x>=4&&x<=7&&y>=4&&y<=6)return false;
+  if(y===2&&(x<=3||x>=8))return false;
+ }else if(name==='The Old Observatory'){
+  if(x>=4&&x<=7&&y>=3&&y<=6)return false;
+  if(y===2&&(x<=3||x>=8))return false;
  }
- return x>=1&&x<=10&&y>=2&&y<=8&&!(y===2&&x!==5)&&!(x>=3&&x<=4&&y>=3&&y<=4)&&!(x>=7&&x<=9&&y>=4&&y<=5)
+ return true;
 }
 function interiorDraw(){
- if(interior?.name==='The Workshop'&&interiorAtlas.complete&&interiorAtlas.naturalWidth){
+ const interiorCrops={
+  'The Workshop':[858,45,672,535],
+  'Your Home':[5,661,375,333],
+  'The Inn':[392,661,362,333],
+  'Willowmere Hall':[785,661,351,333],
+  'The Old Observatory':[1148,661,375,333]
+ };
+ const crop=interiorCrops[interior?.name];
+ if(crop&&interiorAtlas.complete&&interiorAtlas.naturalWidth){
   const sx=128,sy=48;
   ctx.fillStyle='#14232a';ctx.fillRect(0,0,640,480);
-  ctx.drawImage(interiorAtlas,858,45,672,535,sx,sy,384,320);
+  ctx.drawImage(interiorAtlas,...crop,sx,sy,384,320);
   ctx.fillStyle='#f2dbad';ctx.font='bold 16px monospace';ctx.textAlign='center';
-  ctx.fillText('The Workshop',320,29);
+  ctx.fillText(interior.name,320,29);
   drawCharacter(sx+Math.round(visual.x*TILE),sy+Math.round(visual.y*TILE),'#476a9c',player.face,!!step,walkClock);
   ctx.fillStyle='#e9d3a8';ctx.font='12px system-ui';ctx.fillText('EXIT ↓',320,sy+10*TILE+17);
   return;
