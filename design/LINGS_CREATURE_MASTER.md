@@ -114,3 +114,14 @@ User loved first Shadewraith art, requested keeping the samurai defense branch u
 - Defense Haunt (**Ghostblade**, provisional): imposing armored ghost samurai, traditional layered dark blue-violet lamellar armor with gold edging, magnificent horned kabuto helmet, glowing purple sword, spectral purple aura. Keep this branch's design as first illustrated.
 - Background: moonlit Japanese shrine, torii gate, blossoms, lanterns, purple-blue spectral fog. Family Spectraling, native affinity Spectral; gameplay stats and special moves are not yet final.
 - Species name **Shadewraith** shown in concept art; user enthusiastic but did not separately confirm final species name. Art is in conversation, not automatically stored in GitHub.
+
+## MORPHLING — TRIVEX (FINAL VISUAL LOCK, NOVEMBER 4, 2026)
+User explicitly said “Beautiful. Lock it in just like that” to the latest **black-and-gold** Trivex infographic. This is the definitive visual reference, superseding the earlier robotic green/purple saucer version and the intermediate blue-white version. **Do not redesign or recolor without explicit user request.**
+- **Species:** Trivex, “The Trinary Mind”; **one-stage Morphling**, permanently one appearance with no evolutions. One-stage Lings can choose offense or defense specialization affecting abilities/stats, **without physical transformation**.
+- **Anatomy:** humanoid, athletic/muscular bare upper torso with **three separate long-necked alien-human heads** (central face forward and two side heads), realistic humanlike facial structure with subtle alien traits, pointed ears, bald scalps, three personalities/expressions, luminous golden eyes and understated gold facial markings. **Skin remains powdery chalk-white** on every head, neck, arm and torso; do not turn skin black/gold or robotic.
+- **Lower half:** no legs; torso merges into a minimal sleek floating black-metal-and-gold anti-gravity harness with delicate rotating crescent/arc rings and a downward-pointing glowing golden energy crystal. **Not a broad flying saucer/UFO**.
+- **Color:** black-and-gold energy aura, glowing warm amber/gold triangular chest sigil, golden propulsion and psychic effects, black/gold harness; stark powder-white skin is essential. Dark cosmic ruins with golden crystals and luminous gold UI trim.
+- **Offense specialization — Trinary Assault:** unchanged form, three minds synchronize gold energy attacks from both hands; illustration shows swirling golden energy orbs/rings.
+- **Defense specialization — Trinary Bastion:** unchanged form, gold hexagonal spherical barrier, heads scanning threats and hands open.
+- Signature theme: three distinct minds acting together, possible “Tri-Mind Sync” ability (gameplay details provisional). Native affinity Morph, mutation affinities not finalized.
+- Latest image is the approved black/gold Trivex concept sheet in this conversation; GitHub markdown stores description, not the actual image asset.
