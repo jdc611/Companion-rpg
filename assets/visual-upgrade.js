@@ -54,8 +54,45 @@ function loadTerrainArt(){
 }
 loadTerrainArt(); // Dirt only; grass uses a clean generated illustrated texture.
 
+// Sprite-sheet crops from the user's committed environment atlas.
+// Each crop is independently keyed against the dark atlas backing; no full sheet tiles.
+const atlasProps={};
+function loadPropAtlas(){
+ const img=new Image();
+ img.onload=()=>{
+  const defs={
+   fence:[22,386,143,75],
+   sign:[402,383,69,87],
+   lantern:[941,388,69,90],
+   crate:[1195,384,71,80],
+   barrel:[1458,387,66,79]
+  };
+  for(const [name,rect] of Object.entries(defs)){
+   const [sx,sy,w,h]=rect,c=document.createElement('canvas');c.width=w;c.height=h;
+   const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(img,sx,sy,w,h,0,0,w,h);
+   const pixels=g.getImageData(0,0,w,h),d=pixels.data;
+   // Remove the dark charcoal sheet background with a soft color key.
+   for(let i=0;i<d.length;i+=4){
+    const r=d[i],gr=d[i+1],b=d[i+2],max=Math.max(r,gr,b),min=Math.min(r,gr,b);
+    if(max<52 || (max<104&&max-min<25&&b>=r*.72)){
+     d[i+3]=max<48?0:Math.round(Math.max(0,Math.min(255,(max-48)*4)));
+    }
+   }
+   g.putImageData(pixels,0,0);atlasProps[name]=c;
+  }
+ };
+ img.onerror=()=>console.warn('Ground prop atlas not available');
+ img.src='assets/AE22465E-0004-479B-AFF5-E55BC0395AD0.png';
+}
+loadPropAtlas();
 function prop(ctx,kind,x,y,clock=0){
  if(!enabled)return false;
+ if(atlasProps[kind]){
+  const sprite=atlasProps[kind],width=kind==='fence'?44:kind==='sign'?32:kind==='lantern'?30:kind==='crate'?30:28;
+  const height=kind==='fence'?32:kind==='sign'?40:kind==='lantern'?42:32;
+  ctx.drawImage(sprite,Math.round(x+(32-width)/2),Math.round(y+32-height),width,height);
+  return true;
+ }
  const p=(a,b,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(Math.round(x+a),Math.round(y+b),w,h)};
  const shadow=()=>{ctx.fillStyle='rgba(23,39,26,.28)';ctx.beginPath();ctx.ellipse(x+16,y+29,14,3,0,0,Math.PI*2);ctx.fill()};
  shadow();
