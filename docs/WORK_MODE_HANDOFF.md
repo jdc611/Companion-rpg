@@ -46,6 +46,15 @@ Status: TODO / BLOCKED ON ASSET TRANSFER
 Acceptance: live iPhone game renders identifiable polished survivor with genuinely different, consistent walking poses in all four directions.
 
 
+## Approved NPC production approach — 2026-11-04
+Status: DESIGN APPROVED; production models not yet implemented
+- Create a reusable library of generic civilian NPC models first: adult silhouettes with varied clothing, hairstyles, skin tones, packs and workwear, idle and four-direction walk cycles. Mix and match components to make the village populated without bespoke art for every resident.
+- Important named characters (Elder Rowan, Tobin, Mira and later story-critical characters) receive unique, distinctive models, portraits and animations. Do not use generic models as final named-character art.
+- Keep all models at consistent pixel density, proportions, shadow and lighting rules with the protagonist and environment. Test readability at native iPhone game scale.
+- Produce true transparent atlases; avoid presentation-sheet crop artifacts.
+- Build environmental prop atlas next: directional signs, lanterns, wall torches, fences, crates, salvage, campfires, barrels; add nighttime emissive effects and collision/occlusion as appropriate.
+- v2.4 borderless terrain patch committed in normal chat, but still requires iPhone QA and eventual seamless hand-authored tile transitions.
+
 ## Priority 0D — West Village Asset Pack v1 live integration (v2.2)
 Status: IN PROGRESS; committed, live mobile QA pending
 - User uploaded `assets/west_village_asset_pack_v1.png`; GitHub SHA `f646975c0471d74e332263ffae1352f2b7c84f79`.
