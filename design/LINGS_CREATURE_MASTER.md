@@ -79,3 +79,13 @@ The user liked the revised non-animal crystalline design, specifically avoiding 
 - Distinction: offense projects crystals outward; defense builds a sanctuary inward. No need for limbs, animal face, conventional body, or shell.
 - Provisional branch names from concept art: Resonance (offense), Bastion (defense); species name Prismite featured in art, user reacted positively but has not explicitly confirmed as final.
 - Keep elemental affinities independent of physical forms, per global rules. Don't lock image-generated game mechanics without discussion.
+
+## SPECTRALING — HAUNTED DOLL SOULSTITCH (NOVEMBER 4, 2026)
+User requested a haunted doll as the first ordinary Spectraling, and enthusiastically approved the generated Soulstitch concept (“That is sick!”). **Soulstitch** is the working species name displayed in the art; do not presume final naming without explicit confirmation.
+- Base: adorable yet eerie sewn rag doll with floppy rabbit-like ears, patchwork beige/lavender cloth, large glowing purple X-button eyes, oversized bow, stitched smile, purple heart patch, plush rounded limbs; supernatural violet ghostly glow.
+- Offense intermediate: increasingly animated rag-doll marionette with ragged flowing fabric, spectral threads and glowing violet eyes, unsettling but expressive.
+- Offense mature: floating puppetmaster doll, hovering spectral hands above manipulating glowing puppet strings, dramatic violet aura and ragged cloth, clever and menacing rather than a sleek animal predator.
+- Defense intermediate: haunted plush keeper holding a smaller doll, attended by small friendly ghost wisps, protective spirit magic.
+- Defense mature: enormous soft round haunted teddy-bear-like plush guardian with huge stitched arms and glowing violet crystal/portal heart in its open chest, surrounding spirit wisps; protective and supernatural rather than a turtle or stone armor.
+- Color language: violet, lavender, beige stitched fabric, glowing purple spectral energy; illustrated fantasy bestiary game concept art with branching paths.
+- **Important image-label correction:** generated art incorrectly borrowed Terraling stage labels “Shard / Prism / Monolith.” Those are ONLY Terraling stages, not Spectraling stages. Spectraling's own universal life-stage names have not been decided yet. Keep artwork anatomy, not mistaken labels or generated gameplay mechanics. Ancient Spectraling remains mask-faced spectral arms without hands, distinct from ordinary haunted doll.
