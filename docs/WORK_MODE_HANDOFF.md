@@ -15,6 +15,23 @@ Status: Active development. This file is the canonical queue of tasks delegated 
 6. Prefer incremental, recoverable commits. Do not claim a polished playable game based on concept art alone.
 7. If an asset cannot be accessed, document exactly what is missing and how to recover it rather than substituting crude placeholder artwork.
 
+## APPROVED VISUAL QUALITY BAR — 2026-11-04 (highest priority)
+Status: APPROVED ART DIRECTION; NOT YET IMPLEMENTED
+- The user approved the latest richly detailed pixel-art concept of West Village featuring natural textured grass, irregular dirt roads with scattered stones, layered trees, warm lantern-lit buildings, and a rugged brown-haired survivor with red scarf. This reference is the quality target for **the entire game**, not just the character.
+- Retrieve the latest approved concept image from the originating ChatGPT conversation. Do not confuse it with the earlier rough asset sheet or live v2.1 screenshot.
+- Build a cohesive pixel-art production style guide: pixel density, scale, perspective, tile size, material palette, lighting direction, shadow/occlusion rules, contrast, animation frame standards, atlas naming, and mobile readability.
+- **Terrain**: Replace repeated flat grass and square road tiles with high-detail organic grass, ground variation, natural dirt/road boundaries, stones, flowers, wear and biome transitions. Ensure seamless terrain tiling without obvious repeated patches.
+- **Buildings**: Replace flat procedural rectangles with richly detailed structures: roof depth, varied materials, doors, windows, chimneys, signs, ambient lighting and environmental storytelling. The concept illustrates QUALITY, not medieval-only architecture. Preserve post-apocalyptic Earth: salvage, repurposed modern construction, concrete, corrugated metal, remnants of roads and civilization.
+- **Vegetation**: Maintain irregular placement, varied species, canopy sizes, clustering, depth sorting, collision and no overlapping shrubs or uniform tree rows.
+- **Player/NPCs**: Produce a clean four-direction walking/idle atlas for the approved brown-haired rugged survivor with red scarf, armor and pack; consistent proportions and actual movement. Match NPCs to the same style.
+- **Props**: Original matching debris, road signs, salvage piles, lamps, crates, fences, vehicles, and rebuilding materials.
+- **Rebuilding states**: Distinct ruined, under-construction and restored artwork for buildings, with visible progression and environmental changes.
+- **UX**: Match polished game aesthetic, but keep touch controls usable and text legible on iPhone.
+- **Workflow**: First produce one truly polished vertical-slice settlement and short surrounding route, replacing placeholders end-to-end. Test live on iPhone. Only then propagate the art system across the wider map.
+- Avoid extracting production sprites from a JPEG screenshot at runtime. Create proper transparent atlases and tiled maps. Current v2.1 is a visual experiment only.
+- Acceptance: a screenshot of the playable game, not a mockup, approaches the approved concept in texture richness, depth, character detail, terrain transitions and visual coherence, while preserving responsive gameplay.
+- Never claim that a generated scene mockup has been implemented in the live game.
+
 ## Priority 0 — Repair art asset pipeline and playable survivor
 Status: TODO / BLOCKED ON ASSET TRANSFER
 - Locate the generated sprite sheet `lings_survivor_walk_v2.png` from the ChatGPT conversation attachment or working files. Previously available at `/mnt/data/lings_survivor_walk_v2.png` in the originating environment; this path may not persist in Work.
