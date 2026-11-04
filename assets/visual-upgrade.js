@@ -70,7 +70,13 @@ function ground(ctx,type,x,y,size){
   const pick=Math.floor(noise(Math.floor(gx/160)+71,Math.floor(gy/160)+31)*variants.length);
   const tex=variants[Math.min(pick,variants.length-1)];
   // World-aligned sampling keeps the texture stationary during camera movement.
-  ctx.drawImage(tex,(gx%80+80)%80,(gy%80+80)%80,size,size,x,y,size,size);
+  const sx=(gx%80+80)%80,sy=(gy%80+80)%80;
+  for(let oy=0;oy<size;){const sh=Math.min(size-oy,80-((sy+oy)%80));
+   for(let ox=0;ox<size;){const sw=Math.min(size-ox,80-((sx+ox)%80));
+    ctx.drawImage(tex,(sx+ox)%80,(sy+oy)%80,sw,sh,x+ox,y+oy,sw,sh);
+    ox+=sw;
+   }oy+=sh;
+  }
   return true;
  }
  ctx.fillStyle=path?'#a68761':'#648d3c';ctx.fillRect(x,y,size,size);
