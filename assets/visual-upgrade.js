@@ -41,17 +41,26 @@ function draw(ctx,key,x,y,w,h){if(!enabled||!ready||!sprites[key])return false;c
 function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;const frames=hero[face]||hero.down;if(!frames?.length)return false;const frame=walking?Math.floor(clock/155)%frames.length:0;ctx.drawImage(frames[frame],Math.round(x)-3,Math.round(y)-22,40,53);return true}
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
- if(village.loaded){
-  const key=type==='p'?'dirt':'grass',pattern=seamless[key];
-  if(!pattern)return false;
-  // Draw one continuous repeating texture across tile boundaries.
-  const ix=Math.round(x/size),iy=Math.round(y/size);
-  const sx=(ix%2)*32,sy=(iy%2)*32;
-  ctx.drawImage(pattern,sx,sy,32,32,x,y,size,size);
-  return true;
+ if(!village.loaded&&!ready)return false;
+ // Edge-free procedural ground: no shaded borders from the concept sheet.
+ // Details are positioned in world coordinates and never draw tile outlines.
+ const path=type==='p';
+ ctx.fillStyle=path?'#a17b51':'#648d3c';
+ ctx.fillRect(x,y,size,size);
+ const gx=Math.round(x),gy=Math.round(y);
+ for(let i=0;i<(path?44:65);i++){
+  const rx=Math.floor(noise(gx+i*17,gy+i*29)*size);
+  const ry=Math.floor(noise(gx+i*37,gy+i*13)*size);
+  const n=noise(gx+i*7,gy+i*41);
+  ctx.fillStyle=path?(n<.3?'#c6a178':n<.7?'#8e6d4b':'#b28b5c'):(n<.25?'#395f31':n<.6?'#7fa64b':'#9bb65b');
+  ctx.fillRect(x+rx,y+ry,n>.8?2:1,n<.18?3:1);
  }
- if(!ready)return false;
- const key=type==='p'?'dirt':'grass';ctx.drawImage(sprites[key],x,y,size,size);return true;
+ if(path&&noise(gx+501,gy+73)>.79){
+  const rx=Math.floor(noise(gx+9,gy+7)*24)+3,ry=Math.floor(noise(gx+4,gy+11)*24)+3;
+  ctx.fillStyle='#d5b18a';ctx.fillRect(x+rx,y+ry,4,2);
+  ctx.fillStyle='#705b47';ctx.fillRect(x+rx+1,y+ry+2,3,1);
+ }
+ return true;
 }
 function noise(x,y){let n=Math.imul(x+129,374761393)+Math.imul(y+71,668265263);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295}
 function trees(ctx,map,TILE,x0,y0,x1,y1){
