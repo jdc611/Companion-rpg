@@ -29,13 +29,10 @@ function loadVillage(){const img=new Image();img.onload=()=>{
  };img.onerror=()=>console.warn('West Village pack could not load');img.src='assets/west_village_asset_pack_v1.png';}
 loadVillage();
 function drawBuilding(ctx,b,TILE,state){
- if(!enabled||!village.loaded)return false;
- const stage=(b.name==='The Workshop'&&!state?.built?.workshop)?'damaged':'done';
- const sprite=village[b.name+':'+stage];if(!sprite)return false;
- const w=b.w*TILE,h=b.h*TILE;
- // Preserve the original building footprint, doors, collision and interactions.
- ctx.drawImage(sprite,b.x*TILE-7,b.y*TILE-14,w+14,h+22);
- return true;
+ // Source concept crops include incompatible baked-in ground and hard rectangular edges.
+ // Disable these building crops until clean transparent silhouettes are supplied.
+ // Fall back to the original aligned building renderer in index.html.
+ return false;
 }
 function draw(ctx,key,x,y,w,h){if(!enabled||!ready||!sprites[key])return false;ctx.drawImage(sprites[key],x,y,w,h);return true}
 function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;const frames=hero[face]||hero.down;if(!frames?.length)return false;const frame=walking?Math.floor(clock/155)%frames.length:0;ctx.drawImage(frames[frame],Math.round(x)-3,Math.round(y)-22,40,53);return true}
