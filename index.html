@@ -46,7 +46,15 @@ main{align-items:stretch;justify-content:flex-start}
 #lings-quest-panel{width:100%;align-self:stretch;flex-shrink:0!important;max-height:65px;overflow:hidden;white-space:normal}
 .controls{margin-top:auto;flex-shrink:0}
 @media(max-height:680px){.world{width:min(100%, calc((100dvh - 220px)*4 / 3))}}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · TOUCH CONTROLS 4.4</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="dpad"><button class="btn up" data-dir="up" aria-label="Move up">▲</button><button class="btn left" data-dir="left" aria-label="Move left">◀</button><button class="btn right" data-dir="right" aria-label="Move right">▶</button><button class="btn down" data-dir="down" aria-label="Move down">▼</button></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+
+/* v4.5 continuous thumbstick */
+.joystick-zone{position:relative;width:166px;height:140px;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.joystick-base{position:absolute;width:106px;height:106px;left:30px;top:17px;border-radius:50%;background:radial-gradient(circle,#385b5d 0%,#243c43 70%);border:3px solid #74958d;box-shadow:inset 0 3px 14px #091f2588,0 3px 12px #0007;touch-action:none}
+.joystick-base:after{content:'';position:absolute;inset:13px;border:1px solid #88aaa266;border-radius:50%;pointer-events:none}
+.joystick-knob{position:absolute;width:53px;height:53px;left:24px;top:24px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#a6c9b7,#5b897e 65%,#345f5c);border:2px solid #c0d8c7;box-shadow:0 4px 9px #071f2788;pointer-events:none;will-change:transform}
+.joystick-zone.active .joystick-base{border-color:#b6d7c0}
+@media(max-height:680px){.joystick-zone{height:112px;width:146px}.joystick-base{transform:scale(.85);transform-origin:top left;left:24px;top:8px}}
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · ANALOG STICK 4.5</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -487,7 +495,27 @@ function frame(time){const dt=Math.min(50,lastFrame?time-lastFrame:16);lastFrame
 function haptic(){try{if(typeof navigator.vibrate==='function')navigator.vibrate(12)}catch(e){}}
 function stop(dir){if(!dir||held===dir)held=null}
 function start(dir){autoRoute=[];autoTarget=null;held=dir;if(!step)move(dir)}
-document.querySelectorAll('[data-dir]').forEach(b=>{const dir=b.dataset.dir;b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);start(dir);haptic();b.classList.add('pressed')});const release=()=>{stop(dir);b.classList.remove('pressed')};b.addEventListener('pointerup',release);b.addEventListener('pointercancel',release);b.addEventListener('lostpointercapture',release)});
+const stickZone=document.getElementById('joystick-zone'),stickBase=document.getElementById('joystick-base'),stickKnob=document.getElementById('joystick-knob');
+let stickPointer=null,stickVector={x:0,y:0};
+function updateStick(e){
+ const rect=stickBase.getBoundingClientRect(),cx=rect.left+rect.width/2,cy=rect.top+rect.height/2;
+ const dx=e.clientX-cx,dy=e.clientY-cy,limit=rect.width*.34;
+ const len=Math.hypot(dx,dy),factor=len?Math.min(1,limit/len):0;
+ stickKnob.style.transform='translate('+Math.round(dx*factor)+'px,'+Math.round(dy*factor)+'px)';
+ stickVector={x:dx,y:dy};
+ if(len<rect.width*.13){held=null;return}
+ const dir=Math.abs(dx)>=Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');
+ if(held!==dir){held=dir;if(!step)move(dir)}
+}
+stickZone.addEventListener('pointerdown',e=>{
+ e.preventDefault();if(stickPointer!==null)return;
+ stickPointer=e.pointerId;stickZone.setPointerCapture(e.pointerId);
+ autoRoute=[];autoTarget=null;lastTouch=null;clearTimeout(tapTimer);
+ stickZone.classList.add('active');updateStick(e);haptic();
+});
+stickZone.addEventListener('pointermove',e=>{if(stickPointer===e.pointerId){e.preventDefault();updateStick(e)}});
+function releaseStick(e){if(stickPointer!==e.pointerId)return;stickPointer=null;held=null;stickVector={x:0,y:0};stickKnob.style.transform='translate(0px,0px)';stickZone.classList.remove('active')}
+for(const type of ['pointerup','pointercancel','lostpointercapture'])stickZone.addEventListener(type,releaseStick);
 const actionButton=document.getElementById('action');
 actionButton.addEventListener('pointerdown',e=>{e.preventDefault();haptic();if(!dialog.classList.contains('is-hidden'))dialog.classList.add('is-hidden');else interact();actionButton.classList.add('pressed')});
 for(const type of ['pointerup','pointercancel','lostpointercapture'])actionButton.addEventListener(type,()=>actionButton.classList.remove('pressed'));
