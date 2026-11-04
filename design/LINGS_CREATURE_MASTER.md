@@ -125,3 +125,13 @@ User explicitly said “Beautiful. Lock it in just like that” to the latest **
 - **Defense specialization — Trinary Bastion:** unchanged form, gold hexagonal spherical barrier, heads scanning threats and hands open.
 - Signature theme: three distinct minds acting together, possible “Tri-Mind Sync” ability (gameplay details provisional). Native affinity Morph, mutation affinities not finalized.
 - Latest image is the approved black/gold Trivex concept sheet in this conversation; GitHub markdown stores description, not the actual image asset.
+
+## BESTILING — SIMAROK (FINAL VISUAL LOCK, NOVEMBER 4, 2026)
+User enthusiastically approved and explicitly locked final **Simarok — The Royal Lineage** artwork (“Lock it in. Love it”). Keep exact approved design: brown-and-white monkey with cream face/chest, large curled tail, expressive brows and warm gold accents. **Both final branches stand UPRIGHT on two legs**; earlier quadrupedal knight version is superseded.
+- **Cub:** cute little brown-and-white monkey on all fours with large curled tail, cream face/chest and alert expression.
+- **Offense Prowler:** lean athletic upright young royal fighter, gold-trimmed wraps and small red-gold waistcloth, confident clenched fist.
+- **Offense Alpha — King:** muscular upright monkey monarch with ornate **gold crown**, elaborate flowing **red cape**, royal gold bracers and belt, exposed white chest fur, fierce commanding expression; preserve as-is from latest approved artwork.
+- **Defense Prowler (Squire):** upright young monkey warrior, emerging charcoal/black armor, cloak, gauntlets and gold trim, training to become knight.
+- **Defense Alpha — Knight:** upright stocky knight monkey wearing **full-body charcoal plate armor** with gold trim, shoulder plates, breastplate, leg armor, helmet/crest or exposed monkey face as shown, dark flowing cape and sword. No quadrupedal posture, no turtle silhouette.
+- **Official Bestiling universal stages: Cub → Prowler → Alpha.** “Squire” is a descriptive defense intermediate form title, not a replacement for the universal Prowler stage. King and Knight are final branch names.
+- Color scheme brown/white fur, gold crown/trim, red royal cape for offense, charcoal armor and dark cape for defense. No extra transformations or changes without user approval. The latest approved visual is the ChatGPT concept sheet, not automatically an image in the repository.
