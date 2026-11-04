@@ -15,7 +15,7 @@ function active(){return stages.find(q=>!q.done())||null}
 function completed(){return stages.filter(q=>q.done()).length}
 function panel(){let p=document.getElementById('lings-quest-panel');if(p)return p;
 p=document.createElement('section');p.id='lings-quest-panel';p.style.cssText='margin-top:12px;padding:12px;border:2px solid #6f887b;border-radius:12px;background:#203436;color:#f2e9d6;font:14px system-ui;line-height:1.5';
-const dialog=document.getElementById('dialog');dialog.insertAdjacentElement('afterend',p);return p}
+const dialog=document.getElementById('dialog');document.querySelector('.world').insertAdjacentElement('afterend',p);return p}
 function render(){
  const p=panel(),q=active(),n=completed();
  p.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><strong>Willowmere · Rebuilding</strong><span>'+n+'/'+stages.length+' milestones</span></div>'+
