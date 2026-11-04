@@ -28,6 +28,32 @@ function loadVillage(){const img=new Image();img.onload=()=>{
  village.loaded=true;update();
  };img.onerror=()=>console.warn('West Village pack could not load');img.src='assets/west_village_asset_pack_v1.png';}
 loadVillage();
+// Production terrain preview sourced from the newly uploaded West Village art sheet.
+// Use mirrored central samples to remove the original sheet's tile frames and seams.
+const terrainArt={loaded:false};
+function loadTerrainArt(){
+ const img=new Image();
+ img.onload=()=>{
+  const make=(sx,sy)=>{
+   const c=document.createElement('canvas');c.width=80;c.height=80;
+   const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+   // Four mirrored quadrants: all outer edges and internal joins match.
+   for(let row=0;row<2;row++)for(let col=0;col<2;col++){
+    g.save();g.translate(col*40+(col?40:0),row*40+(row?40:0));
+    g.scale(col?-1:1,row?-1:1);
+    g.drawImage(img,sx+12,sy+12,40,40,0,0,40,40);g.restore();
+   }
+   return c;
+  };
+  terrainArt.grass=[make(924,35),make(1081,35),make(1316,35)];
+  terrainArt.dirt=[make(924,111),make(1003,111),make(1081,111)];
+  terrainArt.loaded=true;
+ };
+ img.onerror=()=>console.warn('West Village terrain reference missing');
+ img.src='assets/a_detailed_top_down_pixel_art_game_scene_and_asset.png';
+}
+loadTerrainArt();
+
 function drawBuilding(ctx,b,TILE,state){
  // Source concept crops include incompatible baked-in ground and hard rectangular edges.
  // Disable these building crops until clean transparent silhouettes are supplied.
@@ -39,6 +65,14 @@ function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;c
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
+ if(terrainArt.loaded){
+  const variants=path?terrainArt.dirt:terrainArt.grass;
+  const pick=Math.floor(noise(Math.floor(gx/160)+71,Math.floor(gy/160)+31)*variants.length);
+  const tex=variants[Math.min(pick,variants.length-1)];
+  // World-aligned sampling keeps the texture stationary during camera movement.
+  ctx.drawImage(tex,(gx%80+80)%80,(gy%80+80)%80,size,size,x,y,size,size);
+  return true;
+ }
  ctx.fillStyle=path?'#a68761':'#648d3c';ctx.fillRect(x,y,size,size);
  // Dense hand-shaped micro-clumps; no per-tile borders or hard outlines.
  for(let i=0;i<(path?35:36);i++){
