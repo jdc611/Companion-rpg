@@ -65,3 +65,17 @@ User explicitly liked the first illustrated Tidefin concept sheet: blue/white am
 
 ### Ancient Aquiling
 Immortal Ancient/Guardian Aquiling is walrus/seal inspired with enormous tusks, whiskers, and flippers, Council Sigil on forehead. Ordinary Aquilings should not duplicate this signature anatomy.
+
+## TERRALING — PRISMITE (NOVEMBER 4, 2026)
+**Universal Terraling life stages approved: Shard → Prism → Monolith.**
+
+### First ordinary Terraling species: Prismite (latest concept positively received)
+The user liked the revised non-animal crystalline design, specifically avoiding the overused sleek quadruped offensive silhouette and armored turtle defensive silhouette. Latest concept art shown in ChatGPT: title “Terraling: Prismite,” purple/icy-cyan crystal palette, glowing eyes/energy core, dark crystal cavern, two dramatically distinct paths. User said “That one’s cool.” Treat as favored design direction, not necessarily final locked artwork or name.
+- **Shard base:** adorable small levitating irregular living crystal cluster, bright eyes in shadowy central face, violet and icy cyan crystal shards and tiny floating fragments.
+- **Offense Prism:** compact levitating glowing central core with numerous independently orbiting sharp crystal blades, geometric rings/resonance, no animal limbs or body.
+- **Offense Monolith:** spectacular large suspended crystal core surrounded by wide halo and many floating elongated crystal blades arranged like a mobile orbital weapon system; can launch shards and reassemble.
+- **Defense Prism:** growing central crystalline core with upright separated rock/crystal panels arranged in a protective ring, beginning to resemble a geode.
+- **Defense Monolith:** monumental stationary hollow geode sanctuary, interlocking vertical mineral pillars and crystal walls protecting a glowing inner core, geometric orbiting energy rings; not a turtle, not a quadruped, not an Ancient Terraling stone humanoid.
+- Distinction: offense projects crystals outward; defense builds a sanctuary inward. No need for limbs, animal face, conventional body, or shell.
+- Provisional branch names from concept art: Resonance (offense), Bastion (defense); species name Prismite featured in art, user reacted positively but has not explicitly confirmed as final.
+- Keep elemental affinities independent of physical forms, per global rules. Don't lock image-generated game mechanics without discussion.
