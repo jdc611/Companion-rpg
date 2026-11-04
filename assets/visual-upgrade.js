@@ -45,7 +45,7 @@ function loadTerrainArt(){
    }
    return c;
   };
-  terrainArt.grass=[make(924,35),make(1081,35),make(1316,35)];
+  terrainArt.grass=[]; // Illustrated sheet contains decorative flowers, not clean repeatable grass.
   terrainArt.dirt=[make(924,111),make(1003,111),make(1081,111)];
   terrainArt.loaded=true;
  };
@@ -65,7 +65,7 @@ function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;c
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
- if(terrainArt.loaded){
+ if(terrainArt.loaded&&path){
   const variants=path?terrainArt.dirt:terrainArt.grass;
   const pick=0; // One continuous texture; no abrupt biome patch seams.
   const tex=variants[Math.min(pick,variants.length-1)];
