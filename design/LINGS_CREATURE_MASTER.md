@@ -48,3 +48,20 @@ Reference: second revised Florling infographic (November 4, 2026), featuring Pet
 
 ## Species stage-count flexibility (APPROVED)
 Not all species need 3 stages. A species may have a single mature form (e.g. only Flourish/Alpha), two stages skipping the intermediate (e.g. Sprout → Flourish), or the full three-stage progression. Stage structure is species-defined, not random per individual. The first Verdant concept uses all three stages/two lineages; this does not force other species to do so.
+
+## AQUILING — LIFE STAGES AND FIRST TWO SPECIES (NOVEMBER 4, 2026)
+**Universal Aquiling stages officially approved: Fry → Shoal → Leviathan.** The stage labels apply across Aquilings even if an individual species has only one or two stages.
+
+### Aquiling species 1: Tidefin (artwork direction user likes)
+User explicitly liked the first illustrated Tidefin concept sheet: blue/white amphibious four-legged aquatic creature, glowing cyan fins, broad tail, big expressive eyes; offensive line is sleek and finned, defensive line is broad with shell-like plating. Retain this as the first Aquiling's approved visual direction despite assistant earlier suggesting it might be too dragon-like. **Important:** the illustration's labels Sprout/Surge/Bastion/Riptide/Aegis are NOT canonical life-stage names; canonical stages are Fry/Shoal/Leviathan. 'Tidefin' is a working species name from art, not separately confirmed. Detailed moves/affinities unfinalized.
+
+### Aquiling species 2: fish → shark offense / whale defense (concept agreed, artwork pending)
+- Base Fry: small rounded expressive true fish, fins and swimming silhouette, not four-legged.
+- Offensive Shoal: young sleek shark-inspired fish, emerging dorsal fin, sharper teeth, still juvenile.
+- Offensive Leviathan: mature streamlined formidable shark predator, dramatic distinct adult anatomy.
+- Defensive Shoal: broad plump juvenile fish developing whale-like proportions.
+- Defensive Leviathan: massive smooth-bodied whale-inspired protector with powerful horizontal tail fluke and blowhole, unmistakably cetacean; **avoid** Ancient Aquiling's walrus/seal body, tusks, whiskers and flippers-only silhouette.
+- Second species name and visual art have NOT yet been chosen or approved. Stage count may vary by species under the global rule.
+
+### Ancient Aquiling
+Immortal Ancient/Guardian Aquiling is walrus/seal inspired with enormous tusks, whiskers, and flippers, Council Sigil on forehead. Ordinary Aquilings should not duplicate this signature anatomy.
