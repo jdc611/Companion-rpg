@@ -65,7 +65,20 @@ html{overflow:hidden!important;overscroll-behavior:none!important}
 body{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;height:100dvh!important;overflow:hidden!important}
 main{position:relative!important;width:100%!important;height:100%!important;max-height:100%!important;overflow:hidden!important}
 .controls{touch-action:none!important}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · HATCHLING PORTRAIT 5.8</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+
+.lings-menu{position:absolute;inset:5px;z-index:20;background:#14252aef;border:2px solid #c2aa78;border-radius:10px;padding:12px;overflow:auto;color:#f5e9d1;box-shadow:0 0 0 100vmax #0005;overscroll-behavior:contain;touch-action:pan-y}
+.lings-menu.is-hidden{display:none}
+.lings-menu-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;border-bottom:1px solid #8b8068;padding-bottom:8px}
+.lings-menu button{touch-action:manipulation}
+.lings-menu-choice{display:block;width:100%;text-align:left;background:#263e40;border:1px solid #849d8b;color:#f5e9d1;padding:12px;margin:7px 0;border-radius:8px;font-size:15px}
+.lings-menu-choice:disabled{opacity:.5}
+.lings-portrait{display:block;width:100%;max-width:220px;max-height:180px;object-fit:contain;margin:6px auto;border:1px solid #6c7e72;border-radius:8px}
+.lings-stat{font-size:12px;line-height:1.5;color:#c8d5c9}
+.lings-tree{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:10px 0}
+.lings-node{padding:8px 4px;border:1px solid #8c7959;border-radius:8px;background:#293b3a;text-align:center;font-size:11px}
+.lings-node.locked{opacity:.55;border-style:dashed}
+.lings-node small{display:block;color:#b3c5ba;font-size:10px;margin-top:3px}
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · PARTY MENU 5.9</div><h1>The Reclaimed Valley</h1></div><div style="display:flex;gap:6px"><button class="reset" id="start-menu-button">☰ START</button><button class="reset" id="reset">Return home</button></div></div><div class="world"><div id="lings-start-menu" class="lings-menu is-hidden" role="dialog" aria-label="Start menu"><div class="lings-menu-head"><strong id="lings-menu-title">START MENU</strong><button id="lings-menu-close" class="reset">✕ Close</button></div><div id="lings-menu-content"></div></div><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -73,6 +86,51 @@ main{position:relative!important;width:100%!important;height:100%!important;max-
 'use strict';
 const canvas=document.getElementById('game'),ctx=canvas.getContext('2d'),dialog=document.getElementById('dialog'),place=document.getElementById('place');
 ctx.imageSmoothingEnabled=false;
+
+const menu=document.getElementById('lings-start-menu'),menuContent=document.getElementById('lings-menu-content'),menuTitle=document.getElementById('lings-menu-title');
+let menuOpen=false;
+function openStartMenu(page='start'){
+ menuOpen=true;held=null;autoRoute=[];autoTarget=null;menu.classList.remove('is-hidden');renderMenu(page);
+}
+function closeStartMenu(){menuOpen=false;menu.classList.add('is-hidden')}
+function renderMenu(page){
+ menuTitle.textContent=page==='party'?'LINGS / PARTY':page==='skills'?'SKILL TREE':'START MENU';
+ menuContent.replaceChildren();
+ const add=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;menuContent.append(e);return e};
+ if(page==='start'){
+  const party=add('button','🐉  LINGS / PARTY','lings-menu-choice');party.onclick=()=>renderMenu('party');
+  const bag=add('button','🎒  BAG / INVENTORY  ·  Coming later','lings-menu-choice');bag.disabled=true;
+  const map=add('button','🗺️  WORLD MAP  ·  Coming later','lings-menu-choice');map.disabled=true;
+  const resume=add('button','▶  RESUME EXPLORING','lings-menu-choice');resume.onclick=closeStartMenu;
+  return;
+ }
+ const back=add('button','← Back','lings-menu-choice');back.onclick=()=>renderMenu(page==='skills'?'party':'start');
+ if(!hatchlingBonded){
+  add('p','No Lings have joined your party yet. Explore near the Old Observatory to meet your first Ling.','lings-stat');
+  return;
+ }
+ if(page==='party'){
+  const pic=add('img',null,'lings-portrait');pic.src='assets/dracling-hatchling-portrait.png';pic.alt='Young Dracling hatchling';
+  add('h3','Young Dracling · Hatchling');
+  add('p','Family: Dracling  ·  Element: Fire  ·  Stage: Hatchling','lings-stat');
+  add('p','Temperament: Curious and loyal. This young Ling is still learning to control its elemental energy.','lings-stat');
+  add('h4','Abilities');
+  add('p','🔥 Ember Spark — A tiny flicker of fire (planned)\n🪽 Flutter — Small-wing movement (planned)\n✨ Bond — Travels beside its companion (active)','lings-stat').style.whiteSpace='pre-line';
+  const skill=add('button','View skill tree →','lings-menu-choice');skill.onclick=()=>renderMenu('skills');
+ }else{
+  add('h3','Dracling Hatchling · Growth Path');
+  add('p','Preview of potential skills. Skill points, unlocking and combat are not implemented yet.','lings-stat');
+  const tree=add('div',null,'lings-tree');
+  [['Bond','Active'],['Ember Spark','Planned'],['Flutter','Planned'],['Warmth','Planned'],['Flame Trail','Planned'],['Wing Burst','Planned']].forEach(([name,status])=>{
+   const n=document.createElement('div');n.className='lings-node'+(status==='Planned'?' locked':'');n.textContent=name;
+   const small=document.createElement('small');small.textContent=status;n.append(small);tree.append(n);
+  });
+ }
+}
+document.getElementById('start-menu-button').addEventListener('click',()=>menuOpen?closeStartMenu():openStartMenu());
+document.getElementById('lings-menu-close').addEventListener('click',closeStartMenu);
+menu.addEventListener('pointerdown',e=>e.stopPropagation());
+
 // Put interaction text on the playfield rather than consuming vertical screen space.
 document.querySelector('.world').appendChild(dialog);
 dialog.classList.add('is-hidden');
@@ -303,9 +361,9 @@ function solidPropAt(x,y){
  return false;
 }
 function canWalk(x,y){if(interior)return interiorWalk(x,y);if(x<0||y<0||x>=W||y>=H)return false; if(map[y][x]==='b'&&y!==22)return false;return !['t','w','W','r'].includes(map[y][x])&&!occupied(x,y)&&!solidPropAt(x,y)}
-function move(dir){if(step)return;player.face=dir;const [dx,dy]=directions[dir];const x=player.x+dx,y=player.y+dy;if(interior&&y>=9&&x===5){leave();return}if(canWalk(x,y)){if(hatchlingBonded&&!interior)hatchlingTrail={x:player.x,y:player.y};step={fromX:player.x,fromY:player.y,toX:x,toY:y,elapsed:0,duration:155};player.x=x;player.y=y;save();updatePlace()}}
+function move(dir){if(menuOpen||step)return;player.face=dir;const [dx,dy]=directions[dir];const x=player.x+dx,y=player.y+dy;if(interior&&y>=9&&x===5){leave();return}if(canWalk(x,y)){if(hatchlingBonded&&!interior)hatchlingTrail={x:player.x,y:player.y};step={fromX:player.x,fromY:player.y,toX:x,toY:y,elapsed:0,duration:155};player.x=x;player.y=y;save();updatePlace()}}
 function updatePlace(){if(interior){place.textContent=interior.name+' · Inside';return}let n='First Haven · temporary';if(player.x>=60)n='Luminous Wetlands · prototype';else if(player.x>=58)n='Reclaimed Ruins';else if(player.x>=49)n='Eastern River';else if(player.x>=41)n='Forest Approach';else if(player.x>31)n='Eastern Road';else if(player.x<10)n='West Village';else if(player.y<12)n='Observatory Hill';else if(player.y>24)n='Southern Trail';place.textContent=n}
-function interact(){if(!interior&&Math.abs(player.x-hatchling.x)+Math.abs(player.y-hatchling.y)<=2&&!hatchlingBonded){hatchlingEncounter();return}if(!interior&&hatchlingBonded&&Math.abs(player.x-hatchlingTrail.x)+Math.abs(player.y-hatchlingTrail.y)<=2){hatchlingEncounter();return}if(interior){if(player.y>=8&&player.x===5&&player.face==='down'){leave();return}const [dx,dy]=directions[player.face];const feature=interiorFeatureAt(player.x+dx,player.y+dy);if(feature){useInteriorFeature(feature);return}say(interior.name,'Move near a furnishing and press A, or double-tap it to investigate. Tap EXIT to leave.');return}const [dx,dy]=directions[player.face];const x=player.x+dx,y=player.y+dy;const b=buildings.find(b=>x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+b.h);if(b){if(x===doorX(b)&&y===b.y+b.h-1&&player.x===doorX(b)&&player.y===b.y+b.h){enter(b);return}const questBuilding=window.LingsRebuild?.building(b.name);if(questBuilding){say(questBuilding.title,questBuilding.body);return}say(b.name,b.text+' Find the front door to enter.');return}const o=objects.find(o=>Math.abs(o.x-player.x)+Math.abs(o.y-player.y)<=1);if(o){const quest=window.LingsRebuild?.interact(o.name);if(quest){say(quest.title,quest.body);return}say(o.name,o.text);return}say('The Valley','The old roads lead from the warm green valley into cool, misty wetlands. The environments and their names are still prototypes.')}
+function interact(){if(menuOpen){closeStartMenu();return}if(!interior&&Math.abs(player.x-hatchling.x)+Math.abs(player.y-hatchling.y)<=2&&!hatchlingBonded){hatchlingEncounter();return}if(!interior&&hatchlingBonded&&Math.abs(player.x-hatchlingTrail.x)+Math.abs(player.y-hatchlingTrail.y)<=2){hatchlingEncounter();return}if(interior){if(player.y>=8&&player.x===5&&player.face==='down'){leave();return}const [dx,dy]=directions[player.face];const feature=interiorFeatureAt(player.x+dx,player.y+dy);if(feature){useInteriorFeature(feature);return}say(interior.name,'Move near a furnishing and press A, or double-tap it to investigate. Tap EXIT to leave.');return}const [dx,dy]=directions[player.face];const x=player.x+dx,y=player.y+dy;const b=buildings.find(b=>x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+b.h);if(b){if(x===doorX(b)&&y===b.y+b.h-1&&player.x===doorX(b)&&player.y===b.y+b.h){enter(b);return}const questBuilding=window.LingsRebuild?.building(b.name);if(questBuilding){say(questBuilding.title,questBuilding.body);return}say(b.name,b.text+' Find the front door to enter.');return}const o=objects.find(o=>Math.abs(o.x-player.x)+Math.abs(o.y-player.y)<=1);if(o){const quest=window.LingsRebuild?.interact(o.name);if(quest){say(quest.title,quest.body);return}say(o.name,o.text);return}say('The Valley','The old roads lead from the warm green valley into cool, misty wetlands. The environments and their names are still prototypes.')}
 
 function px(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),w,h)}
 function tile(x,y,t){
@@ -659,7 +717,7 @@ function steerTo(p){
  held=Math.abs(dx)>=Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');
  if(!step)move(held);
 }
-canvas.addEventListener('pointerdown',e=>{
+canvas.addEventListener('pointerdown',e=>{if(menuOpen)return;
  if(e.pointerType==='mouse'&&e.button!==0)return;
  e.preventDefault();canvas.setPointerCapture(e.pointerId);
  const p=touchCoords(e);touchHold={id:e.pointerId,at:performance.now(),p,holding:false};
