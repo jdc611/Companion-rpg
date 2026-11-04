@@ -85,6 +85,45 @@ function loadPropAtlas(){
  img.src='assets/AE22465E-0004-479B-AFF5-E55BC0395AD0.png';
 }
 loadPropAtlas();
+// Bridge and villagers from the user's second committed atlas.
+const worldAtlas={bridge:null,npcs:{}};
+function loadWorldAtlas(){
+ const im=new Image();
+ im.onload=()=>{
+  function crop(sx,sy,w,h){
+   const c=document.createElement('canvas');c.width=w;c.height=h;
+   const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(im,sx,sy,w,h,0,0,w,h);
+   const a=g.getImageData(0,0,w,h),d=a.data;
+   for(let k=0;k<d.length;k+=4){
+    const r=d[k],v=d[k+1],b=d[k+2],hi=Math.max(r,v,b),lo=Math.min(r,v,b);
+    if(hi<48||(hi<85&&hi-lo<18)){d[k+3]=hi<44?0:Math.round((hi-44)*6)}
+   }
+   g.putImageData(a,0,0);return c;
+  }
+  // First wooden bridge and individual 32px-style villagers; avoid text labels.
+  worldAtlas.bridge=crop(29,55,337,107);
+  const rows={villager:78,merchant:204,blacksmith:269,healer:335,guard:466,ranger:530};
+  for(const [role,cy] of Object.entries(rows)){
+   worldAtlas.npcs[role]=[];
+   for(const cx of [849,907,962,1017]){
+    worldAtlas.npcs[role].push(crop(cx-19,cy-22,39,46));
+   }
+  }
+ };
+ im.onerror=()=>console.warn('Bridge and NPC atlas missing');
+ im.src='assets/FEB28115-BEED-43F9-B68F-06D9BB9024DA.png';
+}
+loadWorldAtlas();
+function bridge(ctx,x,y,w,h){
+ if(!enabled||!worldAtlas.bridge)return false;
+ ctx.drawImage(worldAtlas.bridge,Math.round(x),Math.round(y-7),w,h+14);return true;
+}
+function npc(ctx,role,x,y,face='down',walking=false,clock=0){
+ if(!enabled||!worldAtlas.npcs[role])return false;
+ const frames=worldAtlas.npcs[role],dir={down:0,left:1,right:2,up:3}[face]??0;
+ const bob=walking?Math.round(Math.abs(Math.sin(clock*.02))*2):0;
+ ctx.drawImage(frames[dir],Math.round(x)-3,Math.round(y)-12-bob,39,46);return true;
+}
 function prop(ctx,kind,x,y,clock=0){
  if(!enabled)return false;
  if(atlasProps[kind]){
@@ -264,6 +303,6 @@ function decor(ctx,items,TILE){
 }
 function update(){let b=document.getElementById('art-toggle');if(b)b.textContent=enabled?'Art: NEW':'Art: ORIGINAL'}
 function setup(){const bar=document.querySelector('.top');if(!bar)return;const b=document.createElement('button');b.id='art-toggle';b.className='reset';b.style.marginLeft='auto';b.textContent='Art: loading';b.addEventListener('click',()=>{enabled=!enabled;try{localStorage.setItem(KEY,String(enabled))}catch{}update()});bar.insertBefore(b,document.getElementById('reset'));update()}
-window.LingsArt={draw,drawHero,drawBuilding,prop,ground,terrainDepth,buildingBase,trees,decor,get ready(){return ready},get enabled(){return enabled}};
+window.LingsArt={draw,drawHero,drawBuilding,prop,bridge,npc,ground,terrainDepth,buildingBase,trees,decor,get ready(){return ready},get enabled(){return enabled}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);else setup();load();
 })();
