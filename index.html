@@ -65,7 +65,7 @@ html{overflow:hidden!important;overscroll-behavior:none!important}
 body{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;height:100dvh!important;overflow:hidden!important}
 main{position:relative!important;width:100%!important;height:100%!important;max-height:100%!important;overflow:hidden!important}
 .controls{touch-action:none!important}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · VIEWPORT LOCK 4.7</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · INTERIORS 4.8</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -143,7 +143,70 @@ function doorX(b){return b.x+Math.floor(b.w/2)}
 function enter(b){interior=b;interiorReturn={x:player.x,y:player.y,face:'down'};step=null;stop();held=null;visual={x:5,y:7};player={x:5,y:7,face:'up'};camera={x:0,y:0};say(b.name,'You step inside. Look around, then walk to the bottom doorway or press A there to leave.');updatePlace()}
 function leave(){if(!interior)return;interior=null;player={...interiorReturn};visual={x:player.x,y:player.y};step=null;stop();held=null;camera={x:Math.max(0,Math.min(W*TILE-canvas.width,player.x*TILE-canvas.width/2)),y:Math.max(0,Math.min(H*TILE-canvas.height,player.y*TILE-canvas.height/2))};save();say('Willowmere','You step back into the village.');updatePlace()}
 function interiorWalk(x,y){return x>=1&&x<=10&&y>=2&&y<=8&&!(y===2&&x!==5)&&!(x>=3&&x<=4&&y>=3&&y<=4)&&!(x>=7&&x<=9&&y>=4&&y<=5)}
-function interiorDraw(){const sx=144,sy=42;ctx.fillStyle='#1a2b30';ctx.fillRect(0,0,640,480);ctx.fillStyle='#806e5d';ctx.fillRect(sx,sy,12*TILE,10*TILE);ctx.fillStyle='#c8b38b';ctx.fillRect(sx+TILE,sy+TILE,10*TILE,8*TILE);for(let y=1;y<9;y++)for(let x=1;x<11;x++){ctx.fillStyle=(x+y)%2?'#bfa981':'#cbb68e';ctx.fillRect(sx+x*TILE,sy+y*TILE,TILE,TILE)}ctx.fillStyle='#715446';ctx.fillRect(sx+3*TILE,sy+3*TILE,2*TILE,2*TILE);ctx.fillRect(sx+7*TILE,sy+4*TILE,3*TILE,2*TILE);ctx.fillStyle='#e6c78e';ctx.fillRect(sx+3*TILE+8,sy+3*TILE+8,48,12);ctx.fillStyle='#6b8d75';ctx.fillRect(sx+TILE,sy+TILE,32,42);ctx.fillRect(sx+10*TILE,sy+TILE,32,42);ctx.fillStyle='#463b38';ctx.fillRect(sx+5*TILE,sy+9*TILE,32,32);ctx.fillStyle='#f0d4a0';ctx.font='bold 16px monospace';ctx.textAlign='center';ctx.fillText(interior.name,320,27);drawCharacter(sx+Math.round(visual.x*TILE),sy+Math.round(visual.y*TILE),'#476a9c',player.face,!!step,walkClock);ctx.fillStyle='#f5e6c6';ctx.font='13px system-ui';ctx.fillText('Door ↓',320,sy+10*TILE+22)}
+function interiorDraw(){
+ const sx=128,sy=48,T=32,work=interior.name==='The Workshop',home=interior.name==='Your Home',inn=interior.name==='The Inn',hall=interior.name==='Willowmere Hall',obs=interior.name==='The Old Observatory';
+ const rect=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),w,h)};
+ const r=(x,y,w,h,c)=>rect(sx+x*T,sy+y*T,w*T,h*T,c);
+ const line=(x,y,w,h,c)=>rect(sx+x,sy+y,w,h,c);
+ ctx.fillStyle='#14232a';ctx.fillRect(0,0,640,480);
+ // Exterior wall, reclaimed timber frame and layered plaster.
+ r(0,0,12,10,'#332d2c');r(.18,.18,11.64,9.64,'#725b49');r(.42,.42,11.16,9.16,'#a18a6b');
+ r(1,1,10,8,work?'#665b4c':inn?'#806b58':obs?'#56616a':'#967d5d');
+ for(let y=1;y<9;y++)for(let x=1;x<11;x++){
+  const grain=((x*13+y*7)%5);
+  r(x,y,1,1,work?(grain<2?'#88785e':'#918068'):obs?(grain<2?'#667178':'#717c7c'):(grain<2?'#b49a70':'#c1a67a'));
+  line((x+1)*T-3,y*T+3,1,25,'#4b443a55');
+  line(x*T+4,y*T+15,22,1,'#f5d6a11b');
+ }
+ // Thick back wall with timber supports and two sunlit windows.
+ r(.4,.4,11.2,1.45,'#5e4d42');r(.65,.65,10.7,.9,'#907c62');
+ for(const x of [2,9]){
+  r(x,.7,1.2,1.15,'#382e2c');r(x+.12,.8,.96,.88,'#86b4ac');
+  r(x+.55,.8,.1,.88,'#e1c796');r(x+.12,1.2,.96,.1,'#e1c796');
+  r(x+.12,1.68,.96,.12,'#4d4137');
+ }
+ for(const x of [1,5.5,10.5])r(x,.5,.18,1.45,'#493b33');
+ // Furniture is positioned to match the existing collision footprints.
+ const desk=(x,y,w,h)=>{
+  r(x+.08,y+.12,w-.16,h-.2,'#4b352e');r(x+.18,y+.08,w-.36,.32,'#a57b4d');
+  r(x+.2,y+.43,w-.4,.12,'#d4aa68');r(x+.2,y+h-.36,.24,.25,'#5d4537');r(x+w-.44,y+h-.36,.24,.25,'#5d4537');
+ };
+ if(work){
+  desk(3,3,2,2);desk(7,4,3,2);
+  // Anvil, tools, blueprints, spare gears and workbench lamps.
+  r(3.55,3.35,.9,.45,'#424c51');r(3.4,3.52,1.2,.14,'#9ca9a5');
+  r(3.8,3.8,.35,.35,'#667379');
+  for(let i=0;i<4;i++){r(7.3+i*.55,4.22,.12,.58,i%2?'#c3b58a':'#77878a')}
+  r(8,5.05,1.2,.45,'#c6b38b');r(8.1,5.12,.75,.05,'#6b8b99');
+  r(1.1,3,1,.5,'#70503b');r(1.2,3.1,.8,.1,'#c0a47c');
+  r(9.9,6.5,.7,.7,'#6a5540');r(10,6.6,.5,.15,'#a88d65');
+ }else if(home){
+  desk(3,3,2,2);r(3.2,3.3,1.6,.85,'#8a6354');r(3.3,3.4,1.4,.58,'#c9b18c');
+  desk(7,4,3,2);r(7.4,4.25,2.1,1.15,'#67867b');r(7.5,4.35,1.9,.45,'#d4c29d');
+  r(1.2,5.5,1.2,1,'#715845');r(1.35,5.7,.9,.4,'#c9a66e');
+ }else if(inn){
+  desk(3,3,2,2);desk(7,4,3,2);
+  for(const [x,y] of [[3.3,3.4],[4.2,3.4],[7.4,4.4],[8.3,4.4]])r(x,y,.32,.32,'#d3c49d');
+  r(1.2,2.1,1.1,2,'#564233');for(let i=0;i<4;i++)r(1.35,2.25+i*.43,.7,.18,i%2?'#9a5c4e':'#b79a6d');
+ }else if(hall){
+  desk(3,3,2,2);desk(7,4,3,2);r(3.25,3.3,1.5,.55,'#d2bd8e');r(7.3,4.3,2.4,.9,'#d2bd8e');
+  for(let i=0;i<3;i++)r(7.45,4.5+i*.23,1.6,.05,'#72624d');
+  r(1.25,2.2,1.4,1.5,'#674f39');r(1.4,2.35,1.1,1.2,'#c9b58b');
+ }else if(obs){
+  desk(3,3,2,2);desk(7,4,3,2);
+  r(3.4,3.35,1.1,.65,'#6d8e9d');r(3.6,3.5,.7,.3,'#bed3d2');
+  r(7.45,4.4,2,.85,'#3f535f');r(7.6,4.55,1.7,.55,'#9fb4b1');
+  r(1.5,3,1,1.2,'#b4a477');r(1.65,3.15,.7,.9,'#516778');
+ }
+ // Small rugs, potted greenery, warm lamps and bottom exit.
+ r(4,6,4,1.2,work?'#596a62':'#876b55');r(4.15,6.15,3.7,.9,work?'#73887a':'#ad8c6b');
+ for(const x of [1.25,10]){r(x,7,.55,.65,'#785342');r(x+.1,6.6,.35,.5,'#587b57');r(x+.2,6.4,.16,.35,'#82a36b')}
+ for(const x of [1,10]){r(x,2,.35,.3,'#d9b779');r(x+.09,2.05,.17,.14,'#f6db9a')}
+ r(4.7,9,1.6,.85,'#40342f');r(5,9,.95,.85,'#72523e');r(5.25,9.12,.5,.7,'#c0a075');
+ ctx.fillStyle='#f2dbad';ctx.font='bold 16px monospace';ctx.textAlign='center';ctx.fillText(interior.name,320,29);
+ drawCharacter(sx+Math.round(visual.x*T),sy+Math.round(visual.y*T),'#476a9c',player.face,!!step,walkClock);
+ ctx.fillStyle='#e9d3a8';ctx.font='12px system-ui';ctx.fillText('EXIT ↓',320,sy+10*T+17);
+}
 function drawDecor(){if(window.LingsArt?.decor(ctx,decor,TILE))return;for(const d of decor){const x=d.x*TILE,y=d.y*TILE;if(d.type==='bush'){ctx.fillStyle='#426b45';ctx.fillRect(x+7,y+14,18,14);ctx.fillStyle='#68995a';ctx.fillRect(x+10,y+10,12,10)}else{ctx.fillStyle='#f2e2a0';ctx.fillRect(x+8,y+12,5,5);ctx.fillStyle='#d68a9a';ctx.fillRect(x+20,y+19,5,5);ctx.fillStyle='#477d48';ctx.fillRect(x+10,y+17,2,8)}}}
 function tickVillagers(dt){npcTimer+=dt;if(npcTimer<700)return;npcTimer=0;for(const o of villagers){if(rand(o.x+Math.floor(worldTime/1000),o.y)>.85)continue;const opts=[[1,0],[-1,0],[0,1],[0,-1]];const pick=opts[Math.floor(rand(o.y+Math.floor(worldTime/1000),o.x)*4)];const nx=o.x+pick[0],ny=o.y+pick[1];if(Math.abs(nx-o.homeX)>3||Math.abs(ny-o.homeY)>3||!canWalk(nx,ny)||nx===player.x&&ny===player.y)continue;o.face=pick[0]===1?'right':pick[0]===-1?'left':pick[1]===1?'down':'up';o.moving=true;o.x=nx;o.y=ny}} 
 for(const o of villagers){o.homeX=o.x;o.homeY=o.y}
