@@ -212,3 +212,15 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - **Defense stage 3 — Abyssal Siren, The Undertow Empress:** terrifyingly beautiful wicked adult siren with very long flowing purple-black/magenta hair, pointed elaborate fin-crown, pale skin, purple/gold bodice and long layered sweeping violet-magenta tail fins, fingers conjuring swirling purple hypnosis/defense currents; focused on enthrallment, disruption, control and endurance.
 - **Branching happens after the shared baby:** two distinct intermediates, two distinct mature forms. The artwork labels stage 1 “Aquiling” as a provisional species/base name, while the overall poster calls it “Aquiling Line: The Tideborn Line.” **Species-wide final name not independently chosen**; do not conflate family Aquiling with the species name. Universal Aquiling stage labels remain Fry → Shoal → Leviathan; named forms above are individual identities.
 - Colors: bright cyan/blue/gold offense; deep purple/magenta/black/gold defense; blue-and-purple shared baby; underwater ruins/cavern scene. The printed “Tide Sovereignty” mechanics and affinities are provisional. The approved art has a prematurely printed archive banner but is now actually archived and approved.
+
+
+## Velmora — Arthling — APPROVED / LOCKED (2026-11-04)
+- **Lineage:** Velmora, The Metamorph Lineage; three-stage, branching, five forms total.
+- **Shared base:** Velmora, The Catalyst Larva. Cute expressive fluffy segmented caterpillar, turquoise/lavender iridescence and translucent crystalline dorsal growths; unmistakably an original Ling.
+- **Offense intermediate:** Chrysalis, The Emergent Wing. Slender partially developed butterfly-like Arthling, budding stained-glass wings and emerging floating fragments.
+- **Offense mature:** Prismara, The Radiant Sovereign. Graceful insect-bodied butterfly, brilliant turquoise/cyan/gold/violet stained-glass wings, detached crystalline wing fragments acting as orbiting cutting blades; high speed and offense.
+- **Defense intermediate:** Silkwrap, The Cocooned Guardian. Fluffy young moth, compact velvet wings, short living silk ribbons.
+- **Defense mature:** Noctveil, The Dreamweaver Matron. Broad, regal, fluffy moth with enormous midnight violet patterned wings, glowing eye motifs and animated living silk ribbons for barriers and control.
+- **Anatomy/design:** Remain clearly insectoid, not humanoid or merely realistic oversized insects. Both branches retain their recognizable butterfly/moth identity with supernatural distinctive traits.
+- **Canonical approved artwork:** `/Lings/Approved Artwork/Velmora_Metamorph_Lineage_APPROVED.png` (Library ID `libfile_02109230e8988191926e226bcc3a986a`). This is the original user-approved concept sheet, not a regenerated lock confirmation. The sheet's LOCKED banner was premature at generation but user subsequently explicitly approved it.
+- **Notes:** Elements and ability labels on concept sheet are provisional unless separately approved.
