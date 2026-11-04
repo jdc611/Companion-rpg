@@ -52,7 +52,7 @@ function loadTerrainArt(){
  img.onerror=()=>console.warn('West Village terrain reference missing');
  img.src='assets/a_detailed_top_down_pixel_art_game_scene_and_asset.png';
 }
-// loadTerrainArt(); // Reference sheet is not suitable for seamless ground tiling.
+loadTerrainArt(); // Dirt only; grass uses a clean generated illustrated texture.
 
 function drawBuilding(ctx,b,TILE,state){
  // Source concept crops include incompatible baked-in ground and hard rectangular edges.
@@ -62,51 +62,66 @@ function drawBuilding(ctx,b,TILE,state){
 }
 function draw(ctx,key,x,y,w,h){if(!enabled||!ready||!sprites[key])return false;ctx.drawImage(sprites[key],x,y,w,h);return true}
 function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;const frames=hero[face]||hero.down;if(!frames?.length)return false;const frame=walking?Math.floor(clock/155)%frames.length:0;ctx.drawImage(frames[frame],Math.round(x)-3,Math.round(y)-22,40,53);return true}
+const grassTexture={canvas:null};
+function makeGrassTexture(){
+ const c=document.createElement('canvas');c.width=256;c.height=256;
+ const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+ const im=g.createImageData(256,256),d=im.data;
+ function smooth(t){return t*t*(3-2*t)}
+ function periodic(x,y,scale){
+  const u=x/scale,v=y/scale,ix=Math.floor(u),iy=Math.floor(v),fx=smooth(u-ix),fy=smooth(v-iy),period=256/scale;
+  const h=(a,b)=>noise(((a%period)+period)%period+900,((b%period)+period)%period+400);
+  const a=h(ix,iy)*(1-fx)+h(ix+1,iy)*fx,b=h(ix,iy+1)*(1-fx)+h(ix+1,iy+1)*fx;
+  return a*(1-fy)+b*fy;
+ }
+ for(let y=0;y<256;y++)for(let x=0;x<256;x++){
+  const broad=periodic(x,y,64),mid=periodic(x,y,16),fine=noise(x+200,y+300);
+  const v=(broad-.5)*37+(mid-.5)*29+(fine-.5)*20;
+  const i=(y*256+x)*4;
+  d[i]=Math.max(25,Math.min(160,79+v*.76));
+  d[i+1]=Math.max(55,Math.min(180,116+v));
+  d[i+2]=Math.max(18,Math.min(105,49+v*.47));
+  d[i+3]=255;
+ }
+ g.putImageData(im,0,0);
+ // Many tiny tapered blade clusters. Wrap every stroke across boundaries.
+ for(let i=0;i<3900;i++){
+  const x=Math.floor(noise(i+391,28)*256),y=Math.floor(noise(i+201,63)*256);
+  const h=2+Math.floor(noise(i+109,82)*5),n=noise(i+42,51);
+  const col=n<.25?'#315e30':n<.5?'#4d833b':n<.75?'#85a84c':'#b0bb65';
+  for(const dx of [-256,0,256])for(const dy of [-256,0,256]){
+   g.fillStyle='rgba(25,57,25,.26)';g.fillRect(x+dx+1,y+dy,5,2);
+   g.fillStyle=col;g.fillRect(x+dx+2,y+dy-h,1,h);
+   g.fillRect(x+dx+4,y+dy-h+2,1,Math.max(1,h-2));
+   if(n>.53){g.fillStyle='#b6c774';g.fillRect(x+dx+2,y+dy-h,1,1)}
+  }
+ }
+ grassTexture.canvas=c;
+}
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
- if(false){ // Disabled reference-sheet tiling entirely; both grass and road were decorative crops.
-  const variants=path?terrainArt.dirt:terrainArt.grass;
-  const pick=0; // One continuous texture; no abrupt biome patch seams.
-  const tex=variants[Math.min(pick,variants.length-1)];
-  // World-aligned sampling keeps the texture stationary during camera movement.
-  const sx=(gx%80+80)%80,sy=(gy%80+80)%80;
-  for(let oy=0;oy<size;){const sh=Math.min(size-oy,80-((sy+oy)%80));
-   for(let ox=0;ox<size;){const sw=Math.min(size-ox,80-((sx+ox)%80));
-    ctx.drawImage(tex,(sx+ox)%80,(sy+oy)%80,sw,sh,x+ox,y+oy,sw,sh);
-    ox+=sw;
+ if(!path){
+  if(!grassTexture.canvas)makeGrassTexture();
+  const tex=grassTexture.canvas;
+  const sx=(gx%256+256)%256,sy=(gy%256+256)%256;
+  for(let oy=0;oy<size;){const sh=Math.min(size-oy,256-((sy+oy)%256));
+   for(let ox=0;ox<size;){const sw=Math.min(size-ox,256-((sx+ox)%256));
+    ctx.drawImage(tex,(sx+ox)%256,(sy+oy)%256,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
    }oy+=sh;
   }
   return true;
  }
- ctx.fillStyle=path?'#a68761':'#648d3c';ctx.fillRect(x,y,size,size);
- // Dense hand-shaped micro-clumps; no per-tile borders or hard outlines.
- for(let i=0;i<(path?35:36);i++){
-  const rx=Math.floor(noise(gx+i*17,gy+i*29)*size),ry=Math.floor(noise(gx+i*37,gy+i*13)*size);
-  const n=noise(gx+i*7,gy+i*41);
-  if(path){
-   ctx.fillStyle=n<.34?'#8c7153':n<.7?'#c0a17a':'#725e49';
-   ctx.fillRect(x+rx,y+ry,n>.8?3:2,1);
-   if(n>.88){ctx.fillStyle='#d7c09b';ctx.fillRect(x+rx,y+ry-1,2,1)}
-  }else{
-   const h=2+Math.floor(noise(gx+i*23,gy+i*47)*5);
-   ctx.fillStyle=n<.28?'#315d32':n<.62?'#477a3c':'#83a94e';
-   ctx.fillRect(x+rx,y+ry-h,1,h);
-   ctx.fillRect(x+rx+2,y+ry-h+2,1,Math.max(2,h-2));
-   ctx.fillStyle=n>.65?'#a1b86b':'#5c913e';
-   ctx.fillRect(x+rx+1,y+ry-h-1,1,2);
-  }
+ // Keep the detailed illustrated dirt road, without using its floral grass crop.
+ if(terrainArt.loaded&&terrainArt.dirt.length){
+  const tex=terrainArt.dirt[0],sx=(gx%80+80)%80,sy=(gy%80+80)%80;
+  for(let oy=0;oy<size;){const sh=Math.min(size-oy,80-((sy+oy)%80));
+   for(let ox=0;ox<size;){const sw=Math.min(size-ox,80-((sx+ox)%80));
+    ctx.drawImage(tex,(sx+ox)%80,(sy+oy)%80,sw,sh,x+ox,y+oy,sw,sh);ox+=sw;
+   }oy+=sh;
+  }return true;
  }
- if(path){
-  // Light travel wear and gravel: varied by world position, not tile borders.
-  const wear=noise(Math.floor(gx/96)+17,Math.floor(gy/96)+33);
-  if(wear>.43){ctx.fillStyle='rgba(74,54,37,.13)';for(let j=0;j<2;j++){
-   const rx=7+j*15+Math.floor(noise(gx+j,gy+9)*4);
-   ctx.fillRect(x+rx,y+Math.floor(noise(gx+23,gy+j)*10),2,9);
-  }}
-  if(noise(gx+501,gy+73)>.72){const rx=4+Math.floor(noise(gx+9,gy+7)*24),ry=4+Math.floor(noise(gx+4,gy+11)*24);
-   ctx.fillStyle='#e0cba6';ctx.fillRect(x+rx,y+ry,4,2);ctx.fillStyle='#766047';ctx.fillRect(x+rx+1,y+ry+2,3,1)}
- }
+ ctx.fillStyle='#a68761';ctx.fillRect(x,y,size,size);
  return true;
 }
 function terrainDepth(ctx,map,TILE,x0,y0,x1,y1){
