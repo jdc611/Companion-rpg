@@ -2,7 +2,7 @@
    All crops are temporary until true transparent production assets are available. */
 (()=>{'use strict';
 const pieces={tree:[405,129,113,128],autumn:[527,130,110,125],pine:[760,131,88,124],bush:[403,270,91,65],rock:[674,266,95,65],flower:[597,391,73,77],crate:[546,505,54,62],grass:[18,139,69,69],dirt:[239,139,69,69]};
-const sprites={};const hero={};const village={};let ready=false,enabled=true;
+const sprites={};const hero={};const village={};const seamless={};let ready=false,enabled=true;
 const KEY='lings-art-preview-enabled';
 try{enabled=localStorage.getItem(KEY)!=='false'}catch{}
 function crop(img,box,transparent){const [sx,sy,w,h]=box,c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(img,sx,sy,w,h,0,0,w,h);
@@ -12,6 +12,12 @@ async function load(){try{const res=await fetch('lings-art-preview.html',{cache:
 function loadVillage(){const img=new Image();img.onload=()=>{
  const terrain={grassA:[15,140,64,64],grassB:[83,140,64,64],grassC:[150,140,64,64],grassD:[218,140,64,64],dirtA:[284,140,64,64],dirtB:[217,211,64,64],dirtEdge:[83,211,64,64],stone:[350,211,64,64],road:[350,283,64,64]};
  for(const [k,b] of Object.entries(terrain))village[k]=crop(img,b,false);
+ // Mirror the central texture in a 2x2 block so opposite edges match exactly.
+ for(const [name,source] of Object.entries({grass:village.grassA,dirt:village.dirtA})){
+  const c=document.createElement('canvas');c.width=64;c.height=64;const g=c.getContext('2d');
+  for(let yy=0;yy<2;yy++)for(let xx=0;xx<2;xx++){g.save();g.translate(xx*32+(xx?32:0),yy*32+(yy?32:0));g.scale(xx?-1:1,yy?-1:1);g.drawImage(source,16,16,32,32,0,0,32,32);g.restore()}
+  seamless[name]=c;
+ }
  const structures={
  'Your Home':{damaged:[531,150,155,98],mid:[691,149,158,100],done:[857,148,169,102]},
  'Willowmere Hall':{damaged:[531,255,155,102],mid:[692,253,160,106],done:[857,251,169,109]},
@@ -33,7 +39,20 @@ function drawBuilding(ctx,b,TILE,state){
 }
 function draw(ctx,key,x,y,w,h){if(!enabled||!ready||!sprites[key])return false;ctx.drawImage(sprites[key],x,y,w,h);return true}
 function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;const frames=hero[face]||hero.down;if(!frames?.length)return false;const frame=walking?Math.floor(clock/155)%frames.length:0;ctx.drawImage(frames[frame],Math.round(x)-3,Math.round(y)-22,40,53);return true}
-function ground(ctx,type,x,y,size){if(!enabled)return false;if(village.loaded){const key=type==='p'?((Math.floor(x/size)+Math.floor(y/size))%3===0?'dirtB':'dirtA'):(noise(Math.floor(x/size),Math.floor(y/size))>.74?'grassC':'grassA');ctx.drawImage(village[key],x,y,size,size);return true}if(!ready)return false;const key=type==='p'?'dirt':'grass';ctx.drawImage(sprites[key],x,y,size,size);return true}
+function ground(ctx,type,x,y,size){
+ if(!enabled)return false;
+ if(village.loaded){
+  const key=type==='p'?'dirt':'grass',pattern=seamless[key];
+  if(!pattern)return false;
+  // Draw one continuous repeating texture across tile boundaries.
+  const ix=Math.round(x/size),iy=Math.round(y/size);
+  const sx=(ix%2)*32,sy=(iy%2)*32;
+  ctx.drawImage(pattern,sx,sy,32,32,x,y,size,size);
+  return true;
+ }
+ if(!ready)return false;
+ const key=type==='p'?'dirt':'grass';ctx.drawImage(sprites[key],x,y,size,size);return true;
+}
 function noise(x,y){let n=Math.imul(x+129,374761393)+Math.imul(y+71,668265263);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295}
 function trees(ctx,map,TILE,x0,y0,x1,y1){
  if(!enabled||!ready)return;
