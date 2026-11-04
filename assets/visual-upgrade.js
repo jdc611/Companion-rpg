@@ -67,7 +67,7 @@ function ground(ctx,type,x,y,size){
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
  if(terrainArt.loaded){
   const variants=path?terrainArt.dirt:terrainArt.grass;
-  const pick=Math.floor(noise(Math.floor(gx/160)+71,Math.floor(gy/160)+31)*variants.length);
+  const pick=0; // One continuous texture; no abrupt biome patch seams.
   const tex=variants[Math.min(pick,variants.length-1)];
   // World-aligned sampling keeps the texture stationary during camera movement.
   const sx=(gx%80+80)%80,sy=(gy%80+80)%80;
