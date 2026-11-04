@@ -54,7 +54,12 @@ main{align-items:stretch;justify-content:flex-start}
 .joystick-knob{position:absolute;width:53px;height:53px;left:24px;top:24px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#a6c9b7,#5b897e 65%,#345f5c);border:2px solid #c0d8c7;box-shadow:0 4px 9px #071f2788;pointer-events:none;will-change:transform}
 .joystick-zone.active .joystick-base{border-color:#b6d7c0}
 @media(max-height:680px){.joystick-zone{height:112px;width:146px}.joystick-base{transform:scale(.85);transform-origin:top left;left:24px;top:8px}}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · ANALOG STICK 4.5</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+
+/* v4.6 lock the iOS viewport while interacting with controls */
+html,body{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;overscroll-behavior:none!important;touch-action:none!important}
+main{height:100%!important;height:100dvh!important;max-height:100dvh!important;overflow:hidden!important;overscroll-behavior:none!important;touch-action:none!important}
+.world,.world canvas,.controls,.joystick-zone,.joystick-base,.joystick-knob{touch-action:none!important;overscroll-behavior:none!important}
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · FIXED VIEWPORT 4.6</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -495,6 +500,9 @@ function frame(time){const dt=Math.min(50,lastFrame?time-lastFrame:16);lastFrame
 function haptic(){try{if(typeof navigator.vibrate==='function')navigator.vibrate(12)}catch(e){}}
 function stop(dir){if(!dir||held===dir)held=null}
 function start(dir){autoRoute=[];autoTarget=null;held=dir;if(!step)move(dir)}
+// Prevent iOS Safari from scrolling or rubber-banding while playing.
+document.addEventListener('touchmove',e=>{if(e.cancelable)e.preventDefault()},{passive:false});
+document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
 const stickZone=document.getElementById('joystick-zone'),stickBase=document.getElementById('joystick-base'),stickKnob=document.getElementById('joystick-knob');
 let stickPointer=null,stickVector={x:0,y:0};
 function updateStick(e){
