@@ -16,7 +16,12 @@ function completed(){return stages.filter(q=>q.done()).length}
 function panel(){let p=document.getElementById('lings-quest-panel');if(p)return p;
 p=document.createElement('section');p.id='lings-quest-panel';p.style.cssText='margin-top:12px;padding:12px;border:2px solid #6f887b;border-radius:12px;background:#203436;color:#f2e9d6;font:14px system-ui;line-height:1.5';
 const dialog=document.getElementById('dialog');dialog.insertAdjacentElement('afterend',p);return p}
-function render(){const p=panel(),q=active(),n=completed();p.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><strong>Willowmere · Rebuilding</strong><span>'+n+'/'+stages.length+' milestones</span></div><div style="margin:6px 0;color:#d9cda9">Scrap: '+state.scrap+' · Timber: '+state.timber+'</div><div><strong>'+(q?q.name:'First repairs complete')+'</strong> — '+(q?q.desc:'The settlement has a working workshop and a repaired beacon. More rebuilding will follow.')+'</div><div style="margin-top:8px;background:#3d514e;height:7px;border-radius:8px;overflow:hidden"><div style="background:#c5a76c;width:'+(n/stages.length*100)+'%;height:100%"></div></div>'}
+function render(){
+ const p=panel(),q=active(),n=completed();
+ p.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><strong>Willowmere · Rebuilding</strong><span>'+n+'/'+stages.length+' milestones</span></div>'+
+ '<div style="display:flex;justify-content:space-between;gap:8px;margin-top:3px;color:#d9cda9"><span>Scrap: '+state.scrap+' · Timber: '+state.timber+'</span><span>'+(q?q.name:'Repairs complete')+'</span></div>'+
+ '<div class="quest-progress" style="margin-top:5px;background:#3d514e;height:5px;border-radius:8px;overflow:hidden"><div style="background:#c5a76c;width:'+(n/stages.length*100)+'%;height:100%"></div></div>';
+}
 function message(title,body){render();return {title,body}}
 function collect(type,count,label,flag){if(state.flags[flag])return message(label,'You already salvaged what was usable here.');state.flags[flag]=true;state[type]+=count;save();return message(label,'Recovered '+count+' '+type+'. Supplies: '+state.scrap+' scrap, '+state.timber+' timber.')}
 function repair(id,cost,who,desc){if(state.built[id])return message(who,desc+' The repairs are holding.');if(state.scrap<cost.scrap||state.timber<cost.timber)return message(who,'We need '+cost.scrap+' scrap and '+cost.timber+' timber. You currently have '+state.scrap+' scrap and '+state.timber+' timber.');state.scrap-=cost.scrap;state.timber-=cost.timber;state.built[id]=true;save();return message(who,'Repairs completed! '+desc)}
