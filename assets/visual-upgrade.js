@@ -52,7 +52,7 @@ function loadTerrainArt(){
  img.onerror=()=>console.warn('West Village terrain reference missing');
  img.src='assets/a_detailed_top_down_pixel_art_game_scene_and_asset.png';
 }
-loadTerrainArt();
+// loadTerrainArt(); // Reference sheet is not suitable for seamless ground tiling.
 
 function drawBuilding(ctx,b,TILE,state){
  // Source concept crops include incompatible baked-in ground and hard rectangular edges.
@@ -65,7 +65,7 @@ function drawHero(ctx,x,y,face,walking,clock){if(!enabled||!ready)return false;c
 function ground(ctx,type,x,y,size){
  if(!enabled)return false;
  const path=type==='p',gx=Math.round(x),gy=Math.round(y);
- if(terrainArt.loaded&&path){
+ if(false){ // Disabled reference-sheet tiling entirely; both grass and road were decorative crops.
   const variants=path?terrainArt.dirt:terrainArt.grass;
   const pick=0; // One continuous texture; no abrupt biome patch seams.
   const tex=variants[Math.min(pick,variants.length-1)];
