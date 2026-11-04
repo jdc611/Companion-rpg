@@ -103,3 +103,14 @@ User requested a haunted doll as the first ordinary Spectraling, and enthusiasti
 - Official Spectraling universal stages: **Wisp → Ward → Haunt**. “Trickster,” “Dread,” “Jokerant,” and “Dreadclown” are branch/form descriptors from the approved art, not separate universal stages.
 - Theme: cursed circus/forgotten performances, theatrical misdirection, illusions and fear. Native affinity spectral; mutation affinities and gameplay ability specifics not locked. Distinguish offense's deceptive trickster from defense's imposing fear-based protector; “defense” refers to battle role rather than friendly appearance.
 - Visual reference: first Patchrival illustrated concept sheet in this ChatGPT conversation, with purple neon cavern/abandoned carnival backdrop, red balloons and playing cards. Actual image may not be in repository; description is the durable design spec.
+
+## SPECTRALING — SHADEWRAITH (NOVEMBER 4, 2026)
+User loved first Shadewraith art, requested keeping the samurai defense branch unchanged and making offense distinctly more ninja; then reacted “Sweet” to revised ninja/samurai art. Preserve approved design direction, with latest ninja revision and original samurai.
+- Universal stages **Wisp → Ward → Haunt**.
+- Wisp: adorable hovering baby shadow sprite, nearly black smoky rounded body, large luminous violet eyes, bright red scarf trailing dramatically, purple ghostly outline.
+- Offense Ward: young hooded shadow ninja, crouched active stance, red scarf, dark ninja wraps, glowing eyes, shuriken, shadow-smoke trails. Not just generic cloaked assassin.
+- Offense Haunt (**Nightveil**, name shown in artwork, provisional): agile full ninja, dark wrapped/armored fabric, hood and masked shadow face, red streaming scarf, paired short swords or ninja blades, dramatic low acrobatic stance, violet trails; inspired by masked ninja archetype, not a copy of a named existing character.
+- Defense Ward: shadowy wandering ronin in wide straw kasa hat, tattered layered cloak, prayer beads/rope belt, glowing violet eyes, spectral smoke.
+- Defense Haunt (**Ghostblade**, provisional): imposing armored ghost samurai, traditional layered dark blue-violet lamellar armor with gold edging, magnificent horned kabuto helmet, glowing purple sword, spectral purple aura. Keep this branch's design as first illustrated.
+- Background: moonlit Japanese shrine, torii gate, blossoms, lanterns, purple-blue spectral fog. Family Spectraling, native affinity Spectral; gameplay stats and special moves are not yet final.
+- Species name **Shadewraith** shown in concept art; user enthusiastic but did not separately confirm final species name. Art is in conversation, not automatically stored in GitHub.
