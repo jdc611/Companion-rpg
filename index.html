@@ -65,7 +65,7 @@ html{overflow:hidden!important;overscroll-behavior:none!important}
 body{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;height:100dvh!important;overflow:hidden!important}
 main{position:relative!important;width:100%!important;height:100%!important;max-height:100%!important;overflow:hidden!important}
 .controls{touch-action:none!important}
-</style></head><body><main><div class="top"><div><div class="sub">LINGS · FIRST LING 5.7</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
+</style></head><body><main><div class="top"><div><div class="sub">LINGS · HATCHLING PORTRAIT 5.8</div><h1>The Reclaimed Valley</h1></div><button class="reset" id="reset">Return home</button></div><div class="world"><canvas id="game" width="640" height="480" aria-label="Explorable pixel-art village"></canvas><div class="overlay" id="place">First Haven · Prototype</div></div><div class="dialog" id="dialog" role="status" aria-live="polite"><strong>Explore the reclaimed valley.</strong> Follow the eastern road beyond the compact settlement to a river crossing, broken highway, and abandoned ruins. Press A to interact. Place names and buildings are temporary.</div><div class="controls"><div class="joystick-zone" id="joystick-zone" aria-label="Drag thumbstick to move"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div></div><button class="btn action" id="action" aria-label="Interact">A</button></div><div class="hint">Hold the directional buttons to walk or use arrow keys / WASD. Press A or Space to interact.</div><footer>Ling overworld prototype · Temporary locations · Rebuilding quests active · Progress saves locally</footer></main>
 <script src="assets/rebuilding.js?v=42-quest-position"></script>
 <script src="assets/visual-upgrade.js?v=42-layout-fix"></script>
 <script>
@@ -556,16 +556,20 @@ let hatchlingBonded=false;
 try{hatchlingBonded=localStorage.getItem('lings-hatchling-bonded')==='yes'}catch{}
 const hatchling={x:21,y:10};
 let hatchlingTrail={x:hatchling.x,y:hatchling.y};
+let hatchlingVisual={x:hatchling.x,y:hatchling.y};
+function showHatchlingPortrait(){
+ const img=document.createElement('img');img.src='assets/dracling-hatchling-portrait.png';img.alt='Dracling hatchling portrait';img.style.cssText='display:block;width:100%;max-width:220px;max-height:250px;object-fit:contain;margin:8px auto;border-radius:10px';dialog.append(img);
+}
 function hatchlingEncounter(){
- if(hatchlingBonded){say('Young Dracling','Your hatchling chirps and nudges your hand. It seems happy to travel with you.');return}
+ if(hatchlingBonded){say('Young Dracling','Your hatchling chirps and nudges your hand. It seems happy to travel with you.');showHatchlingPortrait();return}
  hatchlingBonded=true;
  try{localStorage.setItem('lings-hatchling-bonded','yes')}catch{}
- hatchlingTrail={x:player.x-1,y:player.y};
- say('Young Dracling','A tiny Dracling-family hatchling peeks out from the grass. It tilts its oversized ears, chirps, and decides to follow you! Your first Ling has joined you.');
+ hatchlingTrail={x:player.x-1,y:player.y};hatchlingVisual={...hatchlingTrail};
+ say('Young Dracling','A tiny Dracling-family hatchling peeks out from the grass. It tilts its oversized ears, chirps, and decides to follow you! Your first Ling has joined you.');showHatchlingPortrait();
 }
 function drawHatchling(x,y,t){
- const X=Math.round(x*TILE),Y=Math.round(y*TILE),bob=Math.round(Math.sin(t/260)*2);
- ctx.save();ctx.translate(X,Y+bob);
+ const X=Math.round(x*TILE),Y=Math.round(y*TILE),bob=Math.round(Math.sin(t/360));
+ ctx.save();ctx.translate(X,Y+bob);ctx.scale(.72,.72);
  // A baby Ling: round body, frilled ears, leaf tail, tiny wings, not an adult dragon.
  ctx.fillStyle='#a84636';ctx.beginPath();ctx.ellipse(-8,15,11,6,-.4,0,Math.PI*2);ctx.fill();
  ctx.fillStyle='#f7b15f';ctx.beginPath();ctx.ellipse(-17,9,7,4,.5,0,Math.PI*2);ctx.fill();
@@ -582,7 +586,7 @@ function drawHatchling(x,y,t){
 }
 function draw(){if(interior){interiorDraw();return}const viewW=canvas.width,viewH=canvas.height;const cx=camera.x,cy=camera.y;ctx.clearRect(0,0,viewW,viewH);ctx.save();ctx.translate(-Math.round(cx),-Math.round(cy));const x0=Math.max(0,Math.floor(cx/TILE)-1),y0=Math.max(0,Math.floor(cy/TILE)-1);for(let y=y0;y<Math.min(H,y0+18);y++)for(let x=x0;x<Math.min(W,x0+23);x++)tile(x,y,map[y][x]);window.LingsArt?.terrainDepth(ctx,map,TILE,x0,y0,Math.min(W,x0+23),Math.min(H,y0+18));window.LingsArt?.trees(ctx,map,TILE,x0,y0,Math.min(W,x0+23),Math.min(H,y0+18));drawDecor();drawWorldDetails();window.LingsArt?.bridge(ctx,49*TILE,21*TILE,4*TILE,3*TILE);for(const b of buildings){window.LingsArt?.buildingBase(ctx,b,TILE);building(b)}window.LingsRebuild?.decorations(ctx,TILE);for(const o of objects)object(o);drawAmbientVillagers();
  if(hatchlingBonded){
-  const hx=hatchlingTrail.x,hy=hatchlingTrail.y;
+  const hx=hatchlingVisual.x,hy=hatchlingVisual.y;
   drawHatchling(hx,hy,worldTime);
  }else drawHatchling(hatchling.x,hatchling.y,worldTime);
  for(const [fx,fy] of [[12,20],[15,20],[23,20],[27,22],[34,22]])fence(fx*TILE,fy*TILE);for(const [kind,px,py] of [['crate',13,19],['barrel',25,19],['lantern',18,20],['lantern',31,22]])window.LingsArt?.prop(ctx,kind,px*TILE,py*TILE,worldTime);drawCharacter(Math.round(visual.x*TILE),Math.round(visual.y*TILE),'#476a9c',player.face,!!step,walkClock);ctx.restore();const mist=biomeMix(visual.x,visual.y);if(mist>.05){ctx.fillStyle='rgba(65,105,126,'+(mist*(.055+.025*Math.sin(worldTime/1200))).toFixed(3)+')';ctx.fillRect(0,0,viewW,viewH);for(let i=0;i<5;i++){const drift=(worldTime*.009+i*117)%800;ctx.fillStyle='rgba(154,207,204,'+(mist*.035).toFixed(3)+')';ctx.fillRect(drift-100,70+i*73,160,4)}}}
@@ -694,7 +698,7 @@ canvas.addEventListener('pointerup',e=>{
 });
 canvas.addEventListener('pointercancel',()=>{touchHold=null;held=null});
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
-function frame(time){const dt=Math.min(50,lastFrame?time-lastFrame:16);lastFrame=time;worldTime+=dt;if(!interior)tickVillagers(dt);if(step){step.elapsed+=dt;walkClock+=dt;const t=Math.min(1,step.elapsed/step.duration);visual.x=step.fromX+(step.toX-step.fromX)*t;visual.y=step.fromY+(step.toY-step.fromY)*t;if(t>=1){visual.x=player.x;visual.y=player.y;step=null;if(held)move(held);else advanceRoute()}}else if(held)move(held);else if(autoRoute.length||autoTarget)advanceRoute();if(touchHold&&!touchHold.holding&&performance.now()-touchHold.at>260){touchHold.holding=true;clearTimeout(tapTimer);lastTouch=null;autoRoute=[];autoTarget=null;steerTo(touchHold.p)}else if(touchHold?.holding)steerTo(touchHold.p);if(interior){draw();requestAnimationFrame(frame);return}const targetX=Math.max(0,Math.min(W*TILE-canvas.width,visual.x*TILE-canvas.width/2+TILE/2));const targetY=Math.max(0,Math.min(H*TILE-canvas.height,visual.y*TILE-canvas.height/2+TILE/2));const smoothing=1-Math.exp(-dt/95);camera.x+=(targetX-camera.x)*smoothing;camera.y+=(targetY-camera.y)*smoothing;draw();requestAnimationFrame(frame)}
+function frame(time){const dt=Math.min(50,lastFrame?time-lastFrame:16);lastFrame=time;worldTime+=dt;if(!interior){tickVillagers(dt);if(hatchlingBonded){const k=1-Math.exp(-dt/145);hatchlingVisual.x+=(hatchlingTrail.x-hatchlingVisual.x)*k;hatchlingVisual.y+=(hatchlingTrail.y-hatchlingVisual.y)*k;}}if(step){step.elapsed+=dt;walkClock+=dt;const t=Math.min(1,step.elapsed/step.duration);visual.x=step.fromX+(step.toX-step.fromX)*t;visual.y=step.fromY+(step.toY-step.fromY)*t;if(t>=1){visual.x=player.x;visual.y=player.y;step=null;if(held)move(held);else advanceRoute()}}else if(held)move(held);else if(autoRoute.length||autoTarget)advanceRoute();if(touchHold&&!touchHold.holding&&performance.now()-touchHold.at>260){touchHold.holding=true;clearTimeout(tapTimer);lastTouch=null;autoRoute=[];autoTarget=null;steerTo(touchHold.p)}else if(touchHold?.holding)steerTo(touchHold.p);if(interior){draw();requestAnimationFrame(frame);return}const targetX=Math.max(0,Math.min(W*TILE-canvas.width,visual.x*TILE-canvas.width/2+TILE/2));const targetY=Math.max(0,Math.min(H*TILE-canvas.height,visual.y*TILE-canvas.height/2+TILE/2));const smoothing=1-Math.exp(-dt/95);camera.x+=(targetX-camera.x)*smoothing;camera.y+=(targetY-camera.y)*smoothing;draw();requestAnimationFrame(frame)}
 function haptic(){try{if(typeof navigator.vibrate==='function')navigator.vibrate(12)}catch(e){}}
 function stop(dir){if(!dir||held===dir)held=null}
 function start(dir){autoRoute=[];autoTarget=null;held=dir;if(!step)move(dir)}
