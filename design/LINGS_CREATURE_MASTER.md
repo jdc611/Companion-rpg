@@ -260,3 +260,36 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - **Design:** Parasite/host-control versus colony/symbiosis theme; maintain clearly arthropod anatomy but supernatural Ling identity. Color palette teal/crimson offense and violet/blue defense.
 - **Canonical approved artwork:** `/Lings/Approved Artwork/Vexling_Parasite_Lineage_APPROVED.png` (Library ID `libfile_c4adcb228e7c8191b6196f95ee42745e`). This is the original approved five-form concept sheet, not a regenerated confirmation image. User explicitly locked it.
 - **Notes:** Printed elemental affinities and signature ability Hostlink are provisional until separately finalized.
+
+
+## MORPHLING ROSTER RECONCILIATION — NOVEMBER 5, 2026
+**Correction:** The prior master omitted THREE already-approved Morphling lineages. Do not count these as variations of Morfex or Trivex. There are **five distinct Morphling lineages** currently recorded: Morfex, Trivex, Vexenode, Triadyn, and the unnamed Gear Morphling. The prior two-lineage count was incorrect.
+
+### MORPHLING — VEXENODE (APPROVED VISUAL DESIGN)
+- **Base:** small alien-like adaptable Morphling, icy-blue and white visual identity, shared origin for both branches.
+- **Offense:** youthful Ranger-style transformation developing into **Star Ranger**, a sleek original armored energy fighter with V-shaped visor and **two laser blasters/pistols**. Distinctly a Morphling; inspiration is the broad armored superhero/ranger genre, not a copied character.
+- **Defense:** youthful armored intermediate developing into **Aegis Titan**, bulky icy-blue/white futuristic armor with a **massive two-handed hammer/maul**, not a shield-only form.
+- **Three-stage branching lineage** (five designs); artwork sometimes uses Wisp → Ward → Haunt, but those are **Spectraling** stage labels and **NOT approved Morphling universal stages**. The Morphling stage naming remains undecided.
+- **Artwork references:** Library files titled `Vexenode: Adaptive Morphling Evolution.png` and `Vexenode Locked: Adaptive Evolution Infographic.png`. Original exact approved image not yet verified in `/Lings/Approved Artwork/`; do not claim archived there until verified.
+- User approved this concept on November 4, 2026. Branch names **Star Ranger** and **Aegis Titan** are artwork labels, not separately ratified universal stage names.
+
+### MORPHLING — TRIADYN (APPROVED / LOCKED)
+- **Base:** white morph-suit-like humanoid with **one solid triangular face motif**; triangle identity persists in every evolution. No conventional facial features required.
+- **Offense:** athletic caped superhero evolution, final form **Vanguard**, with silver-white body armor, triangular glowing chest emblem and a cape with red lining.
+- **Defense:** broad armored guardian, final form **Aegisguard**, with **TWO circular shields**, each bearing a triangle emblem, and subtle spikes on defensive armor. Both shields are essential; not one shield.
+- Three-stage branching visual design; original concept art used Core → Ward → Apex, which are **artwork labels only**, not globally approved Morphling stages.
+- **Artwork reference:** Library file `Triadyn Morphling: Adaptive Sentinel.png`; exact approved original not yet verified in the organized Approved Artwork folder.
+- User explicitly locked the design November 4, 2026. Preserve its approved distinct offensive and defensive silhouettes.
+
+### MORPHLING — GEAR / GUN-SHIELD SHAPESHIFTER (APPROVED / LOCKED, NAME UNVERIFIED)
+- **Base:** cute gear-like mechanical/morphic Ling; both branches visibly develop from the same gear anatomy.
+- **Offense:** morphs its body into a **gun-inspired shape**; this is its creature anatomy, not simply a humanoid holding a gun.
+- **Defense:** morphs its body into a **shield-inspired shape**; this is its creature anatomy, not merely a fighter holding a shield.
+- User changed its color treatment during design and explicitly said **'Lock it in'** November 4, 2026. The exact final palette, species name, form names and original approved image are **not verified** in this record: do not invent them or substitute an earlier color draft.
+- Three-stage branching concept with shared baby, offense and defense lines. Preserve the precise approved art once located.
+
+### Morphling preservation and counting notes
+- **Five recorded Morphling species lineages:** Morfex; Trivex; Vexenode; Triadyn; Gear Morphling (working identifier only).
+- Distinguish species lineage counts from form counts: five branching species would mean up to 25 individual forms, subject to checking original stage structures.
+- This correction adds **three** previously omitted species to the existing roster; no new species were designed by this update.
+- All three artwork references above need verification and filing of the **original user-approved images**; text records alone are not image backups.
