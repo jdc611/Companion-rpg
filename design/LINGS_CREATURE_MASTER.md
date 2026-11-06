@@ -326,3 +326,14 @@ Other variants remain in the Library; exact final-version matching still needs v
 - **Approved art:** `/Lings/Approved Artwork/Breezling_Wind_Lineage_APPROVED.png`, Library ID `libfile_35fb5a0683548191bd5a5571cc020f08`. User said 'Lock it' after approving the five-form pure-wind redesign; this archived image is the final locked sheet.
 - **Art sheet provisional mechanics:** Flying affinity; Gale Flow signature ability; offense favors speed/cutting gusts, defense barriers/pressure redirection.
 - **Roster:** Terraling lineages now FOUR: Prismite, Sandsurge, Stormwraith, Breezling.
+
+
+## TERRALING — CINDRIFT (LOCKED, NOVEMBER 5, 2026)
+- **Species:** Cindrift — The Lava Ribbon Ling. Family Terraling. Unique floating molten ribbon organism, not a conventional lava golem; no arms, legs or solid humanoid anatomy.
+- **Evolution structure:** FIVE unique designs across THREE stages, branching immediately after baby. Shared Stage 1 **Cindrift** → Stage 2 offense **Lashflow** → Stage 3 offense **Inferlash**; OR Stage 2 defense **Coilforge** → Stage 3 defense **Calderaith**.
+- **Distinctive locked visual:** bright orange/yellow molten lava ribbons threaded through and surrounded by **numerous floating obsidian/volcanic rock fragments integrated as actual parts of the creature**, not incidental scenery. Expressive angular obsidian face with glowing eyes. Fragments grow in number and function through evolution.
+- **Offense:** elongated and branching lava lashes with floating jagged rock shards as striking projectiles; final Inferlash radiates multiple independent whipping magma streams with shards.
+- **Defense:** thick coiling lava ring with floating rock armor; final Calderaith forms a wide, hollow furnace-like rotating ring surrounded by layered levitating obsidian shields.
+- **Art sheet provisional mechanics:** Fire primary, Rock secondary, Magma Flow signature ability (stacking fire power/speed while active); treat as proposed until mechanics ratified.
+- **Approved artwork:** `/Lings/Approved Artwork/Cindrift_Lava_Ribbon_Lineage_APPROVED.png` Library ID `libfile_b54fb10544fc81918d60293d2d8cf376`. This is the user-locked, **rock-heavy revised version**, not the earlier sparsely-rocked draft.
+- **Roster:** Terraling species lineages now FIVE: Prismite, Sandsurge, Stormwraith, Breezling, Cindrift.
