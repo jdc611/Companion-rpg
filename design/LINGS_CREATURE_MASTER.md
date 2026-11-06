@@ -301,3 +301,16 @@ Existing Library images copied to `/Lings/Approved Artwork/` without regeneratio
 - Triadyn_Adaptive_Sentinel_Artwork.png — libfile_c932e96b841481919eff28b1b6ff49ed
 - Gearmorph_Crimson_Modular_Artwork.png — libfile_5e0cf23285e88191a4c81c68479cae4c
 Other variants remain in the Library; exact final-version matching still needs visual verification.
+
+
+## TERRALING — STORMWRAITH (LOCKED, NOVEMBER 5, 2026)
+- **Species:** Stormwraith — The Tempest Terraling.
+- **Family:** Terraling (atmospheric inorganic matter / living storm).
+- **Evolution:** Single-stage; no evolution, no branches.
+- **Scale:** Roughly human-sized, **not a giant**.
+- **Visual anatomy:** Entire humanoid figure made of billowing layered storm clouds, no flesh or solid body. Cloud-textured head, torso, arms, and legs; glowing blue-white eyes; electric blue/violet lightning pulsing through the cloud body, with rainfall falling from it. Energetic yet readable human-shaped silhouette.
+- **Art style:** Approved detailed, polished game-creature concept sheet, with character centerpiece, inset detail/action poses, black/dark backdrop and gold-bordered information panels. Preserve the original approved image rather than regenerating.
+- **Art sheet labels (not necessarily final game mechanics):** Electric primary / Flying secondary; signature ability 'Tempest Body'; weather, lightning, wind, rain manipulation. Treat these as artwork labels pending game-mechanics ratification.
+- **Approved original image:** `/Lings/Approved Artwork/Stormwraith_Tempest_Terraling_APPROVED.png` (Library `libfile_574aede16e388191a922c1546f272b66`).
+- **Approval:** User explicitly said 'That is sick. Lock it in' after viewing the revised human-sized concept sheet. Do not substitute the preceding oversized storm-giant artwork.
+- **Roster update:** Terraling lineages now 3 (Prismite, Sandsurge, Stormwraith).
