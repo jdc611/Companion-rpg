@@ -337,3 +337,14 @@ Other variants remain in the Library; exact final-version matching still needs v
 - **Art sheet provisional mechanics:** Fire primary, Rock secondary, Magma Flow signature ability (stacking fire power/speed while active); treat as proposed until mechanics ratified.
 - **Approved artwork:** `/Lings/Approved Artwork/Cindrift_Lava_Ribbon_Lineage_APPROVED.png` Library ID `libfile_b54fb10544fc81918d60293d2d8cf376`. This is the user-locked, **rock-heavy revised version**, not the earlier sparsely-rocked draft.
 - **Roster:** Terraling species lineages now FIVE: Prismite, Sandsurge, Stormwraith, Breezling, Cindrift.
+
+
+## AQUILING — TIDERUSK (LOCKED, NOVEMBER 6, 2026)
+- **Species:** Tiderusk, The Aqua Blade Ling. Narwhal-inspired aquatic creature, distinct from other Aquiling lineages.
+- **Structure:** FIVE designs across THREE stages, branching immediately after shared baby. Stage 1 **Tiderusk** → Stage 2 offense **Riptusk** → Stage 3 offense **Leviablade**; OR Stage 2 defense **Shelltusk** → Stage 3 defense **Bulwarkion**.
+- **Shared baby:** cute streamlined blue-and-white narwhal-like aquatic Ling with a short pointed ivory horn and expressive bright eyes.
+- **Offense:** increasingly streamlined, swift aquatic silhouette. The original horn develops into a **long, sleek sword-like blade**, integral to its head rather than a separate weapon; slashing with water pressure and precision.
+- **Defense:** broader, tougher body with layered pale blue/ivory armor. The horn spreads into a **wide, spiked shield-like frontal structure**, integral to the head and able to block or redirect attacks. Final Bulwarkion is distinct from Leviablade.
+- **Approved exact artwork:** `/Lings/Approved Artwork/Tiderusk_Narwhal_Lineage_APPROVED.png`, Library ID `libfile_3ed617aeef988191a1ceae98c55b5316`. User said 'I like it. Lock it' November 6. Preserve original art; do not regenerate.
+- **Artwork provisional mechanics:** Water primary, Rock secondary, Tidal Focus ability; not separately ratified as final game mechanics.
+- **Roster:** Adds Tiderusk as a new Aquiling lineage; do not merge with Thalvorx or the earlier unillustrated shark/whale concept.
