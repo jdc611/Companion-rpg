@@ -293,3 +293,11 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - Distinguish species lineage counts from form counts: five branching species would mean up to 25 individual forms, subject to checking original stage structures.
 - This correction adds **three** previously omitted species to the existing roster; no new species were designed by this update.
 - All three artwork references above need verification and filing of the **original user-approved images**; text records alone are not image backups.
+
+
+### Morphling artwork archive update
+Existing Library images copied to `/Lings/Approved Artwork/` without regeneration:
+- Vexenode_Locked_Artwork.png — libfile_30ebcf4966448191a2b0097e6d621a10
+- Triadyn_Adaptive_Sentinel_Artwork.png — libfile_c932e96b841481919eff28b1b6ff49ed
+- Gearmorph_Crimson_Modular_Artwork.png — libfile_5e0cf23285e88191a4c81c68479cae4c
+Other variants remain in the Library; exact final-version matching still needs visual verification.
