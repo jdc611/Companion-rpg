@@ -314,3 +314,15 @@ Other variants remain in the Library; exact final-version matching still needs v
 - **Approved original image:** `/Lings/Approved Artwork/Stormwraith_Tempest_Terraling_APPROVED.png` (Library `libfile_574aede16e388191a922c1546f272b66`).
 - **Approval:** User explicitly said 'That is sick. Lock it in' after viewing the revised human-sized concept sheet. Do not substitute the preceding oversized storm-giant artwork.
 - **Roster update:** Terraling lineages now 3 (Prismite, Sandsurge, Stormwraith).
+
+
+## TERRALING — BREEZLING (LOCKED, NOVEMBER 5, 2026)
+- **Family:** Terraling, pure living wind/air. Distinct from Stormwraith: no lightning, muscular clouds, solid armor, or physical limbs; only flowing wind currents and a recognizable face.
+- **Evolution:** Three stages, FIVE unique forms. Shared baby **Breezling** (Stage 1) splits immediately into **Gustblade** (Stage 2 offense) → **Stormcleave** (Stage 3 offense) OR **Whirlward** (Stage 2 defense) → **Aegisvortex** (Stage 3 defense). No shared middle form, no fourth stage.
+- **Baby:** small playful puff of visible wind, luminous eyes and face in moving airflow.
+- **Offense:** elongated streamlined wind-gust adolescent, later a large fast flowing crescent of cutting wind currents; no solid weapons or body.
+- **Defense:** compact spiraling wind adolescent, later a broad rotating vortex with a face within the airflow, redirecting attacks and forming pressure barriers.
+- **Visual identity:** luminous ice-blue/white translucent air trails, drifting leaves/debris as visual scale cues; distinct silhouettes across branches.
+- **Approved art:** `/Lings/Approved Artwork/Breezling_Wind_Lineage_APPROVED.png`, Library ID `libfile_35fb5a0683548191bd5a5571cc020f08`. User said 'Lock it' after approving the five-form pure-wind redesign; this archived image is the final locked sheet.
+- **Art sheet provisional mechanics:** Flying affinity; Gale Flow signature ability; offense favors speed/cutting gusts, defense barriers/pressure redirection.
+- **Roster:** Terraling lineages now FOUR: Prismite, Sandsurge, Stormwraith, Breezling.
