@@ -248,3 +248,15 @@ User explicitly approved the **five-form three-stage merfolk Aquiling lineage**,
 - **Revision history:** User rejected early art because both branches were spiky; offense smoothed and defense plated. User then repeatedly rejected intermediate stages as near-copies of mature forms; latest hybrid adolescent revision accepted **'lock it for now'**. Thus approval is provisional and further refinements remain possible.
 - **Canonical current approved artwork:** `/Lings/Approved Artwork/Scorthan_Venomtail_Lineage_APPROVED.png` (Library ID `libfile_f48316d5fa4481919b096f9582d8b678`). This is the most recent hybrid middle-stage sheet, NOT earlier attempts.
 - **Notes:** Elemental and signature ability labels printed on sheet are provisional. Any 'officially locked' banner predating this approval did not represent actual approval.
+
+
+## Vexling — Arthling — APPROVED / LOCKED (2026-11-05)
+- **Lineage:** Vexling, The Parasite Lineage; three stages with divergent offense and defense branches, five forms total.
+- **Shared base:** Vexling, The Symbiote Larva. Cute, unsettling translucent blue/ivory parasite with visible glowing crimson/pink internal organs, oversized eyes, pink filament antennae and multiple small grasping legs.
+- **Offense intermediate:** Puppetarch, The Host Seizer. Sleek teal/crimson parasite beginning to occupy and animate an abandoned insect exoskeleton, with visible trailing red tendrils.
+- **Offense mature:** Puppeteer, The Mind Weaver. Tall, swift predatory multi-legged host exoskeleton with long articulated scythe-like limbs, a visibly glowing teal/crimson parasite component, and long controlling filaments; speed, manipulation, and disruption.
+- **Defense intermediate:** Broodcell, The Nest Carrier. Squat violet armored arthropod with transparent glowing chambers containing small blue symbiotic creatures.
+- **Defense mature:** Hivekeeper, The Colony Heart. Broad walking living colony fortress, layered purple shell with multiple bioluminescent blue windows full of tiny symbionts, oversized defensive limbs, protection, regeneration, and barriers.
+- **Design:** Parasite/host-control versus colony/symbiosis theme; maintain clearly arthropod anatomy but supernatural Ling identity. Color palette teal/crimson offense and violet/blue defense.
+- **Canonical approved artwork:** `/Lings/Approved Artwork/Vexling_Parasite_Lineage_APPROVED.png` (Library ID `libfile_c4adcb228e7c8191b6196f95ee42745e`). This is the original approved five-form concept sheet, not a regenerated confirmation image. User explicitly locked it.
+- **Notes:** Printed elemental affinities and signature ability Hostlink are provisional until separately finalized.
