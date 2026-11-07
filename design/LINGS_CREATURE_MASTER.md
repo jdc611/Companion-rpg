@@ -471,3 +471,11 @@ This addendum captures the story-building session of November 6, 2026. It record
 - He is **not knowingly embarking on a quest** to find his biological father, discover Morphling ancestry, collect fragments, or save the world. Those wider stakes and truths emerge later.
 - This has both **external validation** (earning the group's recognition) and **internal self-worth** (overcoming the doubt created by his failed qualification).
 - Assistant-proposed, not yet locked: he might aim to survive several days outside, explore dangerous territory, and return with evidence of competence; his later growth may involve recognizing that restraint, empathy, and judgment matter more than a title. Do not impose a specific mission or final arc without further discussion.
+
+
+## NOVEMBER 6 — TWO EARLY LING COMPANIONS (USER PROPOSAL)
+- User is considering **two Lings encountered early in the protagonist's solo journey**, rather than a human traveling companion at departure.
+- **Mechanical/robotic-type Ling**: potentially a **small floating companion** OR a **more humanoid form** (not decided). Personality: **very direct and literal-minded**, does not understand humor or sarcasm, allowing organic comic exchanges. Its family classification, origins, name, design, communication, and exact meeting are not yet settled. Do not invent a ninth family or assume all mechanical entities are Morphlings.
+- **Synkith**: user is **leaning toward** the protagonist encountering a **seemingly weak, injured Synkith**. Synkith is the established harmony-associated Legendary Morphling; its vulnerability and identity could be a major narrative mystery. Preserve the approved Synkith design/dossier rather than inventing a replacement appearance. How a Legendary is injured, why it appears weak, and how much the protagonist or readers know are unresolved.
+- Assistant suggestion: mechanical Ling supplies dialogue/comedy, injured Synkith supplies emotional bond and mystery. Their order of appearance, whether both join permanently, and any first-bond scene are proposals, not locked.
+- Protect the early mystery: do not reveal Synkith's Legendary identity or cosmic mythology too soon if this direction is adopted.
