@@ -409,3 +409,13 @@ This addendum captures the story-building session of November 6, 2026. It record
 - The protagonist's **true Morphling father is kept secret from him and others**, because discovery of his parentage risks **exile** from the community. His human mother knows the secret. Whether his father once lived inside disguised as human, met his mother outside, vanished, or is still alive is **undecided**.
 - Preserve the dramatic irony: the **river sustains the settlement yet connects it to the world it rejects**. This is a proposed literary motif, not mandatory canon.
 - Do not assume settlement leadership is evil; the danger outside may be real and the isolation may have protected residents. The precise rules, governance, settlement name, and opening incident remain to be designed.
+
+
+## NOVEMBER 6 — PROTAGONIST'S FATHER (USER-CONFIRMED)
+- The protagonist's biological father is an **ordinary Morphling with the ability to chameleon/mimic the appearance of species he has seen**. He took human form and **became a member of the isolated human settlement**, living among its inhabitants as a human.
+- He fell in love with a human woman. **Neither anticipated that humans and Morphlings were biologically compatible enough to conceive a child.** Their son is the protagonist, a human–Morphling hybrid who grows up unaware of his true father and heritage.
+- Discovery of the father's Morphling identity and the family's secret would lead to **immediate exile** under the settlement's isolationist rules.
+- The father **chose to leave** to protect his partner and their child from discovery and exile. **His departure was a protective sacrifice, not rejection or lack of love.** His current whereabouts and whether he is alive remain open.
+- Whether the mother knew his true species when their relationship began, how she explains his absence, and whether the son resents him are **not yet established**.
+- The son's possible inherited mimicry or limited transformations are **proposals only**, not locked mechanics.
+- This clarifies the prior speculative alternatives: father **did live inside the settlement disguised as human**, and his reason for leaving is now confirmed.
