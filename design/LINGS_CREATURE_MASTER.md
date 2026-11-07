@@ -505,3 +505,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - Assistant proposal: a **living Morphling with mechanical-looking biology** rather than an ordinary constructed robot; could reconfigure components for limited practical functions. Whether it is organic, artificial, or a hybrid remains **unconfirmed**.
 - This would make the protagonist (half-Morphling), Synkith (Legendary Morphling), and the floating companion (Morphling) three distinct expressions of adaptation. Do not assume they share powers or origins.
 - Exact visual form, origin, limitations, personality history, and meeting circumstances are still open.
+
+
+## NOVEMBER 6 — FLOATING MORPHLING'S LIMITATIONS AND LATE REVEAL (USER-CONFIRMED)
+- The floating, speaking, literal-minded companion is a **rather weak Ling** and **cannot transform**. This overrides the earlier assistant suggestion that it mechanically reconfigures or transforms into tools or limbs. Morphling classification remains the user's preferred fit.
+- **Later revelation scene:** after the protagonist learns he is half Morphling, he asks the floating companion whether it knew. The companion says **yes/of course**. When challenged for not revealing it, it replies in essence **'You didn't ask.'** This is an intentional character-defining payoff, not an early spoiler. Exact wording can be polished later.
+- The floating companion **has known the protagonist's mixed heritage**, but why/how it recognized him remains unresolved. Do not establish a universal Morphling detection ability that would contradict the father's successful human disguise.
+- The character's strengths are primarily **personality, observation, companionship, and literal intelligence**, not combat power or transformation. Exact abilities, origin, visual design, and any insecurities remain open.
