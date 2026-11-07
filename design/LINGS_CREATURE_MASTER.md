@@ -541,3 +541,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **CONFIRMED:** Synkith is **genuinely weak** when the protagonist first encounters it and truly needs help. Synkith still deliberately sought the protagonist; this is not a staged fake injury or deceptive compassion test. Exact cause of weakness, bridge setting, and scene specifics remain open.
 - **USER CONCEPT TO PRESERVE:** Add a **fat/rotund bipedal pig Bestiling**, wielding **two swords**, with a **minimal costume/outfit**. Its defensive approach involves **swapping to a more defensive weapon** that is **not necessarily a shield**. This is a distinct creature concept within Bestilings, not the Bestiling Guardian.
 - **ASSISTANT PROPOSALS ONLY (NOT LOCKED):** pronounced tusks, waist wrap/belt/shoulder guard, slightly curved short swords, heavy iron staff for defensive stance, stance-based combat mechanics. Name, appearance details, defensive weapon and battle rules all undecided. Preserve the user's original dual-sword/defensive-swap concept regardless of later refinement.
+
+
+## NOVEMBER 7 — PIG SWORDSMAN STORY IMPORTANCE / ART DIRECTION
+- User likes the newly generated **rotund bipedal pig Bestiling swordsman** concept art and wants this character to be **a key player in the story**, not merely background creature design.
+- User notes the image's **gritty, realistic rendering differs from other approved Lings**. Preserve the **underlying look** (stout pig/boar silhouette, tusks, expressive face, minimal warrior outfit, dual swords) while ultimately **harmonizing its art style** with the consistent established Ling visual language. Do not assume the current rendering style becomes universal canon.
+- Dual swords remain central; the exact defensive weapon/swap is undecided.
+- **Assistant proposal, not confirmed:** make him a recurring experienced warrior and eventually trusted ally to protagonist, protective of weaker Lings, providing contrast between strength and compassion. Personality, plot role specifics, name, and allegiances remain open for user decision.
