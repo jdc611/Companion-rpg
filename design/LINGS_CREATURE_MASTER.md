@@ -419,3 +419,12 @@ This addendum captures the story-building session of November 6, 2026. It record
 - Whether the mother knew his true species when their relationship began, how she explains his absence, and whether the son resents him are **not yet established**.
 - The son's possible inherited mimicry or limited transformations are **proposals only**, not locked mechanics.
 - This clarifies the prior speculative alternatives: father **did live inside the settlement disguised as human**, and his reason for leaving is now confirmed.
+
+
+## NOVEMBER 6 — FATHER'S COVER STORY, AUTHORIZED RUNS, LIVING MOTHER
+- The protagonist's mother **told him his father died while trying to provide a better life for them**. This is a **cover story**, not the truth: his Morphling father actually chose to leave to protect mother and child from exile if his identity was exposed.
+- His father was publicly known as **one of the few authorized outside-the-walls expedition personnel** (user's provisional term: **'runners'**). This role gives a credible explanation for his supposed death on a dangerous sanctioned run.
+- **Most settlement members may not leave the walls**, but this small authorized group can go on approved expeditions. The settlement remains mostly self-sufficient; exact expedition duties and policies still open.
+- The **mother is still alive at the start of the story** (user's current preference, phrased 'I think'; treat as working direction, not irrevocable).
+- **'Pathfinders'** is an assistant-proposed alternative name to 'runners', **not approved/locked**. Other names may be explored.
+- Possible protagonist motivation (PROPOSAL ONLY): he admires the father he believes died on an expedition and dreams of joining the same authorized group; his mother opposes this because she knows the truth. Do not lock this character motivation without user approval.
