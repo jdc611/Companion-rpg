@@ -428,3 +428,11 @@ This addendum captures the story-building session of November 6, 2026. It record
 - The **mother is still alive at the start of the story** (user's current preference, phrased 'I think'; treat as working direction, not irrevocable).
 - **'Pathfinders'** is an assistant-proposed alternative name to 'runners', **not approved/locked**. Other names may be explored.
 - Possible protagonist motivation (PROPOSAL ONLY): he admires the father he believes died on an expedition and dreams of joining the same authorized group; his mother opposes this because she knows the truth. Do not lock this character motivation without user approval.
+
+
+## NOVEMBER 6 — PATHFINDER REJECTION / INCITING INCIDENT
+- **User-established plot direction:** The curious protagonist seeks to qualify for the settlement's authorized outside-the-walls expedition group (working term 'Pathfinders'; previously 'runners'). **He fails a physical or other qualification test because of his hidden Morphling DNA.** He does not understand why he failed or know his hybrid ancestry.
+- **His failure motivates him to go outside the walls on his own**, defying the isolationist community's prohibition, to **prove the examiners wrong**. This is the initial personal motivation, not foreknowledge of the cosmic mystery or a destiny to save the world.
+- The precise screening format is **not yet chosen**. Assistant proposed a staged endurance/navigation/survival examination ending in a medical screening that flags atypical physiology as unfit without identifying Morphling heritage. This is a **proposal**, not locked canon.
+- Whether he passes earlier tests, the examiners' response, how his mother reacts, whether he leaves at night, and the first encounter outside are **open story decisions**.
+- This makes hybrid biology an initial **obstacle** rather than an obvious superpower. Preserve the slow revelation of his parentage.
