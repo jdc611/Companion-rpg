@@ -490,3 +490,11 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **Unresolved:** how Synkith sensed/identified the protagonist, why it searched for him, whether it is injured at first meeting, and when the reader learns it intentionally found him. Do not prematurely reveal his Morphling heritage, Synkith's Legendary nature, the Creator, fragments, or timelines.
 **ASSISTANT STORY SUGGESTION (NOT LOCKED)**
 - The protagonist mistakenly thinks he discovered or helped a vulnerable Ling; later learns Synkith chose him. Their bond is mutual protection, not capture or conquest.
+
+
+## NOVEMBER 6 — MAIN TRIO COMMUNICATION (USER-CONFIRMED)
+- **Synkith is initially unable to speak human language**, not secretly fluent but choosing silence. Synkith communicates nonverbally through expressions, movements, gestures, vocalizations, and other nonverbal means; future developments are open. Preserve Synkith's intelligence and emotional depth without requiring human speech.
+- The **floating mechanical Ling can speak**. Its established personality is literal-minded, direct, and prone to misunderstanding humor and sarcasm. Floating form is now favored; exact design, origin, and family remain undecided.
+- The protagonist is particularly good at interpreting Synkith's nonverbal intentions and emotions, but **this is not confirmed telepathy or direct mind-reading**. His connection with Synkith should develop through attention, empathy, and trust.
+- User explicitly likes the conversational dynamic where the protagonist understands Synkith's cues while the mechanical Ling insists no verbal instruction was issued; use natural, occasional humor of this kind.
+- General world communication system remains **proposed rather than canon**: speech can depend on anatomy, learned language, and adaptations rather than family alone; Morphlings may be especially capable of mimicking speech. Do not lock this rule without explicit approval.
