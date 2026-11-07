@@ -528,3 +528,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - The particular companion's **individual name remains intentionally undecided**; protagonist and Oculin may have a humorous exchange about why a species designation is not a personal name. Do not assign one without user approval.
 - **Cyril** (pronounced SEAR-il) is currently the user's favored but **NOT finalized** protagonist name; **Rhyden** remains an alternative. The protagonist name must not yet be treated as canon.
 - Preserve approved smooth-shelled, glossy black face, cyan-eye, no-mouth, halo visual from previous addendum; do not replace the approved visual with a generic Oculin image.
+
+
+## NOVEMBER 6 — FIRST OCULIN ENCOUNTER CHOICE (CONFIRMED); SYNKITH INTRO (PROPOSED)
+- User **chose Option A: the curious observer** for the protagonist's first encounter with the Oculin. After leaving the isolated settlement alone, protagonist notices a small floating Oculin silently observing/following him in the wilderness. Oculin is curious about the protagonist's unusual nature and gradually becomes a reluctant traveling companion; friendship develops organically rather than via instant rescue or formal assignment.
+- Oculin remains literal, observant, verbally capable, physically weak, and not omniscient. Protagonist initially may mistake 'Oculin' (species designation) for a personal name, saving the naming misunderstanding for a later comic scene.
+- **PROPOSED, not yet approved:** shortly afterward protagonist finds Synkith near an old bridge/ruin, appearing vulnerable or exhausted; protagonist approaches gently and helps without violence. Synkith has intentionally sought him, but its motive and legendary identity stay concealed. Trio shelters together; Oculin suspects Synkith is more than it appears, while protagonist remains unaware. Do not treat specific dialogue, timing, bridge, or injury as confirmed canon until user approves.
+- Protagonist name **Cyril** (SEAR-il) remains provisional, with Rhyden another candidate.
