@@ -596,3 +596,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - Preserve this as a **major delayed reveal**: protagonist, guild, and reader initially interpret raids as ordinary Dracling aggression, not a coordinated search for the Creator's power. Avoid revealing the power's division into eight fragments, other timelines, or the true Shattering mechanism too early.
 - **Proposed clues, not canon:** selectively excavated ruins, attacks that leave some ancient structures untouched, patterns noticed by Oculin. Exact recruitment strategy, target sites, Dracling command structure, and traitor identity reveal timing remain open.
 - **Outstanding chronology:** original traitor's survival across ~50–100 post-Shattering years must be explained plausibly; long-lived species or Aetherion exposure are possibilities, not yet canon. Rogue Morphling traitor's current role/motive continuity also unresolved.
+
+
+## NOVEMBER 7 — DRACLINGS TARGET HISTORICAL KNOWLEDGE (CONFIRMED)
+- **CONFIRMED:** Cyril and allies eventually discover that the traitor-led Dracling campaign is **specifically targeting historical records, artifacts/pieces, historians, and comparable sources of ancient knowledge** that might reveal **where to find Aetherion**. This is the concealed strategic purpose behind seemingly indiscriminate destruction and displacement.
+- The investigation should reveal a pattern gradually: Dracling raids are not merely innate destructiveness. Early protagonists and readers should not yet know the full Aetherion truth or eight-fragment/timeline structure.
+- **ASSISTANT PROPOSALS ONLY:** emptied libraries, abducted historians, carefully dismantled monuments, stolen artifacts, burned archives after documents removed, Oculin correlating incidents, guild memorial artifact as target, Arturo knowing a displaced historian. Exact clues, raid scenes, and revelation sequence remain open.
+- The rogue Dracling knows ancient events but is seeking the missing source's current whereabouts. Whether he has specific fragment knowledge or understands the Shattering fully remains to be defined with existing mythology continuity.
