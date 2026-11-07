@@ -398,3 +398,14 @@ This addendum captures the story-building session of November 6, 2026. It record
 
 ## Narrative handling rule
 **Separate objective lore (author-only truth) from the beliefs of the protagonist, reader, and inhabitants.** Never spoil the eight-fragment reunion mechanism or the living Creator in early-story exposition. Do not contradict the sequence: Great War → Council → division → eight timelines → centuries → Bestiling betrayal → fragment seeks reunion → Shattering/merged Earth → eventual Convergence.
+
+
+## NOVEMBER 6 — PROTAGONIST'S HOME SETTLEMENT (USER-ESTABLISHED)
+- Protagonist is a **curious explorer** by temperament, fascinated by the world outside his home.
+- **Many settlements and groups exist worldwide** roughly 50–100 years after the Shattering; they have different degrees of self-sufficiency, contact, and trade.
+- His starting community is **largely closed off from the outside world**, relatively **self-sufficient** and therefore **does not need to rely on trade** the way some other settlements do.
+- The settlement is **beside a river** that supplies much of what it needs. Details such as fishing, irrigation, water power, farming, and settlement architecture are plausible proposals, not all separately locked.
+- The community **forbids its members from going beyond its walls**. Its protection and self-reliance have become a restrictive isolationist culture.
+- The protagonist's **true Morphling father is kept secret from him and others**, because discovery of his parentage risks **exile** from the community. His human mother knows the secret. Whether his father once lived inside disguised as human, met his mother outside, vanished, or is still alive is **undecided**.
+- Preserve the dramatic irony: the **river sustains the settlement yet connects it to the world it rejects**. This is a proposed literary motif, not mandatory canon.
+- Do not assume settlement leadership is evil; the danger outside may be real and the isolation may have protected residents. The precise rules, governance, settlement name, and opening incident remain to be designed.
