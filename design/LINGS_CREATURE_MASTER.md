@@ -521,3 +521,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - This is a **living Morphling with a mechanical/scout-drone aesthetic**, not simply a conventional robot. User likes the design exactly as rendered; do not alter it casually.
 - **Cannot transform; relatively weak physically.** Speaks, is very literal/direct, misses sarcasm, is intelligent and loyal. The future half-Morphling reveal exchange including **'You didn't ask'** is a keeper.
 - **Name, precise origin, and first meeting remain undecided.**
+
+
+## NOVEMBER 6 — OCULIN SPECIES NAME LOCKED
+- **Oculin** (OCK-yoo-lin) is the user-approved **species name** of the small floating Morphling companion, NOT his personal name. Morphling is the broader family. Name draws inspiration from ocular/observation; the species is characterized by keen observation, awareness, and memory, rather than physical strength.
+- The particular companion's **individual name remains intentionally undecided**; protagonist and Oculin may have a humorous exchange about why a species designation is not a personal name. Do not assign one without user approval.
+- **Cyril** (pronounced SEAR-il) is currently the user's favored but **NOT finalized** protagonist name; **Rhyden** remains an alternative. The protagonist name must not yet be treated as canon.
+- Preserve approved smooth-shelled, glossy black face, cyan-eye, no-mouth, halo visual from previous addendum; do not replace the approved visual with a generic Oculin image.
