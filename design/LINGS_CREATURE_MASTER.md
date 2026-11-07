@@ -512,3 +512,12 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **Later revelation scene:** after the protagonist learns he is half Morphling, he asks the floating companion whether it knew. The companion says **yes/of course**. When challenged for not revealing it, it replies in essence **'You didn't ask.'** This is an intentional character-defining payoff, not an early spoiler. Exact wording can be polished later.
 - The floating companion **has known the protagonist's mixed heritage**, but why/how it recognized him remains unresolved. Do not establish a universal Morphling detection ability that would contradict the father's successful human disguise.
 - The character's strengths are primarily **personality, observation, companionship, and literal intelligence**, not combat power or transformation. Exact abilities, origin, visual design, and any insecurities remain open.
+
+
+## NOVEMBER 6 — FLOATING MORPHLING VISUAL DESIGN APPROVED / LOCKED
+- User explicitly approved the **SECOND revised character concept sheet** (generated in chat on Nov 6–7, 2026), replacing the first feathered/leaf-like design. The approved image was rendered in this conversation as `a_polished_infographic_character_concept_sheet_for.png`; the actual visual reference is the second generated sheet, not a new interpretation.
+- **LOCKED VISUAL:** small hovering spherical scout-like Morphling; **smooth glossy black faceplate**, **two expressive luminous cyan-blue eyes**, **NO mouth**, even when speaking; **rounded segmented ivory/gray shell**, sleek curved plating (NOT feathered or leaf-like), restrained glowing blue seams and circular side details; **glowing floating halo/ring above**; compact roughly 20–25 cm scale as depicted. Preserve the approved silhouette and face.
+- Facial emotion is conveyed entirely through eye shapes/expressions (happy crescents, wide surprise, narrow skepticism, neutral ovals); voice may be accompanied by subtle light pulses, but no visible mouth.
+- This is a **living Morphling with a mechanical/scout-drone aesthetic**, not simply a conventional robot. User likes the design exactly as rendered; do not alter it casually.
+- **Cannot transform; relatively weak physically.** Speaks, is very literal/direct, misses sarcasm, is intelligent and loyal. The future half-Morphling reveal exchange including **'You didn't ask'** is a keeper.
+- **Name, precise origin, and first meeting remain undecided.**
