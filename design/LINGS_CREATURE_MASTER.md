@@ -562,3 +562,8 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **CONFIRMED:** Pig Bestiling guild warrior's **primary offensive weapon is a giant hammer**, replacing the earlier dual-sword concept for current canon. The **defensive pole/staff remains** his defensive option.
 - **CONFIRMED CHARACTER COMBAT TRAIT:** When he drops or loses the hammer, he is still a **formidable barehanded brawler**; losing the weapon should not render him helpless. His heavyset physique supports forceful close-quarters fighting.
 - **PROPOSED ONLY:** ground-shaking hammer blows, grappling/shoulder charges, nonlethal subdual specialty, and a dramatic disarmed-then-brawling reveal. Exact moves, hammer design, staff design, and personality remain to develop. Keep action impactful without graphic gore.
+
+
+## NOVEMBER 7 — ARTURO PERSONAL NAME
+- User proposes **Arturo** as the individual/personal name of the rotund, bipedal, hammer-wielding pig Bestiling guild warrior. User phrased 'I think his name is Arturo,' so treat as strong favored name, pending final confirmation if needed.
+- **Arturo is NOT his species name.** Species name remains undecided. Suggested options (NOT canon): Brumbar, Tuskarn, Porvok, Grumbar, Borvyn, Brusk, Porgrim, Grondel, Tuskrel, Borruk. Do not silently select one.
