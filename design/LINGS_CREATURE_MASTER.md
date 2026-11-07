@@ -567,3 +567,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 ## NOVEMBER 7 — ARTURO PERSONAL NAME
 - User proposes **Arturo** as the individual/personal name of the rotund, bipedal, hammer-wielding pig Bestiling guild warrior. User phrased 'I think his name is Arturo,' so treat as strong favored name, pending final confirmation if needed.
 - **Arturo is NOT his species name.** Species name remains undecided. Suggested options (NOT canon): Brumbar, Tuskarn, Porvok, Grumbar, Borvyn, Brusk, Porgrim, Grondel, Tuskrel, Borruk. Do not silently select one.
+
+
+## NOVEMBER 7 — ARTURO / OCULIN COMEDIC GUILD INTRODUCTION (USER-DIRECTED)
+- User wants an early guild scene where **Cyril (provisional name) points to Arturo having a personal name**, unlike the Oculin who gives only his species name. This advances the running joke that Oculin sees no need for an individual name.
+- User also wants the Oculin to **observe matter-of-factly that Arturo has an unusual body size and shape for a Bestiling warrior**. Crucially, the Oculin is **purely observational, not intentionally teasing, insulting, or sarcastic**. The comedy arises from literal honesty and Cyril's alarm at the social implications.
+- Assistant drafted a proposed guild-introduction dialogue: Arturo introduces himself; Cyril says 'See? Arturo has a name'; Oculin insists 'Oculin' works as a designation; Oculin then clinically notes Arturo's exceptional abdominal circumference/physique; Cyril tries to stop him; Arturo laughs once he understands no insult was intended. Synkith reacts silently. Later Oculin updates assessment after witnessing Arturo's combat strength: 'It was a correction' when asked whether complimenting him. **Dialogue and Arturo's specific reaction are proposals, not final locked lines.**
+- Keep Arturo formidable and self-assured, not a fat-joke caricature. Preserve established warm-but-literal trio tone and non-gory action.
