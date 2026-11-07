@@ -436,3 +436,18 @@ This addendum captures the story-building session of November 6, 2026. It record
 - The precise screening format is **not yet chosen**. Assistant proposed a staged endurance/navigation/survival examination ending in a medical screening that flags atypical physiology as unfit without identifying Morphling heritage. This is a **proposal**, not locked canon.
 - Whether he passes earlier tests, the examiners' response, how his mother reacts, whether he leaves at night, and the first encounter outside are **open story decisions**.
 - This makes hybrid biology an initial **obstacle** rather than an obvious superpower. Preserve the slow revelation of his parentage.
+
+
+## NOVEMBER 6 — UNCONVENTIONAL LING ENCOUNTER & ADAPTIVE HYBRID PHYSIOLOGY
+**USER-CONFIRMED STORY DIRECTION**
+- In the Pathfinder candidate trials, the protagonist has an **extremely unconventional encounter with a Ling**: where other candidates fight or slay the creature, **he soothes and calms it instead**. This is an early clue that he is different, but the reader must not yet be told his biological secret.
+- The father is a **Morphling mimic**: consciously chameleons his appearance to resemble species he has seen.
+- The son's inherited ability is **distinct from his father's mimicry**: he **does not consciously choose an appearance or transformation**. His **body automatically and involuntarily adapts to the conditions/situation**, especially harsh environments, to survive. He does not initially understand or control this ability, and the narrative must not explicitly explain it to the reader during the trial.
+- The Pathfinder qualification includes a **demanding environmental hardship trial** (extreme heat, cold, or other severe conditions) designed to test dedication, resourcefulness, pain/hardship tolerance, and the ability to accomplish a task despite adversity. The son undergoes an involuntary adaptation during it.
+- **Crucial design constraint:** The adaptation must look **odd, concerning, and medically inexplicable**, **not like an obvious hidden advantage or superpower**. The examiners deem him **ineligible** because something appears wrong with his physiology/reliability. Design the precise testing and medical criteria carefully before finalizing.
+- The Ling encounter and the harsh-environment trial are both important beats of the selection process; their order and the exact creature are not yet fixed.
+**ASSISTANT PROPOSALS — NOT LOCKED**
+- A three-part exam: fieldcraft, contained Ling encounter, and environmental endurance.
+- During the Ling encounter, candidates are expected to neutralize a threat; protagonist notices fear and de-escalates instead. Exact instructions, whether killing is mandatory, and how assessors interpret his choice are open.
+- Cold-chamber challenge with a practical repair task, anomalous temperature/circulation/recovery readings, and a medical officer refusing clearance because the response is unpredictable. Cold specifically, chamber infrastructure, readings, and outcome details are suggestions only; do not imply real-world medically established hybrid physiology.
+- The protagonist completes the assignment but fails medical clearance; this is a promising mechanism, not yet ratified as exact scene.
