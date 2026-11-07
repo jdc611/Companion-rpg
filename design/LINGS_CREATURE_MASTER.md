@@ -451,3 +451,16 @@ This addendum captures the story-building session of November 6, 2026. It record
 - During the Ling encounter, candidates are expected to neutralize a threat; protagonist notices fear and de-escalates instead. Exact instructions, whether killing is mandatory, and how assessors interpret his choice are open.
 - Cold-chamber challenge with a practical repair task, anomalous temperature/circulation/recovery readings, and a medical officer refusing clearance because the response is unpredictable. Cold specifically, chamber infrastructure, readings, and outcome details are suggestions only; do not imply real-world medically established hybrid physiology.
 - The protagonist completes the assignment but fails medical clearance; this is a promising mechanism, not yet ratified as exact scene.
+
+
+## NOVEMBER 6 — NONVIOLENT NEUTRALIZATION & MOTHER'S SECRET AID
+**USER-DECIDED**
+- The Pathfinder trial instruction is to **neutralize a dangerous Ling**, NOT necessarily kill it. **Most candidates choose violence**, but the protagonist **soothes and calms the Ling**, fulfilling the underlying objective in an unconventional way. This must be a meaningful early clue to his difference without explicitly revealing his hybrid heritage.
+- When the protagonist secretly departs beyond the walls after failing the harsh-environment qualification, **the narration reveals to readers that his mother sees him leaving and does not stop him**. She **may indirectly help** (such as arranging supplies or access), but the exact assistance is not fixed.
+- **Author-only motive:** The mother believes he is **safer outside** because the settlement is getting close to uncovering his Morphling heritage. The **reader should not learn that true motive yet**; frame her actions ambiguously, with a later reinterpretation.
+- **Potential later twist, NOT yet finalized:** Upon returning later in the story, the protagonist discovers that his mother has been **killed or exiled** after authorities uncovered a secret by studying his anomalous Pathfinder test results. The precise fate and timing are still open; do not lock death, exile, or missing status.
+**PROPOSED IMPLEMENTATION (NOT LOCKED)**
+- Medical personnel flag the trial results, review family and expedition records, and investigate; mother realizes the danger and silently helps him escape.
+- Show a short maternal POV at departure without revealing her secret knowledge.
+- Assistant favors exile with unknown whereabouts as an option, but user has not chosen among exile, death, or uncertain fate.
+- Protect the early-story mystery: the narration may show her worry and intentional silence, but must not reveal the Morphling father, hybrid DNA, or the cosmic mythology before intended reveals.
