@@ -548,3 +548,11 @@ This addendum captures the story-building session of November 6, 2026. It record
 - User notes the image's **gritty, realistic rendering differs from other approved Lings**. Preserve the **underlying look** (stout pig/boar silhouette, tusks, expressive face, minimal warrior outfit, dual swords) while ultimately **harmonizing its art style** with the consistent established Ling visual language. Do not assume the current rendering style becomes universal canon.
 - Dual swords remain central; the exact defensive weapon/swap is undecided.
 - **Assistant proposal, not confirmed:** make him a recurring experienced warrior and eventually trusted ally to protagonist, protective of weaker Lings, providing contrast between strength and compassion. Personality, plot role specifics, name, and allegiances remain open for user decision.
+
+
+## NOVEMBER 7 — LING GUILD / PIG WARRIOR ROLE / NON-GORY COMBAT DIRECTION
+- **USER-DECIDED:** The rotund bipedal pig Bestiling is a **warrior member of a guild of Lings**. This guild **accepts the protagonist (currently called Cyril), Synkith, and the Oculin**, and serves as an important setting where the protagonist learns more about the wider world and Lings. Guild name, exact membership, structure, location, and entry circumstances remain to be developed.
+- **USER CREATIVE CONSTRAINT:** Story may have dark elements, but **visual combat should NOT be Game-of-Thrones-style gore**, graphic stabbing, or sword cutting. Avoid graphic blade violence in the character's action scenes.
+- **USER PROPOSED REVISION:** Consider replacing pig Bestiling's dual swords with **brass-knuckle-style fighting gauntlets** or **a giant hammer**, while **retaining the defensive pole/staff**. The offensive weapon is **not yet decided**; swords are now under reconsideration and should not be treated as final.
+- **ASSISTANT PREFERENCE ONLY:** giant warhammer for offense and reinforced pole for defense, possibly convertible into one weapon; alternative twin blunt clubs/tonfa to retain dual-wielding. Not approved yet.
+- Guild can be a natural venue for Ling culture/history exposition without prematurely revealing Aetherion's divided fragments, multiple timelines, or other guarded endgame mythology.
