@@ -556,3 +556,9 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **USER PROPOSED REVISION:** Consider replacing pig Bestiling's dual swords with **brass-knuckle-style fighting gauntlets** or **a giant hammer**, while **retaining the defensive pole/staff**. The offensive weapon is **not yet decided**; swords are now under reconsideration and should not be treated as final.
 - **ASSISTANT PREFERENCE ONLY:** giant warhammer for offense and reinforced pole for defense, possibly convertible into one weapon; alternative twin blunt clubs/tonfa to retain dual-wielding. Not approved yet.
 - Guild can be a natural venue for Ling culture/history exposition without prematurely revealing Aetherion's divided fragments, multiple timelines, or other guarded endgame mythology.
+
+
+## NOVEMBER 7 — PIG BESTILING HAMMER CONFIRMED
+- **CONFIRMED:** Pig Bestiling guild warrior's **primary offensive weapon is a giant hammer**, replacing the earlier dual-sword concept for current canon. The **defensive pole/staff remains** his defensive option.
+- **CONFIRMED CHARACTER COMBAT TRAIT:** When he drops or loses the hammer, he is still a **formidable barehanded brawler**; losing the weapon should not render him helpless. His heavyset physique supports forceful close-quarters fighting.
+- **PROPOSED ONLY:** ground-shaking hammer blows, grappling/shoulder charges, nonlethal subdual specialty, and a dramatic disarmed-then-brawling reveal. Exact moves, hammer design, staff design, and personality remain to develop. Keep action impactful without graphic gore.
