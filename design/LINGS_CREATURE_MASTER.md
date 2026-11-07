@@ -479,3 +479,14 @@ This addendum captures the story-building session of November 6, 2026. It record
 - **Synkith**: user is **leaning toward** the protagonist encountering a **seemingly weak, injured Synkith**. Synkith is the established harmony-associated Legendary Morphling; its vulnerability and identity could be a major narrative mystery. Preserve the approved Synkith design/dossier rather than inventing a replacement appearance. How a Legendary is injured, why it appears weak, and how much the protagonist or readers know are unresolved.
 - Assistant suggestion: mechanical Ling supplies dialogue/comedy, injured Synkith supplies emotional bond and mystery. Their order of appearance, whether both join permanently, and any first-bond scene are proposals, not locked.
 - Protect the early mystery: do not reveal Synkith's Legendary identity or cosmic mythology too soon if this direction is adopted.
+
+
+## NOVEMBER 6 — SYNKITH'S INTENTIONAL SEARCH AND PARALLEL TO PROTAGONIST
+**USER-ESTABLISHED STORY DIRECTION**
+- Synkith **deliberately sought out the protagonist**. The protagonist and reader **do not initially know** that their meeting was intentional. This supersedes the earlier notion of a purely accidental encounter with an injured Synkith.
+- Synkith **does not have to be injured**; an injured/seemingly weak introduction is now optional, not a requirement. Its normal form is already small and outwardly unthreatening.
+- The protagonist and Synkith are **parallels**: both can calm others, and both adapt in response to circumstances. The protagonist's involuntary hybrid adaptation is **survival/environment-focused**; Synkith's **Retribution Form** is a protective last-resort battle transformation.
+- Preserve Synkith's **established Retribution Form** terminology and existing approved dossier/mechanics. It is not a generic freely activated battle mode. Previously established trigger: last party member able to battle, with low-health condition in the newer dossier (HP at or below 50%); it reverts after battle. Do not replace the approved art.
+- **Unresolved:** how Synkith sensed/identified the protagonist, why it searched for him, whether it is injured at first meeting, and when the reader learns it intentionally found him. Do not prematurely reveal his Morphling heritage, Synkith's Legendary nature, the Creator, fragments, or timelines.
+**ASSISTANT STORY SUGGESTION (NOT LOCKED)**
+- The protagonist mistakenly thinks he discovered or helped a vulnerable Ling; later learns Synkith chose him. Their bond is mutual protection, not capture or conquest.
