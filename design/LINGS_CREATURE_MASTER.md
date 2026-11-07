@@ -464,3 +464,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - Show a short maternal POV at departure without revealing her secret knowledge.
 - Assistant favors exile with unknown whereabouts as an option, but user has not chosen among exile, death, or uncertain fate.
 - Protect the early-story mystery: the narration may show her worry and intentional silence, but must not reveal the Morphling father, hybrid DNA, or the cosmic mythology before intended reveals.
+
+
+## NOVEMBER 6 — PROTAGONIST'S DEPARTURE MOTIVATION (USER-CONFIRMED)
+- The protagonist's **ultimate initial reason for venturing beyond the walls is to prove he is Pathfinder-quality**, both **to the settlement/group that disqualified him** and **to himself**.
+- He is **not knowingly embarking on a quest** to find his biological father, discover Morphling ancestry, collect fragments, or save the world. Those wider stakes and truths emerge later.
+- This has both **external validation** (earning the group's recognition) and **internal self-worth** (overcoming the doubt created by his failed qualification).
+- Assistant-proposed, not yet locked: he might aim to survive several days outside, explore dangerous territory, and return with evidence of competence; his later growth may involve recognizing that restraint, empathy, and judgment matter more than a title. Do not impose a specific mission or final arc without further discussion.
