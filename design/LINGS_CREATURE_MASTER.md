@@ -348,3 +348,53 @@ Other variants remain in the Library; exact final-version matching still needs v
 - **Approved exact artwork:** `/Lings/Approved Artwork/Tiderusk_Narwhal_Lineage_APPROVED.png`, Library ID `libfile_3ed617aeef988191a1ceae98c55b5316`. User said 'I like it. Lock it' November 6. Preserve original art; do not regenerate.
 - **Artwork provisional mechanics:** Water primary, Rock secondary, Tidal Focus ability; not separately ratified as final game mechanics.
 - **Roster:** Adds Tiderusk as a new Aquiling lineage; do not merge with Thalvorx or the earlier unillustrated shark/whale concept.
+
+
+---
+
+# LINGS — STORY & MYTHOLOGY MASTER ADDENDUM (NOVEMBER 6, 2026)
+This addendum captures the story-building session of November 6, 2026. It records confirmed decisions separately from proposed directions and unresolved questions. It does not supersede approved creature artwork or lineages elsewhere in this master.
+
+## CONFIRMED CANON — Cosmic origins, the Council, and the Shattering
+- There are eight ordinary Ling families: Bestiling, Dracling, Morphling, Florling, Arthling, Aquiling, Terraling, Spectraling.
+- **Aetherion** is the current working name for the primordial power source **and the actual Creator**, a unique being outside all eight Ling families (not a ninth family). Aetherion is alive/conscious; normally he observes his creations and refrains from intervening. When sufficiently whole he can choose to manifest in a living physical form. His appearance, precise limits, personality, and whether he had ever manifested before the Great War remain open.
+- **Great War** happened first: Lings fought for control of the whole Aetherion. The war led to creation of the Council of Eight: one chosen Ling from each family, appointed as protectors, **not gods**. Each became an Ancient Guardian through Aetherion's power and is immortal and extraordinarily strong. An Ancient is this specific Guardian classification, not just an old Ling.
+- **Following the Great War**, the Council **deliberately divided Aetherion into eight fragments**, one entrusted to each Guardian. They **unknowingly divided a living Creator**, disabling his ability to physically manifest/intervene even if he wished to. This was a sincere protective act with an unintended tragic consequence.
+- **Before the Shattering**, the Guardians **used Aetherion's own power to travel into eight different timelines**, each taking and protecting their own fragment. Each timeline's inhabitants eventually knew only their one Guardian, revered as a god; the existence of seven equal Guardians was unknown to them.
+- **Centuries later**, in the **Bestiling Guardian's timeline**, an ordinary **Morphling** (not an Ancient) begged the Bestiling Guardian for access to the protected power to resurrect someone he loved. The Guardian refused to risk repeating the Great War. The Morphling allied with an ordinary, rogue, power-hungry **Dracling** who wanted control and dominance. **These two traitors already lived in that timeline**; they did not travel there from another timeline. They imprisoned the Bestiling Guardian and **unleashed the Aetherion fragment** in his care.
+- **True cause of the Shattering:** The released fragment **tried to reconnect with the seven fragments across separate timelines**. That drive to become whole **tore the boundaries of time and space**, catastrophically **merging Earth with portions of the Ling world** and devastating the resulting world. The Shattering is **not** the Great War, nor did the Guardians first flee to different timelines after the Shattering. The separation was the original Council's strategy and occurred centuries before the betrayal.
+- **Convergence:** The torn boundaries remain damaged, and the separated pieces of Aetherion continue tending toward reunion, threatening further timeline/world convergence. When the pieces reunite sufficiently, Aetherion can again become manifest as a living being, by choice; he is not automatically an evil boss or mindless energy explosion.
+- The irony is central: the Council unknowingly silenced its Creator to protect its creations, and the traitors' attempt to exploit the power accidentally triggered the Creator's drive to reunite.
+- The original Ling world and Earth **merged**, rather than Lings merely landing on Earth as visitors. The post-apocalyptic setting contains displaced terrain, ecosystems, structures, and surviving humans and Lings who must coexist.
+- **Guardians vs Legendaries:** Guardians are chosen, Aetherion-infused protectors; naturally occurring Legendary Lings maintain balance, are not appointed by the Council, and are approximately comparable to Guardians in power. Aetherion is a separate, incomparable Creator-level being.
+
+## CONFIRMED CANON — Mystery and disclosure to the audience
+- **Do not disclose early** that the protected power is one fragment, that seven other fragments/Guardians/timelines exist, or that the Shattering was caused by Aetherion trying to reunite. These are major **late-first-story or sequel** revelations. The player/reader initially understands Aetherion as an ancient source of dangerous energy and the Shattering as a disastrous release of that energy.
+- Early dialogue/narration from limited viewpoints should refer to **the Source**, **ancient power**, or **Aetherion**, **not 'a fragment'** in a way that spoils the truth. Hints can be planted without giving away the mechanism.
+- Exact reveal pacing is **not yet locked**: possible late Game/Book I discovery of other Guardians, followed by later revelation of fragments, true Shattering cause, and living Creator in a sequel.
+- Inhabitants of each timeline may regard their Guardian as a god, but the Guardians are chosen Lings, not actual gods. Their equality and the existence of the other seven form a major revelation.
+
+## PROTAGONIST & FORMAT — Confirmed direction and proposals
+- The creator enjoys **creating the story and watching it unfold** as much as or more than gameplay. Consider developing Lings as an original **novel/saga or cinematic narrative universe first**, without abandoning the possibility of a game, graphic novel, or animation. No final publishing medium or book count chosen.
+- The **protagonist is an apparently ordinary human survivor**, experiencing the merged world firsthand, who gradually learns he is exceptional. His **human mother fell in love with a very humanoid Morphling father**; the protagonist is **half human, half Morphling**, and this explains his unusually strong connection to Lings. This parentage and gradual discovery are the user's favored story direction; names, ages, family fates, and exact abilities remain undecided.
+- Proposed reveal arc (NOT locked): Lings trust him unusually early; he can sense their feelings; strange reactions near ancient sites; stress reveals Morphling traits; eventually he learns his father's identity. Avoid a simplistic predestined/chosen-one explanation. His parents' love is a personal parallel to the grief-driven traitor Morphling.
+- Proposed father backstory (NOT locked): a Morphling who lived among humans after the Shattering, appeared human, loved the protagonist's mother, and may have disappeared. The mother may be protecting a secret. None of the disappearance, secrecy, or specific abilities has been confirmed.
+- **Shattering-to-story interval remains UNDECIDED.** Options discussed were 5–15, 20–40, or 100+ years. Assistant preferred 20–40, but the user did NOT choose. Any chronology must accommodate a human–Morphling child born after worlds merged.
+- The user would like to **remain publicly anonymous if commercially publishing**. A pen name/imprint is a possible route; publishing/payment/tax providers may still require legal identity. Commercial AI-assisted writing and associated copyright/disclosure considerations were discussed; no pen name, publisher, or legal structure chosen.
+
+## ESTABLISHED CHARACTER CONFLICTS AND FACTIONS (earlier lore carried forward)
+- **The Reclamation** (working name), led by **the Last Heir** (working title), seeks to restore the lost Ling civilization/home. Their cause is sympathetic, and they would restore it harmlessly if possible; the moral flaw is risking the present world in desperation. They may become allies.
+- **The Unbound** (working name) are the more ruthless antagonists led by the traitor Morphling and Dracling. The Dracling craves power/control; the Morphling secretly seeks to restore a lost loved one. His true motivation should be a late emotional reveal. Their exact survival/lifespans from the Shattering to the story present are unresolved; **do not casually grant ordinary traitors immortality**.
+- The Bestiling Guardian's refusal, the traitor Morphling's grief, the Reclamation's desire to restore a civilization, and Aetherion's inability to intervene create the central moral parallels.
+- The first installment should have its own satisfying character arc even while preserving large sequel mysteries.
+
+## CREATOR / COSMOLOGY — Open questions; do not present as locked
+- Whether Aetherion always had a fully conscious, embodied state or the Shattering changed his experience/awareness; current preferred direction is that he was **always conscious** but normally a silent observer and that division prevented intervention. Exact metaphysics are not settled.
+- Whether Aetherion loves, judges, forgives, or disagrees with his creations; whether he can manifest only when *all eight* pieces rejoin or when sufficiently reunited; the exact physical form.
+- How the Guardian-held fragments relate to the small amounts of Aetherion power infused in Guardian bodies.
+- Whether the Shattering's merger of Earth and the Ling world also pulled other timelines into Earth, and exactly which geography was merged.
+- The time between the Shattering and story present; human/Ling hybrid biology and social consequences; the fate of protagonist's parents.
+- The final reveal sequence, novel/game adaptation, naming, and commercial publishing plan.
+
+## Narrative handling rule
+**Separate objective lore (author-only truth) from the beliefs of the protagonist, reader, and inhabitants.** Never spoil the eight-fragment reunion mechanism or the living Creator in early-story exposition. Do not contradict the sequence: Great War → Council → division → eight timelines → centuries → Bestiling betrayal → fragment seeks reunion → Shattering/merged Earth → eventual Convergence.
