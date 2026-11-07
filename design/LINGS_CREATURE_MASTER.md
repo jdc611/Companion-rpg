@@ -498,3 +498,10 @@ This addendum captures the story-building session of November 6, 2026. It record
 - The protagonist is particularly good at interpreting Synkith's nonverbal intentions and emotions, but **this is not confirmed telepathy or direct mind-reading**. His connection with Synkith should develop through attention, empathy, and trust.
 - User explicitly likes the conversational dynamic where the protagonist understands Synkith's cues while the mechanical Ling insists no verbal instruction was issued; use natural, occasional humor of this kind.
 - General world communication system remains **proposed rather than canon**: speech can depend on anatomy, learned language, and adaptations rather than family alone; Morphlings may be especially capable of mimicking speech. Do not lock this rule without explicit approval.
+
+
+## NOVEMBER 6 — FLOATING MECHANICAL COMPANION FAMILY (USER PREFERENCE)
+- User suggests **Morphling** as the best family classification for the floating, talking, literal-minded, mechanical-looking companion. Treat as **strong preference / provisional classification**, not final design.
+- Assistant proposal: a **living Morphling with mechanical-looking biology** rather than an ordinary constructed robot; could reconfigure components for limited practical functions. Whether it is organic, artificial, or a hybrid remains **unconfirmed**.
+- This would make the protagonist (half-Morphling), Synkith (Legendary Morphling), and the floating companion (Morphling) three distinct expressions of adaptation. Do not assume they share powers or origins.
+- Exact visual form, origin, limitations, personality history, and meeting circumstances are still open.
